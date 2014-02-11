@@ -8,7 +8,7 @@ public class ReadFile {
     {
 	    System.out.println("Reading File from Java code");
 	    //Name of the file
-	    String fileName="/home/rupak/Documents/programming/java/SVNLogExtractor/ant-core-history.txt";
+	    String fileName="C:\Users\Home\git\SOEN6611_Taj\oss_projects\ant";
 	    try{
 	
 		    //Create object of FileReader
