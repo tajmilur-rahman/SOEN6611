@@ -1,0 +1,4 @@
+
+Notepad++ regex for extracting a single revision:
+
+(r\d+)\s\|\s(.*?)\s\|\s(.*?)\s\|.*?\r\nChanged paths:\r\n(^.+$\r\n)+?(^$\r\n)+(.*\r\n)+?------------------------------------------------------------------------
