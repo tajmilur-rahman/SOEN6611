@@ -1,0 +1,55 @@
+﻿Abstract Syntax Tree AST:
+
+To access the source an Abstract Syntax Tree should be buit on demand.
+
+For source code analysis we need binding information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Types of Binding:
+	ITypeBinding
+	ImethodBinding
+	IvariableBinding
+
+AST
+In eclipse we ave AST note.
+Categories of AST Note:
+	BodyDeclaration
+	Type
+	Statement
+	Expression
+Statements have categories.
+	With body
+	Without body
+
+Jdeodorant Model:
+Not very abstract, not so detail
+It's built using AST
+It has 3 lavels:
+	Top level (Methods, Classes)
+	Statement Representations
+	Expressions
+* Composite Design Pattern used to represent of a tree type object.

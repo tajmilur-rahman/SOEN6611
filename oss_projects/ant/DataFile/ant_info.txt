@@ -480,7 +480,7 @@ r1060193|bodewig|2011-01-18 00:19:47|re-generate site|1 line
 r1060192|bodewig|2011-01-18 00:17:24|eol style|1 line
 r1058994|antoine|2011-01-14 08:03:33|the image tasks are no longer available. PR 50595|1 line
 r1058992|antoine|2011-01-14 08:03:08|docs regeneration|2 lines
-r1058855|bodewig|2011-01-14 00:19:07|update of the blurb about dynaTrace ant task, see\|1 line
+r1058855|bodewig|2011-01-14 00:19:07|update of the blurb about dynaTrace ant task, see|1 line
 r1058854|bodewig|2011-01-14 00:14:52|make it a sentence|1 line
 r1057294|antoine|2011-01-10 13:10:17|the -source magic was broken for 1.5 and 1.6.  PR 50578|1 line
 r1056339|antoine|2011-01-07 09:43:47|fixing typo|1 line
@@ -628,9 +628,8 @@ r986226|bodewig|2010-08-17 03:57:18|clean up after test|1 line
 r985957|jglick|2010-08-16 10:26:38|Avoid NPE in createTempFile if no prfix has been specified.  PR 49755|2 lines
 r985652|hibou|2010-08-15 06:39:34|New builder location.|2 lines
 r985640|hibou|2010-08-15 05:32:28|Give a name to the thread|2 lines
-null|null|null|null|null
-r985632|hibou|2010-08-15 05:09:37|r985632 : actually it is breaking unit test, reverting|3 lines
-r984155|bodewig|2010-08-10 14:14:01|Bug #49119 :|1 line
+r985632|hibou|2010-08-15 05:09:37|r985632 actually it is breaking unit test, reverting|3 lines
+r984155|bodewig|2010-08-10 14:14:01|Bug #49119 |1 line
 r983308|bodewig|2010-08-07 16:43:21|compress antlib requires commons compress 1.1|1 line
 r982773|bodewig|2010-08-05 16:44:30|<jar doesn't merge manifests that come from zipfilesets with prefix.  PR 49605|1 line
 r982731|bodewig|2010-08-05 14:53:14|nested redirectors and parrallel-apply don't mix well - PR 49594|1 line
@@ -4635,7 +4634,7 @@ r277719|stevel|2005-02-23 08:04:16|2005|2 lines
 r277718|stevel|2005-02-23 07:51:07|lower success message to verbose output on schema validation. Could do the same for XmlValidate, and indeed, am sorely tempted to. Also added some javadocs.|2 lines
 r277717|stevel|2005-02-22 17:15:36|Worked out how to validate XSD files themselves. Changes to task made, and the examples of the task now show how to do this.|2 lines
 r277715|mbenson|2005-02-22 13:26:56|Update with <schemavalidate>|3 lines
-r277714|mbenson|2005-02-22 13:05:48|Pathconvert no longer requires that one of (targetos|pathsep|dirsep)|2 lines
+r277714|mbenson|2005-02-22 13:05:48|Pathconvert no longer requires that one of (targetos or pathsep or dirsep)|2 lines
 r277713|mbenson|2005-02-22 12:54:44|More LOC bumming|2 lines
 r277712|mbenson|2005-02-22 12:48:02|Trade 2 LOC for 10.|2 lines
 r277711|stevel|2005-02-22 12:45:40|Missing quote in javadoc.|2 lines
@@ -4808,7 +4807,7 @@ r277495|mbenson|2005-01-26 17:58:12|Show exec's searchpath attribute as merged.|
 r277494|mbenson|2005-01-26 17:46:00|Javadoc, changed local searchPath of resolveExecutable to mustSearchPath,|2 lines
 r277492|mbenson|2005-01-26 17:08:31|Merge basic switch to java.io.tmpdir via FileUtils.createTempFile(...)|2 lines
 r277487|mbenson|2005-01-26 15:12:51|Catch up merges|2 lines
-r277486|mbenson|2005-01-26 14:28:33|Oops, got|and ^ confused... :(|2 lines
+r277486|mbenson|2005-01-26 14:28:33|Oops, got\|and ^ confused... :(|2 lines
 r277483|mbenson|2005-01-26 14:22:29|Merged DependScanner losing its private basedir member.|2 lines
 r277482|mbenson|2005-01-26 14:04:28|Thread-safe(r)ty, javadoc, code simplification|3 lines
 r277479|mbenson|2005-01-26 13:06:51|Merge "Wrapper scripts did not detect WINNT value of dynamic OS environment|2 lines
@@ -5385,7 +5384,7 @@ r276752|bodewig|2004-08-04 10:35:06|sneak in an explicit test of the new file ut
 r276751|jhm|2004-08-04 03:48:46|Change output so that it doesn't look as if csc always compiles everything|2 lines
 r276750|stevel|2004-08-03 19:26:44|29808. Clearify what 'external' means.|2 lines
 r276749|stevel|2004-08-03 19:24:09|updated whatsnew|14 lines
-r276748|stevel|2004-08-03 19:19:08|These changes will break Stefan's and my work builds, but they are for the better.1. pull file/url stuff from the main class into another instance of the schema class.2. added a makeURL flag that turns a file ref in a schema into a URL. v. useful for .net. 3. added a compiler enum and attr that lets you choose compiler. Compilers are microsoft|mono|microsoft-on-mono. 4. renamed parseableerrors to ideErrors.5. dependency logic uses filesys granularity. No tests for the compiler stuff, we need to think about how to do that.|2 lines
+r276748|stevel|2004-08-03 19:19:08|These changes will break Stefan's and my work builds, but they are for the better.1. pull file/url stuff from the main class into another instance of the schema class.2. added a makeURL flag that turns a file ref in a schema into a URL. v. useful for .net. 3. added a compiler enum and attr that lets you choose compiler. Compilers are microsoft\|mono\|microsoft-on-mono. 4. renamed parseableerrors to ideErrors.5. dependency logic uses filesys granularity. No tests for the compiler stuff, we need to think about how to do that.|2 lines
 r276747|stevel|2004-08-03 19:18:35|Echo cleanup. Too much duplicate logic.|6 lines
 r276746|stevel|2004-08-03 19:16:16|1. some factoring out of the timestamp checks for even more reuse. That way the granularity logic can all go in one place.2. a refactoring of close() to ignore exceptions. I made this static because I want to use it everywhere we close things in a finally clause. NB, note that all four methods would all be unified if the writer/reader/instream/outstream classes had a base class "Closeable" with method void close().No, I have not refactored everything to use these yet.|2 lines
 r276745|stevel|2004-08-03 19:12:58|The ide is fussy, so we dont have to be|2 lines
@@ -5830,10 +5829,10 @@ r276054|antoine|2004-02-06 10:53:40|Give 2 seconds to these tests to succeed ins
 r276052|antoine|2004-02-06 10:22:52|Update information concerning MS FTP server required libraries|2 lines
 r276051|antoine|2004-02-06 10:19:56|Copyright year|3 lines
 r276049|antoine|2004-02-06 09:55:46|Add something about the support of MS FTP servers,|2 lines
-r276048|antoine|2004-02-06 09:50:45|Upgrade to License 2.0|2 lines
-r276046|antoine|2004-02-06 09:44:37|Upgrade to License 2.0|2 lines
-r276044|antoine|2004-02-06 09:26:10|Upgrade to License 2.0 continues|2 lines
-r276042|antoine|2004-02-06 06:03:55|Upgrade to License 2.0|6 lines
+r276048|antoine|2004-02-06 09:50:45|Upgrade to License 2.0 |2 lines
+r276046|antoine|2004-02-06 09:44:37|Upgrade to License 2.0 |2 lines
+r276044|antoine|2004-02-06 09:26:10|Upgrade to License 2.0 |2 lines
+r276042|antoine|2004-02-06 06:03:55|Upgrade to License 2.0 |6 lines
 r276040|peterreilly|2004-02-06 04:39:59|Make license upgrade more prominent|3 lines
 r276038|bodewig|2004-02-06 04:09:10|Allow unit tests to pass for java 1.5|12 lines
 r276036|antoine|2004-02-05 19:36:12|Make failure to display the splash screen non-fatal.I've tested this with JDK 1.4 and the java.awt.headless systemPR: 11482Fix a copyright year mistake introduced in revision 1.9 at the same time.|2 lines
@@ -8831,7 +8830,7 @@ r271932|bodewig|2002-03-21 03:58:09|restore alphabetical order|4 lines
 r271931|bodewig|2002-03-21 03:48:18|documentation for xmlcatalogSubmitted by:	dion@multitask.com.au|7 lines
 r271930|bodewig|2002-03-21 03:33:56|new task vsscreate.undocumented and as tested as all the other vss tasks.PR: 7153|8 lines
 r271929|bodewig|2002-03-21 03:19:07|additional vss tasks (add and cp).not really tested, but they look the same as all the other vss tasksPR: 7153|5 lines
-r271928|bodewig|2002-03-21 03:09:19|Make detection system for java|javac|javadoc fallback to *.exe insteadPR: 7117|4 lines
+r271928|bodewig|2002-03-21 03:09:19|Make detection system for java\|javac\|javadoc fallback to *.exe insteadPR: 7117|4 lines
 r271927|adammurdoch|2002-03-21 03:03:56|make sure files get closed during copy.PR: 7302|7 lines
 r271926|adammurdoch|2002-03-21 01:38:13|* Moved ExecuteJava -> framework.java package.  Added a bunch of Javadocs,* Moved Java -> antlib.java.JavaTask.* Moved Path and friends -> framework.file package.|17 lines
 r271925|adammurdoch|2002-03-21 01:33:17|Changes to todo.types.Path, should be useable now:* Removed Path.isEmpty().* Changed Path.list() -> listFiles( TaskContext ).* Extracted FileList interface from Path.  This interface has a single* Split PathElement into two FileList implementations, ParsedPathElement and* Added FileList -> String converter.* Temporarily disabled Argument.setPath() and EnvironmentVariable.setPath().|2 lines
@@ -12905,7 +12904,7 @@ r267601|rubys|2000-02-11 11:17:03|Add a task to convert a text file to local OS 
 r267600|stefano|2000-02-10 20:33:31|The Tstamp task uses incorrect formatting strings for DSTAMP & TSTAMP:* Use the month format in DSTAMP (mm is minutes)|2 lines
 r267599|stefano|2000-02-10 20:32:54|updated latest changes|6 lines
 r267598|stefano|2000-02-10 20:31:24|Added the init() method to TaskAdded the "if" attribute to Target that executes it if and only if the property specified in the attribute is setThere might be better ways of doing it and don't consider this carved in stone, but it works, it's simple and vital for Cocoon.|4 lines
-r267597|stefano|2000-02-10 13:04:29|Added "available" task that sets a property in case a file|class|resource is present in the systemAlso, added an init() method to Tasks and cleaned up Property task|2 lines
+r267597|stefano|2000-02-10 13:04:29|Added "available" task that sets a property in case a file\|class\|resource is present in the systemAlso, added an init() method to Tasks and cleaned up Property task|2 lines
 r267596|stefano|2000-02-09 15:52:42|added Tar task + implementation classes|2 lines
 r267595|rubys|2000-02-08 21:01:33|better abstraction on the includes/excludes|3 lines
 r267594|rubys|2000-02-08 18:45:48|Javadoc improvements|3 lines

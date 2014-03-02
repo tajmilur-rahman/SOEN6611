@@ -1,0 +1,78 @@
+==Project Outline==
+We will examine four versions of Apache Ant (1.5, 1.6, 1.7 and 1.8) in order to identify the classes which were modified between each subsequent release. We will group these classes into three buckets:
+
+# '''High Volatility (HV):''' The classes which changed all three times
+# '''Medium Volatility (MV):''' The classes which changed two times
+# '''Low Volatility (LV):''' The classes which changed only once
+
+We will then calculate the average of specific quality metrics on each bucket.
+
+'''Hypothesis:''' In Apache Ant, the classes which are more volatile (HV) exhibit lower quality metrics compared to classes which are less volatile (LV). We will chose a subset of class based metrics proposed by Chidamber and Kemerer (CK),  Bansiya and Davis (MOOD), and those identified in Marinscu’s design flaw strategies.
+
+Based on our data collection, we will also try to predict the classes which have changed between 1.8 and 1.9, and then compare against the actual changes made between those versions.
+
+===Data Source===
+# Link: https://fisheye6.atlassian.com/browse/ant (Code can be retrieved via branches for the first 4 versions, and then ANT_190 in Tags for the latest (or potentially HEAD) )
+# Compile Code: The actions we took in order to successfully compile the projects in Eclipse
+## Clone the ant-core code
+## Create a new project Eclipse project from the ant buildfile (build.xml)
+## Import a bunch of external libraries (see appendix):
+# The presence of complementary software artifacts that we will use in our study (e.g., bug reports):
+SVN commit log (obtained via % svn log <ant repo> -v > ant_core_history.txt)
+We may access the Apache Ant bug database in order to obtain further details for particular bugs (https://issues.apache.org/bugzilla/)
+# Additional tools that you may use for extracting information (e.g., applied refactorings)
+## Eclipse plugins to help identify static code issues (FindBugs)
+## Visualization plugins (ObjectAid)
+## RStudio for statistical analysis
+
+===Metrics===
+The following list of metrics is interesting to us in order to classify and identify the quality attributes for a given class. This list may grow / shrink depending on available time.
+
+||Number of Methods (QMOOD)||Weighted Method Count (WMC from CK)||
+||Class Interface Size (QMOOD)||Depth of Inheritance Tree (DIT from CK)||
+||Tight Class Cohesion (Cohesion)||Response For a Class (RF from CK)||
+||Access to Foreign Data (Marinescu)||  ||
+
+==Results and SQLs==
+--------------------------
+# Project: ApacheAnt
+# Versions: 1.5, 1.6, 1.7, 1.8, 1.9
+# Total devs: 48
+# Total commits per release:
+||=Version ||=Commits ||
+||         ||   132   ||
+||   v8    ||  1767   ||
+||   v5    ||  4890   ||
+||   v9    ||   782   ||
+||   v7    ||  3277   ||
+||   v6    ||  2109   ||
+
+--------------------------
+
+
+==References==
+
+# H.M. Olague, L.H. Etzkorn, S. Gholston and S. Quattlebaum, "Empirical Validation of Three Software Metrics Suites to Predict Fault-Proneness of Object-Oriented Classes Developed Using Highly Iterative or Agile Software Development Process," IEEE Trans. Software Eng., vol. 33, no. 6, pp. 402-419, June 2007
+# R. Marinescu, "Detection Strategies: Metrics-Based Rules for Detecting Design Flaws," Proc. 20th IEEE Int',l Conf. Software Maintenance, 2004
+# A. Trifu and R. Marinescu. Diagnosing design problems in object oriented systems. In Proceedings of the Working Conference on Reverse Engineering (WCRE), Pittsburgh USA, 2005
+# J. Bansiya and C. Davis, “A Hierarchical Model for Object-Oriented Design Quality Assessment,” IEEE Trans. Software Eng., vol. 28, no. 1, pp. 4-17, Jan. 2002.
+# S. Chidamber and C. Kemerer, “A Metrics Suite for Object-Oriented Design,” IEEE Trans. Software Eng., vol. 20, no. 6, pp. 476-493, June 1994.
+
+==Appendix==
+
+Links to all external JARs necessary to have Apache Ant (core) imported into Eclipse without build errors
+# https://java.net/projects/javamail/pages/Home#Download_JavaMail_1.5.1_Release
+# http://commons.apache.org/proper/commons-bcel/download_bcel.cgi
+# http://commons.apache.org/proper/commons-logging/download_logging.cgi
+# http://archive.apache.org/dist/logging/log4j/1.2.17/
+# http://mavenhub.com/mvn/thirdparty-releases/com.sun.media/jai-codec/1.1.3#availableVersions
+# http://download.java.net/media/jai/builds/release/1_1_3/ (the zip file at the bottom)
+# http://clarkware.com/software/JDepend.html#download
+# http://commons.apache.org/proper/commons-net/download_net.cgi
+# http://sourceforge.net/projects/jsch/files/jsch.jar/0.1.50/jsch-0.1.50.jar/download
+# http://www.netrexx.org/downloads.nsp
+## Put ecj-4.2, NetRexxC, and NetRexxF .jars 
+# http://mirror.its.dal.ca/apache/xalan/xalan-j/binaries/
+# http://xerces.apache.org/mirrors.cgi#tools (bottom link XML Commons Resolver 1.2)
+# https://commons.apache.org/proper/commons-bsf/download_bsf.cgi
+# http://archive.apache.org/dist/jakarta/oro/binaries/
