@@ -1,6 +1,6 @@
 CREATE TABLE ant_path
 (
-  revision_id character varying(8),
+  revision_id text,
   bug_id character varying(15),
   type character(1),
   path character varying(1000),
@@ -12,7 +12,7 @@ CREATE TABLE ant_path
 
 CREATE TABLE ant_info
 (
-  revision_id character varying(8) NOT NULL,
+  revision_id text NOT NULL,
   user_id character varying(20),
   commit_date date,
   log_message character varying(2000),
