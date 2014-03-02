@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +20,7 @@ import model.CommitFactory;
 import com.google.common.io.Files;
 
 public class Runner {
-	public static final DateFormat DATEFORMAT = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss Z");
+	public static final DateFormat DATEFORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.CANADA);
 
 	public static void main(String[] args) throws IOException, ParseException {
 		Date rev1_5 = DATEFORMAT.parse("2002-07-10 00:00:00 -0500");	

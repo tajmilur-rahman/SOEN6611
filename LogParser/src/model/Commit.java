@@ -1,18 +1,25 @@
 package model;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import execute.Runner;
 
 public class Commit {
-	String revisionID;
-	String userID;
-	Date commitDate;
-	List<String> modifiedFiles;
-	String commitLog;
+	public String revisionID;
+	public String userID;
+	public Date commitDate;
+	public List<String> modifiedFiles;
+	public List<String> commitLogs;
+	public String commitLog;
+	public String linesChanged;
 	
+	public Commit() {
+		modifiedFiles = new ArrayList<>();
+		commitLogs = new ArrayList<>();
+	}
 	
 	public Commit(String rid, String uid, String cd, List<String> mf, String cl) {
 		this.revisionID = rid;
