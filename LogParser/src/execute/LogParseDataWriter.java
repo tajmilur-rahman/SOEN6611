@@ -18,8 +18,9 @@ import org.apache.commons.io.FileUtils;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
-public class VinodExtractor {
+public class LogParseDataWriter {
 	
+	private static final Boolean WRITE_OUTPUT = false;
 	private static final String DELIMITER = "«";
 	private static final String OUTPUT_PATH = "out\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
@@ -108,6 +109,8 @@ public class VinodExtractor {
 	}
 
 	private static void createOutputfiles(List<Commit> allCommitObjects) throws IOException {
+		if(!WRITE_OUTPUT) return;
+		
 		// Create two files
 		// One will have the ant_commits, the other will have ant_modifiedfiles
 		
@@ -173,8 +176,6 @@ public class VinodExtractor {
 		Pattern headerPattern = Pattern.compile(regex.toString());
 		Matcher headerMatcher = headerPattern.matcher(line);
 		
-		return headerMatcher.find();
-		
+		return headerMatcher.find();		
 	}
-
 }
