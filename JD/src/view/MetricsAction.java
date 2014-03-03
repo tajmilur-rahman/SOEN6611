@@ -3,7 +3,6 @@ package view;
 import java.lang.reflect.InvocationTargetException;
 
 import metrics.LCOM;
-import metrics.LCOM2;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -109,9 +108,9 @@ public class MetricsAction  implements IObjectActionDelegate {
 						}
 						SystemObject system = ASTReader.getSystemObject();
 						LCOM lcom = new LCOM(system);
-						LCOM2 lcom2 = new LCOM2(system);
+						//LCOM2 lcom2 = new LCOM2(system);
 						System.out.print(lcom.toString());
-						System.out.print(lcom2.toString());
+						//System.out.print(lcom2.toString());
 						
 						if(selectedPackageFragmentRoot != null) {
 							// package fragment root selected
