@@ -20,7 +20,7 @@ import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
-	private static final Boolean WRITE_OUTPUT = false;
+	private static final Boolean WRITE_OUTPUT = true;
 	private static final String DELIMITER = "«";
 	private static final String OUTPUT_PATH = "out\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
@@ -40,8 +40,8 @@ public class LogParseDataWriter {
 		Date rev1_8 = Runner.DATEFORMAT.parse("2010-02-08 00:00:00 -0500");
 		Date rev1_9 = Runner.DATEFORMAT.parse("2013-03-07 00:00:00 -0500");
 		
-		String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
-		//String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
+		//String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
+		String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
 
 		String adjusted = antLog.replaceAll("(?m)^[ \t]*\r?\n", ""); // remove all empty lines
 		
@@ -136,9 +136,8 @@ public class LogParseDataWriter {
 			commitLine.append(DELIMITER);
 			commitLine.append(c.linesChanged);
 			
-			//FileUtils.writeStringToFile(new File(ANT_COMMIT_FILE_PATH), commitLine.toString(), Charsets.UTF_8, true);
-			Files.append(commitLine.toString(), new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
-			Files.append("\r\n", new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
+			Files.append(commitLine.toString() + "\r\n", new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
+//			Files.append("\r\n", new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
 			
 			for(String line: c.modifiedFiles) {
 				modifiedFiles = new StringBuilder();
@@ -146,9 +145,8 @@ public class LogParseDataWriter {
 				modifiedFiles.append(DELIMITER);
 				modifiedFiles.append(line.trim());
 
-				//FileUtils.writeStringToFile(new File(ANT_MODIFIED_FILES_PATH), modifiedFiles.toString(), Charsets.UTF_8, true);
-				Files.append(commitLine.toString(), new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
-				Files.append("\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
+				Files.append(modifiedFiles.toString() + "\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
+//				Files.append("\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
 			}
 		}
 		System.out.println("Done!");
@@ -159,7 +157,7 @@ public class LogParseDataWriter {
 		StringBuilder regex = new StringBuilder() ;
 		//   M /ant/core/trunk/WHATSNEW
 
-		regex.append("\\s\\s\\s([ADM].*?)");
+		regex.append("\\s\\s\\s([ADM]\\s.*?)");
 		
 		Pattern headerPattern = Pattern.compile(regex.toString());
 		Matcher headerMatcher = headerPattern.matcher(line);
