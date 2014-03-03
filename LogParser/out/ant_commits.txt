@@ -3114,11 +3114,11 @@ r448636«mbenson«2006-09-21 15:10:48 -0400«[Restructuring to allow junit and a
 r448452«antoine«2006-09-21 00:04:32 -0400«[patch submitted by Xavier Hanin, mainly closing HttpURLConnection]«2 lines
 r448449«bodewig«2006-09-20 23:58:46 -0400«[remove CRs]«1 line
 r448389«peterreilly«2006-09-20 18:47:20 -0400«[add note to whatsnew about performance improvments]«1 line
-r448385«peterreilly«2006-09-20 18:41:51 -0400«[Performance: bugzilla  25778]«4 lines
+r448385«peterreilly«2006-09-20 18:41:51 -0400«[Performance: bugzilla  25778, Minor optimization for ComponentHelper.initDefaultDefinitions]«4 lines
 r448382«peterreilly«2006-09-20 18:38:11 -0400«[Performance:, if a task does not have an id, do not bother, to replace the unknownelement in the tasks list of the target]«4 lines
 r448379«peterreilly«2006-09-20 18:35:20 -0400«[Perforamce:, do not bother to check if need to expand for, strings that do not have $]«4 lines
 r448377«peterreilly«2006-09-20 18:32:24 -0400«[Performace:, cache last FileUtils.fromUri() result]«3 lines
-r448373«peterreilly«2006-09-20 18:29:23 -0400«[This build file is designed to report the performance, of ant from various releases., to use:, * install ant-contrib.jar to ($ANT_HOME|$HOME/.ant)/lib, * install beanshell jar and bsf jar, * use unix (with bash) or install cygwin, * set the env variables {whichever needs testing}, * run ant, For example:, export ANT_HOME="c:/cygwin/home/me/svn/trunk/dist", export ANT_HOME_5_4="l:/apps/apache-ant-1.5.4", ant.bat, TODO: more build files.]«21 lines
+r448373«peterreilly«2006-09-20 18:29:23 -0400«[This build file is designed to report the performance, of ant from various releases., to use:, * install ant-contrib.jar to ($ANT_HOME|$HOME/.ant)/lib, * install beanshell jar and bsf jar, * use unix (with bash) or install cygwin, * set the env variables {whichever needs testing}, ANT_HOME, ANT_HOME_6_5 (the directory containing ant 1.6.5), ANT_HOME_6_4, ANT_HOME_5_4, * run ant, For example:, export ANT_HOME="c:/cygwin/home/me/svn/trunk/dist", export ANT_HOME_5_4="l:/apps/apache-ant-1.5.4", ant.bat, TODO: more build files.]«21 lines
 r448319«peterreilly«2006-09-20 16:05:30 -0400«[backout broken code]«1 line
 r448068«antoine«2006-09-20 01:10:29 -0400«[make sure that most of DirectoryScannerTest runs when we build a release., This one is too critical.]«3 lines
 r448064«antoine«2006-09-20 00:49:56 -0400«[comment on last changes]«1 line
@@ -4993,7 +4993,7 @@ r277260«bodewig«2004-12-21 10:49:39 -0500«[Make bootclasspath construction in
 r277259«bodewig«2004-12-21 10:44:51 -0500«[Jikes supports -bootclasspath, PR: 32609, Make bootclasspath construction in <javac> take build.sysclasspath, into account.  Probably needs to get used in all other tasks, supporting bootclasspath as well.]«7 lines
 r277257«bodewig«2004-12-21 09:58:33 -0500«[java.library.path != PATH - PR: 32523]«2 lines
 r277255«bodewig«2004-12-21 09:08:20 -0500«[<setproxy> fails to provide password authentication on some JDKs., The patch provided in the bug report looked very similar to something, I once had to do in production code, when Ant's original code wasn't, enough.  I forgot about it when we switched to commons-httpclient, shortly thereafter., PR: 32667]«9 lines
-r277253«bodewig«2004-12-21 08:38:06 -0500«[<scp> using <fileset> doesn't work with OpenSSH 3.9 (and later?)., PR: 31939, Submitted by:    Casper Groenen <cgroenen at xebia dot com>]«6 lines
+r277253«bodewig«2004-12-21 08:38:06 -0500«[<scp> using <fileset> doesn't work with OpenSSH 3.9 (and later?)., PR: 31939, Submitted by:    Casper Groenen <cgroenen at xebia dot com>, Atsuhiko Yamanaka <ymnk at jcraft dot com>]«6 lines
 r277252«mbenson«2004-12-18 12:50:40 -0500«[Missing period]«2 lines
 r277251«mbenson«2004-12-17 15:33:54 -0500«[Spelling]«2 lines
 r277249«peterreilly«2004-12-17 14:51:27 -0500«[1.6.2 version of class was not final]«2 lines
@@ -5298,7 +5298,7 @@ r276867«bodewig«2004-09-17 03:55:01 -0400«[Add some docs for people getting t
 r276866«conor«2004-09-15 18:58:05 -0400«[This is a FAQ by any measure.]«2 lines
 r276865«peterreilly«2004-09-15 10:19:38 -0400«[script doc: add judoscript example]«2 lines
 r276864«peterreilly«2004-09-15 09:30:17 -0400«[typepo: snipnet -> snippet, Obtained from: Jan]«3 lines
-r276863«peterreilly«2004-09-15 09:17:12 -0400«[script doc: Add groovy, beanshell and jython examples, (This is not a usecase we want for script).]«4 lines
+r276863«peterreilly«2004-09-15 09:17:12 -0400«[script doc: Add groovy, beanshell and jython examples, Modify echo example so that it does not modify ant's task structure, (This is not a usecase we want for script).]«4 lines
 r276861«peterreilly«2004-09-15 08:41:01 -0400«[Doc for groovy jars installation]«2 lines
 r276860«peterreilly«2004-09-15 06:25:32 -0400«[fix sizeselector testcase]«2 lines
 r276858«peterreilly«2004-09-14 08:45:12 -0400«[AntTypeDefintion#similarDefinition could be called in situations, where the loader for the class is not antclassloader, Obtained from: David Konecny]«4 lines
@@ -6861,7 +6861,7 @@ r274646«umagesh«2003-06-04 09:43:48 -0400«[Remind submitters to include the A
 r274645«umagesh«2003-06-04 08:24:47 -0400«[ok, we all Cut 'n Paste :-)]«2 lines
 r274644«umagesh«2003-06-04 08:18:55 -0400«[Suggest using Ant to generate a patch file for Ant.]«2 lines
 r274643«antoine«2003-06-04 03:08:50 -0400«[Added requirement for jsse.jar for SMTP over TLS/SSL, PR: 19180]«3 lines
-r274642«antoine«2003-06-03 17:13:54 -0400«[Make sure that javac source files in lists passed to external compilers, are always quoted in the default external compiler implementations, Also replace backslashes with slashes in path names containing spaces, PR: 10499 17683, Submitted by: Joe Boon (joe dot boon at cdcsolutions dot com) and]«7 lines
+r274642«antoine«2003-06-03 17:13:54 -0400«[Make sure that javac source files in lists passed to external compilers, are always quoted in the default external compiler implementations, Also replace backslashes with slashes in path names containing spaces, PR: 10499 17683, Submitted by: Joe Boon (joe dot boon at cdcsolutions dot com) and, Anne Kinsella (anne dot kinsella at iona dot com)]«7 lines
 r274641«bodewig«2003-05-30 05:31:45 -0400«[Revert logic that performs the <os family="win9x"/> check from "I know, all that are not win9x" to "I know all thar are win9x"., Note that the list is as authoritative, complete and real-world-tested, as my knowledge on said platform. ;-), PR: 16611]«8 lines
 r274640«bodewig«2003-05-30 02:35:41 -0400«[Log all statements in <sql>, PR: 20309]«3 lines
 r274639«antoine«2003-05-29 17:35:42 -0400«[config attribute added to set the location of a specific PVCS .cfg file, PR: 9752, Submitted by: Jon Dickinson (dickinson dot j at ucles dot org dot uk )]«4 lines
@@ -6962,7 +6962,7 @@ r274545«costin«2003-05-03 01:59:35 -0400«[Update with the changes in Project.
 r274544«bodewig«2003-05-02 10:50:10 -0400«[Improve fix for PR: 19449., Don't drop directory entries after we've found out they were outdated,, but simply do not perform timestamp checks on the at all.]«5 lines
 r274543«bodewig«2003-05-02 10:44:53 -0400«[Don't update archives because it lacks directory entries when we are, not going to add directory entries either., PR: 19449]«5 lines
 r274542«bodewig«2003-05-02 10:24:58 -0400«[Demonstrate bug 19449]«2 lines
-r274541«bodewig«2003-05-02 04:18:36 -0400«[Provide control over EOL conversion via a new attribute., PR: 18884, Submitted by:	Steve Cohen <scohen at apache dot org>]«6 lines
+r274541«bodewig«2003-05-02 04:18:36 -0400«[Provide control over EOL conversion via a new attribute., PR: 18884, Submitted by:	Steve Cohen <scohen at apache dot org>, Aaron DeForest <aaron underscore deforest at rosettabio dot com>]«6 lines
 r274540«jesse«2003-05-01 16:37:40 -0400«[Throw a BuildException if the root directory does not exist, instead of letting IndexGen NPE]«2 lines
 r274539«ehatcher«2003-04-30 09:19:47 -0400«[hopefully fix Gump]«2 lines
 r274538«jesse«2003-04-29 19:59:40 -0400«[Switch to using regular collections instead of the deprecated XCollections]«2 lines
@@ -7171,7 +7171,7 @@ r274317«bodewig«2003-03-27 03:02:15 -0500«[Make starteam checkout handle dele
 r274316«stevel«2003-03-26 12:55:37 -0500«[manual insertion of xdocs pages]«2 lines
 r274315«bodewig«2003-03-26 10:50:28 -0500«[Fix javadocs., PR: 17143, Submitted by:	Gus Heck]«5 lines
 r274314«conor«2003-03-25 06:27:27 -0500«[Update website with 1.5.3 Beta 1 availability, Remove Ant2 reference from front page]«3 lines
-r274313«bodewig«2003-03-25 04:30:59 -0500«[New task <sync>., PR: 12632]«6 lines
+r274313«bodewig«2003-03-25 04:30:59 -0500«[New task <sync>., PR: 12632, Submitted by:   Dominique Devienne <ddevienne at lgc dot com>, Dan Armbrust <daniel dot armbrust at mayo dot edu>]«6 lines
 r274311«bodewig«2003-03-25 04:14:30 -0500«[update info on AntFarm]«2 lines
 r274309«bodewig«2003-03-25 04:04:52 -0500«[Fix some URLs]«2 lines
 r274307«bodewig«2003-03-25 03:43:34 -0500«[Add pointers to JBuilder 8 Enterprise and Gel., Submitted by:	Paul King <king at asert dot com dot au>]«4 lines
@@ -7195,7 +7195,7 @@ r274273«bodewig«2003-03-19 03:26:58 -0500«[Merge fix for bug 18053 from 1.5 b
 r274271«bodewig«2003-03-19 03:20:13 -0500«[Merge fix for bug 14974 from 1.5 branch]«2 lines
 r274269«bodewig«2003-03-18 11:34:55 -0500«[Greebo has moved]«2 lines
 r274268«bodewig«2003-03-18 11:15:38 -0500«[untabify]«2 lines
-r274267«bodewig«2003-03-18 11:11:37 -0500«[Pointers Submitted by:	Jan.Materne <Jan dot Materne at rzf dot fin dash nrw dot de>, Steve Neal <S dot Neal at Smartkey dot co dot uk>]«4 lines
+r274267«bodewig«2003-03-18 11:11:37 -0500«[Pointers Submitted by:	Jan.Materne <Jan dot Materne at rzf dot fin dash nrw dot de>, Markus Gebhard <markus at jave dot de>, Steve Neal <S dot Neal at Smartkey dot co dot uk>]«4 lines
 r274266«bodewig«2003-03-18 08:15:48 -0500«[JDK 1.1]«2 lines
 r274264«ehatcher«2003-03-16 17:02:55 -0500«[upgrading to an XDoclet that works on Mac OS X JDK 1.4.1 - woohoo!]«2 lines
 r274263«ehatcher«2003-03-15 21:33:59 -0500«[hopefully fix the Gump build]«2 lines

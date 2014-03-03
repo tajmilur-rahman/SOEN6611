@@ -20,7 +20,7 @@ import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
-	private static final Boolean WRITE_OUTPUT = true;
+	private static final Boolean WRITE_OUTPUT = false;
 	private static final String DELIMITER = "«";
 	private static final String OUTPUT_PATH = "out\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
@@ -40,8 +40,8 @@ public class LogParseDataWriter {
 		Date rev1_8 = Runner.DATEFORMAT.parse("2010-02-08 00:00:00 -0500");
 		Date rev1_9 = Runner.DATEFORMAT.parse("2013-03-07 00:00:00 -0500");
 		
-		//String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
-		String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
+		String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
+		//String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
 
 		String adjusted = antLog.replaceAll("(?m)^[ \t]*\r?\n", ""); // remove all empty lines
 		
@@ -111,6 +111,9 @@ public class LogParseDataWriter {
 	private static void createOutputfiles(List<Commit> allCommitObjects) throws IOException {
 		if(!WRITE_OUTPUT) return;
 		
+		long startTime = System.nanoTime();
+
+		
 		// Create two files
 		// One will have the ant_commits, the other will have ant_modifiedfiles
 		
@@ -149,7 +152,10 @@ public class LogParseDataWriter {
 //				Files.append("\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
 			}
 		}
-		System.out.println("Done!");
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime;
+
+		System.out.println("Done! Processing took: " + (duration / 1000000000) + " seconds");
 		
 	}
 
