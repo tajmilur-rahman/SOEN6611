@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+
 import execute.Runner;
 
 public class Commit {
@@ -13,6 +16,7 @@ public class Commit {
 	public Date commitDate;
 	public List<String> modifiedFiles;
 	public List<String> commitLogs;
+	public Multimap<String, String> commitLogsByType = ArrayListMultimap.create();
 	public String commitLog;
 	public String linesChanged;
 	

@@ -50,7 +50,6 @@ public class LogParseDataWriter {
 		List<Commit> allCommitObjects = new ArrayList<>();
 		for(String commit: splitCommits) {
 			commitObject = new Commit();
-			
 			Boolean modifiedFileFound = false;
 			for(String line: commit.split("\r\n")) {
 				if (line.trim().isEmpty()) continue;
@@ -65,6 +64,7 @@ public class LogParseDataWriter {
 					
 				} else if (isModifiedFileLine(line)) {
 					commitObject.modifiedFiles.add(line.trim());
+					commitObject.commitLogsByType.put(line.trim().split("\\s")[0].trim(), line.trim().split("\\s")[1].trim());
 					modifiedFileFound = true;
 				} else {
 					if (modifiedFileFound) {
@@ -96,8 +96,7 @@ public class LogParseDataWriter {
 		}
 		
 		printStatistics();		
-		createOutputfiles(allCommitObjects);
-		
+		createOutputfiles(allCommitObjects);		
 	}
 
 	private static void printStatistics() {
@@ -112,7 +111,6 @@ public class LogParseDataWriter {
 		if(!WRITE_OUTPUT) return;
 		
 		long startTime = System.nanoTime();
-
 		
 		// Create two files
 		// One will have the ant_commits, the other will have ant_modifiedfiles
@@ -140,17 +138,20 @@ public class LogParseDataWriter {
 			commitLine.append(c.linesChanged);
 			
 			Files.append(commitLine.toString() + "\r\n", new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
-//			Files.append("\r\n", new File(ANT_COMMIT_FILE_PATH), Charsets.UTF_8);
-			
-			for(String line: c.modifiedFiles) {
-				modifiedFiles = new StringBuilder();
-				modifiedFiles.append(c.revisionID);
-				modifiedFiles.append(DELIMITER);
-				modifiedFiles.append(line.trim());
 
-				Files.append(modifiedFiles.toString() + "\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
-//				Files.append("\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
+			for(String key: c.commitLogsByType.keySet()) {
+				for(String value: c.commitLogsByType.get(key)) {
+					modifiedFiles = new StringBuilder();
+					modifiedFiles.append(c.revisionID);
+					modifiedFiles.append(DELIMITER);
+					modifiedFiles.append(key);
+					modifiedFiles.append(DELIMITER);
+					modifiedFiles.append(value);
+
+					Files.append(modifiedFiles.toString() + "\r\n", new File(ANT_MODIFIED_FILES_PATH), Charsets.UTF_8);
+				}
 			}
+			
 		}
 		long endTime = System.nanoTime();
 		long duration = endTime - startTime;
