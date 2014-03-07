@@ -30,9 +30,15 @@ The following list of metrics is interesting to us in order to classify and iden
 
 {| class="wikitable"
 |-
-| Number of Methods (QMOOD), Weighted Method Count (WMC from CK)
-| Class Interface Size (QMOOD), Depth of Inheritance Tree (DIT from CK)
-| Tight Class Cohesion (Cohesion), Response For a Class (RF from CK)
+| Number of Methods (QMOOD)
+| Weighted Method Count (WMC from CK)
+|-
+| Class Interface Size (QMOOD)
+| Depth of Inheritance Tree (DIT from CK)
+|-
+| Tight Class Cohesion (Cohesion)
+| Response For a Class (RF from CK)
+|-
 | Access to Foreign Data (Marinescu), ..
 |}
 
@@ -47,12 +53,23 @@ The following list of metrics is interesting to us in order to classify and iden
 ! Version
 ! Commits
 |-
-|         ,   132
-|   v8    ,  1767
-|   v5    ,  4890
-|   v9    ,   782
-|   v7    ,  3277
-|   v6    ,  2109
+|    ..   
+|   132
+|-
+|   v8    
+|  1767
+|-
+|   v5    
+|  4890
+|-
+|   v9    
+|   782
+|-
+|   v7    
+|  3277
+|-
+|   v6    
+|  2109
 |}
 
 --------------------------
