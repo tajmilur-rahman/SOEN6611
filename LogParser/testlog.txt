@@ -24,3 +24,16 @@ Accommodate Windows bug encountered in both Sun and IBM JDKs.
 Obtained from: Java Technology Forums at http://forums.java.sun.com
 
 ------------------------------------------------------------------------
+r274313 | bodewig | 2003-03-25 04:30:59 -0500 (Tue, 25 Mar 2003) | 6 lines
+Changed paths:
+   M /ant/core/trunk/WHATSNEW
+   A /ant/core/trunk/src/main/org/apache/tools/ant/taskdefs/Sync.java
+   M /ant/core/trunk/src/main/org/apache/tools/ant/taskdefs/defaults.properties
+
+New task <sync>.
+
+PR: 12632
+Submitted by:   Dominique Devienne <ddevienne at lgc dot com>
+                Dan Armbrust <daniel dot armbrust at mayo dot edu>
+
+------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Amish/Downloads/guava-15.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Amish/Downloads/commons-io-2.4-bin/commons-io-2.4/commons-io-2.4.jar" sourcepath="C:/Users/Amish/Downloads/commons-io-2.4-src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
