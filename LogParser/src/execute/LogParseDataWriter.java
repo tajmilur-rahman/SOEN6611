@@ -7,7 +7,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -95,8 +100,86 @@ public class LogParseDataWriter {
 			}
 		}
 		
-		printStatistics();		
+		printStatistics();
+		calculateVolatility();
+		
 		createOutputfiles(allCommitObjects);		
+	}
+
+	private static void calculateVolatility() {
+		Map<String, Integer> volatilityMap = new HashMap<>();
+		Set<String> modifiedJavaFiles = new HashSet<>();
+		for(Commit c: from15to16) {
+			for(String file: c.modifiedFiles) {
+				if(file.contains(".java")) {
+					modifiedJavaFiles.add(file.trim());
+				}
+			}
+		}
+		
+		System.out.println("Number of modified files between 1.5 and 1.6: " + modifiedJavaFiles.size());
+		
+		for(String file: modifiedJavaFiles) {
+			volatilityMap.put(file, 1);
+		}
+		
+		modifiedJavaFiles = new HashSet<>();
+		for(Commit c: from16to17) {
+			for(String file: c.modifiedFiles) {
+				if(file.contains(".java")) {
+					modifiedJavaFiles.add(file.trim());
+				}
+			}
+		}
+		
+		System.out.println("Number of modified files between 1.6 and 1.7: " + modifiedJavaFiles.size());
+		
+		for(String file: modifiedJavaFiles) {
+			volatilityMap.put(file, volatilityMap.get(file.trim()) == null ? 1 : volatilityMap.get(file.trim()) + 1 );
+		}
+		
+		modifiedJavaFiles = new HashSet<>();
+		for(Commit c: from17to18) {
+			for(String file: c.modifiedFiles) {
+				if(file.contains(".java")) {
+					modifiedJavaFiles.add(file.trim());
+				}
+			}
+		}
+		
+		System.out.println("Number of modified files between 1.7 and 1.8: " + modifiedJavaFiles.size());
+		
+		for(String file: modifiedJavaFiles) {
+			volatilityMap.put(file, volatilityMap.get(file.trim()) == null ? 1 : volatilityMap.get(file.trim()) + 1 );
+		}
+		
+		System.out.println("Size of Volatility Map: " + volatilityMap.size());
+		
+		int lowVol = 0;
+		int midVol = 0;
+		int highVol = 0;
+		
+		
+		
+		int count = 0;
+		for(Entry<String, Integer> e: volatilityMap.entrySet()) {
+			if (e.getValue().equals(1)) {
+				lowVol++;
+			} else if (e.getValue().equals(2)) {
+				midVol++;
+			} else if (e.getValue().equals(3)) {
+				highVol++;
+			} else {
+				throw new IllegalStateException("Volatility is weird!?! " + e.getKey() + ": " + e.getValue());
+			}
+
+		}
+
+		System.out.println("Number of files modified 1 time: " + lowVol);
+		System.out.println("Number of files modified 2 times: " + midVol);
+		System.out.println("Number of files modified 3 times: " + highVol);
+
+		
 	}
 
 	private static void printStatistics() {
