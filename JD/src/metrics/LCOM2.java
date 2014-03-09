@@ -64,7 +64,7 @@ public class LCOM2 {
 	}
 	
 	private Set<FieldInstructionObject> commonAttributes(List<FieldInstructionObject> attributesI,
-		List<FieldInstructionObject> attributesJ, String className) {
+			List<FieldInstructionObject> attributesJ, String className) {
 		
 		Set<FieldInstructionObject> commonAttributes = new HashSet<FieldInstructionObject>();
 		for (FieldInstructionObject instructionI : attributesI) {
@@ -72,8 +72,8 @@ public class LCOM2 {
 				commonAttributes.add(instructionI);
 			}
 		}
-		
 		return commonAttributes;
+		
 	}
 
 	@Override
@@ -82,6 +82,7 @@ public class LCOM2 {
 		for(String key : cohesionMap.keySet()) {
 			sb.append(key).append("\t").append(cohesionMap.get(key)).append("\n");
 		}
+		sb.append("This is LCOM 2 DUDE!!");
 		return sb.toString();
 	}
 }
