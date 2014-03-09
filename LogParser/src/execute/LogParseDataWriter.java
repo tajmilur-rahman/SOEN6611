@@ -17,6 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import model.Commit;
+import model.ModifiedCommitWriter;
 
 import org.apache.commons.io.FileUtils;
 
@@ -25,7 +26,7 @@ import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
-	private static final Boolean WRITE_OUTPUT = true;
+	private static final Boolean WRITE_OUTPUT = false;
 	private static final String DELIMITER = "«";
 	private static final String OUTPUT_PATH = "out\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
@@ -36,6 +37,7 @@ public class LogParseDataWriter {
 	private static final List<Commit> from17to18 = new ArrayList<>();
 	private static final List<Commit> from18to19 = new ArrayList<>();
 	private static final List<Commit> from19toNow = new ArrayList<>();
+
 	
 	public static void main(String[] args) throws IOException, ParseException {
 
@@ -70,6 +72,7 @@ public class LogParseDataWriter {
 					commitObject.linesChanged = header[3].trim();
 					
 				} else if (isModifiedFileLine(line)) {
+					if (!line.contains(".java")) continue; //only takes java files
 					commitObject.modifiedFiles.add(line.trim());
 					commitObject.commitLogsByType.put(line.trim().split("\\s")[0].trim(), line.trim().split("\\s")[1].trim());
 					modifiedFileFound = true;
@@ -105,7 +108,20 @@ public class LogParseDataWriter {
 		printStatistics();
 		calculateVolatility();
 		
+		writeModifiedCommits();
+		
 		createOutputfiles(allCommitObjects);		
+	}
+
+	private static void writeModifiedCommits() throws IOException {
+		ModifiedCommitWriter modifiedCommitWriter = new ModifiedCommitWriter(from15to16, "From15to16.txt");
+		modifiedCommitWriter.writeOutput();
+		
+		modifiedCommitWriter = new ModifiedCommitWriter(from16to17, "From16to17.txt");
+		modifiedCommitWriter.writeOutput();
+		
+		modifiedCommitWriter = new ModifiedCommitWriter(from17to18, "From17to18.txt");
+		modifiedCommitWriter.writeOutput();
 	}
 
 	private static void calculateVolatility() {
@@ -161,9 +177,6 @@ public class LogParseDataWriter {
 		int midVol = 0;
 		int highVol = 0;
 		
-		
-		
-		int count = 0;
 		for(Entry<String, Integer> e: volatilityMap.entrySet()) {
 			if (e.getValue().equals(1)) {
 				lowVol++;
@@ -176,7 +189,7 @@ public class LogParseDataWriter {
 			}
 
 		}
-
+		
 		System.out.println("Number of files modified 1 time: " + lowVol);
 		System.out.println("Number of files modified 2 times: " + midVol);
 		System.out.println("Number of files modified 3 times: " + highVol);
