@@ -25,7 +25,7 @@ import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
-	private static final Boolean WRITE_OUTPUT = false;
+	private static final Boolean WRITE_OUTPUT = true;
 	private static final String DELIMITER = "«";
 	private static final String OUTPUT_PATH = "out\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
@@ -45,6 +45,8 @@ public class LogParseDataWriter {
 		Date rev1_8 = Runner.DATEFORMAT.parse("2010-02-08 00:00:00 -0500");
 		Date rev1_9 = Runner.DATEFORMAT.parse("2013-03-07 00:00:00 -0500");
 		
+
+		//String antLog = Files.asCharSource(new File("ant-core-history.txt"), Charset.defaultCharset()).read();
 		String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
 		//String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
 
@@ -135,9 +137,9 @@ public class LogParseDataWriter {
 		System.out.println("Number of modified files between 1.6 and 1.7: " + modifiedJavaFiles.size());
 		
 		for(String file: modifiedJavaFiles) {
-			volatilityMap.put(file, volatilityMap.get(file.trim()) == null ? 1 : volatilityMap.get(file.trim()) + 1 );
+			volatilityMap.put(file.trim(), volatilityMap.get(file.trim()) == null ? 1 : volatilityMap.get(file.trim()) + 1 );
 		}
-		
+				
 		modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from17to18) {
 			for(String file: c.modifiedFiles) {

@@ -5842,10 +5842,8 @@ r276025«antoine«2004-02-05 15:44:02 -0500«[Added the NOTICE to the metainf di
 r276022«antoine«2004-02-05 15:12:12 -0500«[Added NOTICE file as discussed previously on the development list]«2 lines
 r276021«bodewig«2004-02-05 08:09:28 -0500«[Changes to make Ant installed in JPackage's RPM environment behave a, little bit more friendly., * a new system property ant.lib.dir that if set will be used instead, of the location of ant-launcher.jar to slurp in the jars for Ant., * a --noconfig switch that suppresses sourcing of additional, configuration files., * various changes to the $rpm_mode specific parts of the file., Submitted by:	Randy Watler <rwatler at finali dot com>]«13 lines
 r276019«antoine«2004-02-04 17:08:16 -0500«[bring back original copyright years]«2 lines
-r276017«antoine«2004-02-04 15:38:09 -0500«[Remove trailing spaces in all java files, in order to make checkstyle happy]«3 lines
 r276015«peterreilly«2004-02-04 13:15:34 -0500«[add flush are println in DefaultHandlerHandler#handleInput, - some java jvms do not flush the output for System.err.println(), in particular z/OS, PR:  26655, Obtained from: wwalsh at curamsoftware dot com]«6 lines
 r276013«antoine«2004-02-03 18:30:37 -0500«[adapt checkstyle configuration to the new license]«2 lines
-r276010«antoine«2004-02-03 17:44:50 -0500«[Switch to Apache Software License 2.0]«2 lines
 r276008«peterreilly«2004-02-03 14:21:05 -0500«[Check if character is in range for special array, PR: 26642, Obtained from: Jesse Glick]«4 lines
 r276006«peterreilly«2004-02-03 04:07:16 -0500«[Update manual entry for javac to document when tempdir is used, PR: 26559, Obtained from: Steven Scheffler]«4 lines
 r276005«antoine«2004-02-02 14:30:05 -0500«[first test to move to the Apache License 2.0]«2 lines
@@ -7352,7 +7350,6 @@ r274046«chrisw«2003-02-10 18:36:15 -0500«[Introducing Projects tab and first 
 r274044«bodewig«2003-02-10 11:01:22 -0500«[2003]«2 lines
 r274043«bodewig«2003-02-10 10:42:57 -0500«[Add pointer to mbox archives]«2 lines
 r274042«bodewig«2003-02-10 09:44:22 -0500«[Mailinglists have moved]«2 lines
-r274040«bodewig«2003-02-10 09:15:00 -0500«[Remove Jakarta Project from license]«2 lines
 r274038«bodewig«2003-02-10 08:49:25 -0500«[jakarta-ant module has gone away]«2 lines
 r274036«conor«2003-02-10 08:00:11 -0500«[Fix fixcrlf docs, PR:	16858, Submitted by:	Jesse Stockall]«5 lines
 r274035«conor«2003-02-10 07:36:46 -0500«[Use ThreadGroups to link tasks to any threads they create, Make sure parallel creates a separate thread group for each, thread it spawns, PR:	7980]«6 lines
@@ -8006,7 +8003,6 @@ r273174«costin«2002-07-26 22:18:34 -0400«[Fixed the loading of JXPath., Added
 r273172«costin«2002-07-26 12:47:56 -0400«[One more try :-)]«2 lines
 r273171«costin«2002-07-26 12:46:15 -0400«[Moved the embed proposal, use a 'normal' hierarchy and build system., Added a small test file - JXPath is not working yet with systemPath]«4 lines
 r273170«costin«2002-07-26 12:44:57 -0400«[First draft of JXPath.]«2 lines
-r273169«donaldp«2002-07-25 11:21:25 -0400«[Remove unused imports, remove glob imports, sort imports.]«2 lines
 r273168«donaldp«2002-07-25 11:01:53 -0400«[Remove unused import]«2 lines
 r273167«donaldp«2002-07-25 10:59:02 -0400«[Encapsulate some fields of DataType.]«2 lines
 r273166«donaldp«2002-07-25 10:45:15 -0400«[Remove redudent assignments]«2 lines
