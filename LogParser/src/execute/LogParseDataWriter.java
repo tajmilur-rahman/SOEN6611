@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,15 +23,21 @@ import model.ModifiedCommitWriter;
 import org.apache.commons.io.FileUtils;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Joiner;
 import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
 	private static final Boolean WRITE_OUTPUT = false;
 	private static final String DELIMITER = "«";
-	private static final String OUTPUT_PATH = "out\\"; 
+	private static final String OUTPUT_PATH = "out\\";
+	private static final String PROCESSED_PATH = "processed\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
 	private static final String ANT_MODIFIED_FILES_PATH = OUTPUT_PATH + "ant_modified_files.txt";
+	private static final String HIGH_VOLATILITY_FILES = PROCESSED_PATH + "1_high_volatility.txt";
+	private static final String MED_VOLATILITY_FILES = PROCESSED_PATH + "2_med_volatility.txt";
+	private static final String LOW_VOLATILITY_FILES = PROCESSED_PATH + "3_low_volatility.txt";
+	
 
 	private static final List<Commit> from15to16 = new ArrayList<>();
 	private static final List<Commit> from16to17 = new ArrayList<>();
@@ -125,7 +132,7 @@ public class LogParseDataWriter {
 		modifiedCommitWriter.writeOutput();
 	}
 
-	private static void calculateVolatility() {
+	private static void calculateVolatility() throws IOException {
 		Map<String, Integer> volatilityMap = new HashMap<>();
 		Set<String> modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from15to16) {
@@ -178,18 +185,33 @@ public class LogParseDataWriter {
 		int midVol = 0;
 		int highVol = 0;
 		
+		List<String> lowFiles = new ArrayList<>();
+		List<String> medFiles = new ArrayList<>();
+		List<String> highFiles = new ArrayList<>();
+		
 		for(Entry<String, Integer> e: volatilityMap.entrySet()) {
 			if (e.getValue().equals(1)) {
+				lowFiles.add(e.getKey());
 				lowVol++;
 			} else if (e.getValue().equals(2)) {
+				medFiles.add(e.getKey());
 				midVol++;
 			} else if (e.getValue().equals(3)) {
+				highFiles.add(e.getKey());
 				highVol++;
 			} else {
 				throw new IllegalStateException("Volatility is weird!?! " + e.getKey() + ": " + e.getValue());
 			}
-
 		}
+
+		// What a mess!!!!
+		File high = new File(HIGH_VOLATILITY_FILES);
+		File med = new File(MED_VOLATILITY_FILES);
+		File low = new File(LOW_VOLATILITY_FILES);
+		Collections.sort(lowFiles); Collections.sort(medFiles); Collections.sort(highFiles);
+		Files.write(Joiner.on('\n').join(lowFiles), low, Charsets.UTF_8);
+		Files.write(Joiner.on('\n').join(medFiles), med, Charsets.UTF_8);
+		Files.write(Joiner.on('\n').join(highFiles), high, Charsets.UTF_8);
 		
 		System.out.println("Number of files modified 1 time: " + lowVol);
 		System.out.println("Number of files modified 2 times: " + midVol);
