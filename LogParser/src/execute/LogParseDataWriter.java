@@ -50,6 +50,7 @@ public class LogParseDataWriter {
 
 		//String antLog = Files.asCharSource(new File("ant-core-history.txt"), Charset.defaultCharset()).read();
 		String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
+		//String antLog = Files.asCharSource(new File("commitsToVerifyVolatility.txt"), Charset.defaultCharset()).read();
 		//String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
 
 		String adjusted = antLog.replaceAll("(?m)^[ \t]*\r?\n", ""); // remove all empty lines
@@ -91,25 +92,25 @@ public class LogParseDataWriter {
 		
 		// Sort the commits into different buckets
 		for(Commit c: allCommitObjects) {
-			if (c.revisionID.isEmpty()) continue;			
-			if(c.getCommitDate().before(rev1_6)) {
+			if (c.revisionID.isEmpty()) continue;	
+			if(c.getCommitDate().after(rev1_5) && c.getCommitDate().before(rev1_6)) {
 				from15to16.add(c);
-			} else if (c.getCommitDate().before(rev1_7)) {
+			} else if (c.getCommitDate().after(rev1_6) && c.getCommitDate().before(rev1_7)) {
 				from16to17.add(c);
-			} else if (c.getCommitDate().before(rev1_8)) {
+			} else if (c.getCommitDate().after(rev1_7) && c.getCommitDate().before(rev1_8)) {
 				from17to18.add(c);
-			} else if (c.getCommitDate().before(rev1_9)) {
+			} else if (c.getCommitDate().after(rev1_8) && c.getCommitDate().before(rev1_9)) {
 				from18to19.add(c);
-			} else {
+			} else if (c.getCommitDate().after(rev1_9)) {
 				from19toNow.add(c);
+			} else {
+				System.out.println("Ignoring: " + c);
 			}
 		}
 		
 		printStatistics();
-		calculateVolatility();
-		
-		writeModifiedCommits();
-		
+		calculateVolatility();		
+		//writeModifiedCommits();		
 		createOutputfiles(allCommitObjects);		
 	}
 
@@ -128,7 +129,7 @@ public class LogParseDataWriter {
 		Map<String, Integer> volatilityMap = new HashMap<>();
 		Set<String> modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from15to16) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -143,7 +144,7 @@ public class LogParseDataWriter {
 		
 		modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from16to17) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -158,7 +159,7 @@ public class LogParseDataWriter {
 				
 		modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from17to18) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -193,7 +194,6 @@ public class LogParseDataWriter {
 		System.out.println("Number of files modified 1 time: " + lowVol);
 		System.out.println("Number of files modified 2 times: " + midVol);
 		System.out.println("Number of files modified 3 times: " + highVol);
-
 		
 	}
 
