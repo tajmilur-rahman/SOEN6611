@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,25 +18,33 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import model.Commit;
+import model.ModifiedCommitWriter;
 
 import org.apache.commons.io.FileUtils;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Joiner;
 import com.google.common.io.Files;
 
 public class LogParseDataWriter {
 	
-	private static final Boolean WRITE_OUTPUT = true;
+	private static final Boolean WRITE_OUTPUT = false;
 	private static final String DELIMITER = "«";
-	private static final String OUTPUT_PATH = "out\\"; 
+	private static final String OUTPUT_PATH = "out\\";
+	private static final String PROCESSED_PATH = "processed\\"; 
 	private static final String ANT_COMMIT_FILE_PATH = OUTPUT_PATH + "ant_commits.txt";
 	private static final String ANT_MODIFIED_FILES_PATH = OUTPUT_PATH + "ant_modified_files.txt";
+	private static final String HIGH_VOLATILITY_FILES = PROCESSED_PATH + "1_high_volatility.txt";
+	private static final String MED_VOLATILITY_FILES = PROCESSED_PATH + "2_med_volatility.txt";
+	private static final String LOW_VOLATILITY_FILES = PROCESSED_PATH + "3_low_volatility.txt";
+	
 
 	private static final List<Commit> from15to16 = new ArrayList<>();
 	private static final List<Commit> from16to17 = new ArrayList<>();
 	private static final List<Commit> from17to18 = new ArrayList<>();
 	private static final List<Commit> from18to19 = new ArrayList<>();
 	private static final List<Commit> from19toNow = new ArrayList<>();
+
 	
 	public static void main(String[] args) throws IOException, ParseException {
 
@@ -48,6 +57,7 @@ public class LogParseDataWriter {
 
 		//String antLog = Files.asCharSource(new File("ant-core-history.txt"), Charset.defaultCharset()).read();
 		String antLog = Files.asCharSource(new File("small_history.txt"), Charset.defaultCharset()).read();
+		//String antLog = Files.asCharSource(new File("commitsToVerifyVolatility.txt"), Charset.defaultCharset()).read();
 		//String antLog = Files.asCharSource(new File("testlog.txt"), Charset.defaultCharset()).read();
 
 		String adjusted = antLog.replaceAll("(?m)^[ \t]*\r?\n", ""); // remove all empty lines
@@ -70,6 +80,7 @@ public class LogParseDataWriter {
 					commitObject.linesChanged = header[3].trim();
 					
 				} else if (isModifiedFileLine(line)) {
+					if (!line.contains(".java")) continue; //only takes java files
 					commitObject.modifiedFiles.add(line.trim());
 					commitObject.commitLogsByType.put(line.trim().split("\\s")[0].trim(), line.trim().split("\\s")[1].trim());
 					modifiedFileFound = true;
@@ -88,31 +99,44 @@ public class LogParseDataWriter {
 		
 		// Sort the commits into different buckets
 		for(Commit c: allCommitObjects) {
-			if (c.revisionID.isEmpty()) continue;			
-			if(c.getCommitDate().before(rev1_6)) {
+			if (c.revisionID.isEmpty()) continue;	
+			if(c.getCommitDate().after(rev1_5) && c.getCommitDate().before(rev1_6)) {
 				from15to16.add(c);
-			} else if (c.getCommitDate().before(rev1_7)) {
+			} else if (c.getCommitDate().after(rev1_6) && c.getCommitDate().before(rev1_7)) {
 				from16to17.add(c);
-			} else if (c.getCommitDate().before(rev1_8)) {
+			} else if (c.getCommitDate().after(rev1_7) && c.getCommitDate().before(rev1_8)) {
 				from17to18.add(c);
-			} else if (c.getCommitDate().before(rev1_9)) {
+			} else if (c.getCommitDate().after(rev1_8) && c.getCommitDate().before(rev1_9)) {
 				from18to19.add(c);
-			} else {
+			} else if (c.getCommitDate().after(rev1_9)) {
 				from19toNow.add(c);
+			} else {
+				System.out.println("Ignoring: " + c);
 			}
 		}
 		
 		printStatistics();
-		calculateVolatility();
-		
+		calculateVolatility();		
+		//writeModifiedCommits();		
 		createOutputfiles(allCommitObjects);		
 	}
 
-	private static void calculateVolatility() {
+	private static void writeModifiedCommits() throws IOException {
+		ModifiedCommitWriter modifiedCommitWriter = new ModifiedCommitWriter(from15to16, "From15to16.txt");
+		modifiedCommitWriter.writeOutput();
+		
+		modifiedCommitWriter = new ModifiedCommitWriter(from16to17, "From16to17.txt");
+		modifiedCommitWriter.writeOutput();
+		
+		modifiedCommitWriter = new ModifiedCommitWriter(from17to18, "From17to18.txt");
+		modifiedCommitWriter.writeOutput();
+	}
+
+	private static void calculateVolatility() throws IOException {
 		Map<String, Integer> volatilityMap = new HashMap<>();
 		Set<String> modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from15to16) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -127,7 +151,7 @@ public class LogParseDataWriter {
 		
 		modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from16to17) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -142,7 +166,7 @@ public class LogParseDataWriter {
 				
 		modifiedJavaFiles = new HashSet<>();
 		for(Commit c: from17to18) {
-			for(String file: c.modifiedFiles) {
+			for(String file: c.commitLogsByType.get("M")) {
 				if(file.contains(".java")) {
 					modifiedJavaFiles.add(file.trim());
 				}
@@ -161,26 +185,37 @@ public class LogParseDataWriter {
 		int midVol = 0;
 		int highVol = 0;
 		
+		List<String> lowFiles = new ArrayList<>();
+		List<String> medFiles = new ArrayList<>();
+		List<String> highFiles = new ArrayList<>();
 		
-		
-		int count = 0;
 		for(Entry<String, Integer> e: volatilityMap.entrySet()) {
 			if (e.getValue().equals(1)) {
+				lowFiles.add(e.getKey());
 				lowVol++;
 			} else if (e.getValue().equals(2)) {
+				medFiles.add(e.getKey());
 				midVol++;
 			} else if (e.getValue().equals(3)) {
+				highFiles.add(e.getKey());
 				highVol++;
 			} else {
 				throw new IllegalStateException("Volatility is weird!?! " + e.getKey() + ": " + e.getValue());
 			}
-
 		}
 
+		// What a mess!!!!
+		File high = new File(HIGH_VOLATILITY_FILES);
+		File med = new File(MED_VOLATILITY_FILES);
+		File low = new File(LOW_VOLATILITY_FILES);
+		Collections.sort(lowFiles); Collections.sort(medFiles); Collections.sort(highFiles);
+		Files.write(Joiner.on('\n').join(lowFiles), low, Charsets.UTF_8);
+		Files.write(Joiner.on('\n').join(medFiles), med, Charsets.UTF_8);
+		Files.write(Joiner.on('\n').join(highFiles), high, Charsets.UTF_8);
+		
 		System.out.println("Number of files modified 1 time: " + lowVol);
 		System.out.println("Number of files modified 2 times: " + midVol);
 		System.out.println("Number of files modified 3 times: " + highVol);
-
 		
 	}
 
