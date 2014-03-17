@@ -27,12 +27,21 @@ We may access the Apache Ant bug database in order to obtain further details for
 
 ===Metrics===
 The following list of metrics is interesting to us in order to classify and identify the quality attributes for a given class. This list may grow / shrink depending on available time.
-<<<<<<< HEAD
-{|border="0"
-|Number of Methods (QMOOD)|Weighted Method Count (WMC from CK)
-|Class Interface Size (QMOOD)|Depth of Inheritance Tree (DIT from CK)
-|Tight Class Cohesion (Cohesion)|Response For a Class (RF from CK)
-|Access to Foreign Data (Marinescu)|  
+
+{|class="wikitable"
+|-
+| Number of Methods (QMOOD)
+|Weighted Method Count (WMC from CK)
+|-
+| Class Interface Size (QMOOD)
+|Depth of Inheritance Tree (DIT from CK)
+|-
+| Tight Class Cohesion (Cohesion)
+| Response For a Class (RF from CK)
+|-
+| Access to Foreign Data (Marinescu) 
+| ..
+|} 
 =======
 
 {| class="wikitable"
@@ -46,26 +55,20 @@ The following list of metrics is interesting to us in order to classify and iden
 | Tight Class Cohesion (Cohesion)
 | Response For a Class (RF from CK)
 |-
-| Access to Foreign Data (Marinescu), ..
->>>>>>> 5f4543d920e8bc1ff86c8ae82c6251383af6a636
+| Access to Foreign Data (Marinescu)
+| ..
 |}
 
 ==Results and SQLs==
 --------------------------
+Create table ant_info and ant_path. Load data by terminal: 
+COPY ant_info FROM '/home/rupak/Documents/git/SOEN6611_Taj/LogParser/out/ant_commits.txt' (DELIMITER('`'));
+COPY ant_path FROM '/home/rupak/Documents/git/SOEN6611_Taj/LogParser/out/ant_modified_files.txt' (DELIMITER('`'));
+
 # Project: ApacheAnt
 # Versions: 1.5, 1.6, 1.7, 1.8, 1.9
 # Total devs: 48
 # Total commits per release:
-<<<<<<< HEAD
-{|border="0"
-|Version  | Commits 
-|         |   132   
-|   v8    |  1767   
-|   v5    |  4890   
-|   v9    |   782   
-|   v7    |  3277   
-|   v6    |  2109   
-=======
 {| class="wikitable"
 |-
 ! Version
@@ -88,11 +91,9 @@ The following list of metrics is interesting to us in order to classify and iden
 |-
 |   v6    
 |  2109
->>>>>>> 5f4543d920e8bc1ff86c8ae82c6251383af6a636
 |}
 
 --------------------------
-
 
 ==References==
 
