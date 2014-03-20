@@ -1,8 +1,10 @@
 package ast;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
@@ -53,6 +55,9 @@ public class ASTReader {
 						for(ICompilationUnit iCompilationUnit : iCompilationUnits) {
 							if(monitor != null && monitor.isCanceled())
 				    			throw new OperationCanceledException();
+							
+							printCompilationUnitDetails(iCompilationUnit);
+							
 							systemObject.addClasses(parseAST(iCompilationUnit));
 							if(monitor != null)
 								monitor.worked(1);
@@ -65,6 +70,17 @@ public class ASTReader {
 		}
 		if(monitor != null)
 			monitor.done();
+	}
+
+	private void printCompilationUnitDetails(ICompilationUnit iCompilationUnit) throws JavaModelException {
+		IResource ir = iCompilationUnit.getUnderlyingResource();
+		if (null != ir && ir.getType() == IResource.FILE){
+			IFile iFile = (IFile) ir;
+			System.out.println(iFile.getRawLocation().toString());
+			System.out.println(Platform.getLocation());
+		}
+		
+		
 	}
 
 	public ASTReader(IJavaProject iJavaProject, SystemObject existingSystemObject, IProgressMonitor monitor) {
