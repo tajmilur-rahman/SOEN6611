@@ -47,6 +47,7 @@ public abstract class AbstractClassMetric {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		System.out.println("Finished writing: " + metricFile.toString());
 		
 		// TODO: Ask Dr. Tsantalis
 		//for(Entry<String, String> e: metricValues.entrySet()) {

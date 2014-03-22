@@ -76,8 +76,8 @@ public class ASTReader {
 		IResource ir = iCompilationUnit.getUnderlyingResource();
 		if (null != ir && ir.getType() == IResource.FILE){
 			IFile iFile = (IFile) ir;
-			System.out.println(iFile.getRawLocation().toString());
-			System.out.println(Platform.getLocation());
+			//System.out.println(iFile.getRawLocation().toString());
+			//System.out.println(Platform.getLocation());
 		}
 		
 		

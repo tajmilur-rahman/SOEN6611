@@ -15,7 +15,6 @@ public class LCOM2 extends AbstractClassMetric {
 	public void calculateMetric() {
 		
 		Set<ClassObject> classes = system.getClassObjects();
-		System.out.println(classes.size());
 		
 		metricValues.put("file 1", "1");
 		metricValues.put("file 2", "2.0");
