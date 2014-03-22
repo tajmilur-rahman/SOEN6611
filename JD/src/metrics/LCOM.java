@@ -1,9 +1,7 @@
 package metrics;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import ast.ClassObject;
@@ -11,22 +9,23 @@ import ast.FieldInstructionObject;
 import ast.MethodObject;
 import ast.SystemObject;
 
-public class LCOM {
-	
-	private Map<String, Integer> cohesionMap;
+public class LCOM extends AbstractClassMetric {
 
 	public LCOM(SystemObject system) {
-		cohesionMap = new HashMap<String, Integer>();
+		super(system);
+	}
+	
+	@Override
+	protected void calculateMetric() {
 		
 		Set<ClassObject> classes = system.getClassObjects();
 		
 		for(ClassObject classObject : classes) {
 			int cohesion = computeCohesion(classObject);
 			if(cohesion != -1) {
-				cohesionMap.put(classObject.getName(), cohesion);
+				metricValues.put(classObject.getName(), "" + cohesion);
 			}
-		}
-		
+		}			
 	}
 	
 	private int computeCohesion(ClassObject classObject) {
@@ -76,12 +75,4 @@ public class LCOM {
 		
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		for(String key : cohesionMap.keySet()) {
-			sb.append(key).append("\t").append(cohesionMap.get(key)).append("\n");
-		}
-		return sb.toString();
-	}
 }
