@@ -12,6 +12,9 @@ import java.util.TreeMap;
 
 import ast.SystemObject;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.Files;
+
 public abstract class AbstractClassMetric {
 	
 	static String folderName = (new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")).format(new Date());
@@ -49,16 +52,16 @@ public abstract class AbstractClassMetric {
 		}
 		System.out.println("Finished writing: " + metricFile.toString());
 		
-		// TODO: Ask Dr. Tsantalis
-		//for(Entry<String, String> e: metricValues.entrySet()) {
+/*		TODO: Ask Dr. Tsantalis
+		for(Entry<String, String> e: metricValues.entrySet()) {
 
 			// this doesn't work sadly. JD throws this exception:
 			// Caused by: java.lang.ClassNotFoundException: com.google.common.io.Files cannot be found by jd_1.0.0.qualifier
-			/*			try {
+			try {
 				Files.append(e.getKey() + "," + e.getValue() + "\r\n", metricFile, Charsets.UTF_8);
 			} catch (IOException e1) {
 				e1.printStackTrace();
-			}*/
-		//}
+			}
+		}*/
 	}
 }
