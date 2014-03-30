@@ -2,6 +2,7 @@ package view;
 
 import java.lang.reflect.InvocationTargetException;
 
+import metrics.Coh;
 import metrics.LCOM;
 import metrics.LCOM2;
 
@@ -109,9 +110,13 @@ public class MetricsAction  implements IObjectActionDelegate {
 						}
 						SystemObject system = ASTReader.getSystemObject();
 						LCOM lcom = new LCOM(system);
-						//LCOM2 lcom2 = new LCOM2(system);
 						System.out.print(lcom.toString());
-						//System.out.print(lcom2.toString());
+						
+						LCOM2 lcom2 = new LCOM2(system);
+						System.out.println(lcom2.toString());
+						
+						Coh coh = new Coh(system);
+						System.out.println();
 						
 						if(selectedPackageFragmentRoot != null) {
 							// package fragment root selected
