@@ -1,10 +1,14 @@
 package view;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
-import metrics.Coh;
+import metrics.AbstractClassMetric;
 import metrics.LCOM;
 import metrics.LCOM2;
+import metrics.LCOMHenderson;
+import metrics.RFC;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -109,14 +113,19 @@ public class MetricsAction  implements IObjectActionDelegate {
 							new ASTReader(selectedProject, monitor);
 						}
 						SystemObject system = ASTReader.getSystemObject();
-						LCOM lcom = new LCOM(system);
-						System.out.print(lcom.toString());
+
+						// === Code here is used to run all the metrics we create === 
+						List<AbstractClassMetric> metricsToRun = new ArrayList<>();
+						metricsToRun.add(new LCOM(system));
+						metricsToRun.add(new LCOM2(system));
+						metricsToRun.add(new RFC(system));
+						metricsToRun.add(new LCOMHenderson(system));
+						//... add your metrics the same way I did it here
 						
-						LCOM2 lcom2 = new LCOM2(system);
-						System.out.println(lcom2.toString());
-						
-						Coh coh = new Coh(system);
-						System.out.println();
+						for(AbstractClassMetric acm : metricsToRun) {
+							acm.executeMetric();
+						}
+						// === End === 
 						
 						if(selectedPackageFragmentRoot != null) {
 							// package fragment root selected
