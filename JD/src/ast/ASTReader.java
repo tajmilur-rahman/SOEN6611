@@ -1,5 +1,10 @@
 package ast;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
@@ -27,13 +32,8 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 import ast.decomposition.MethodBodyObject;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
 public class ASTReader {
-
+	
 	private static SystemObject systemObject;
 	private static IJavaProject examinedProject;
 
@@ -53,9 +53,11 @@ public class ASTReader {
 						for(ICompilationUnit iCompilationUnit : iCompilationUnits) {
 							if(monitor != null && monitor.isCanceled())
 				    			throw new OperationCanceledException();
+							
 							systemObject.addClasses(parseAST(iCompilationUnit));
-							if(monitor != null)
-								monitor.worked(1);
+							if(monitor != null) {
+								monitor.worked(1); 
+							}
 						}
 					}
 				}
