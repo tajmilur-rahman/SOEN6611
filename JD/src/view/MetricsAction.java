@@ -9,6 +9,7 @@ import metrics.LCOM;
 import metrics.LCOM2;
 import metrics.LCOMHenderson;
 import metrics.RFC;
+import metrics.Coh;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -120,6 +121,7 @@ public class MetricsAction  implements IObjectActionDelegate {
 						metricsToRun.add(new LCOM2(system));
 						metricsToRun.add(new RFC(system));
 						metricsToRun.add(new LCOMHenderson(system));
+						metricsToRun.add(new Coh(system));
 						//... add your metrics the same way I did it here
 						
 						for(AbstractClassMetric acm : metricsToRun) {

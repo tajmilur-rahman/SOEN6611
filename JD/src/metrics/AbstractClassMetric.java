@@ -18,7 +18,8 @@ import com.google.common.io.Files;
 public abstract class AbstractClassMetric {
 	
 	static String folderName = (new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")).format(new Date());
-	private static final String outputPath = "C:\\metrics\\";
+	//private static final String outputPath = "C:\\metrics\\"; // for windows
+	private static final String outputPath = "/home/rupak/documents/"; // for linux
 	
 	protected SystemObject system;
 	protected Map<String, String> metricValues;
