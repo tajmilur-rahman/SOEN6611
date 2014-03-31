@@ -1,10 +1,13 @@
 package ast;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
@@ -29,13 +32,8 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 import ast.decomposition.MethodBodyObject;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
 public class ASTReader {
-
+	
 	private static SystemObject systemObject;
 	private static IJavaProject examinedProject;
 
@@ -56,11 +54,10 @@ public class ASTReader {
 							if(monitor != null && monitor.isCanceled())
 				    			throw new OperationCanceledException();
 							
-							printCompilationUnitDetails(iCompilationUnit);
-							
 							systemObject.addClasses(parseAST(iCompilationUnit));
-							if(monitor != null)
-								monitor.worked(1);
+							if(monitor != null) {
+								monitor.worked(1); 
+							}
 						}
 					}
 				}
@@ -70,17 +67,6 @@ public class ASTReader {
 		}
 		if(monitor != null)
 			monitor.done();
-	}
-
-	private void printCompilationUnitDetails(ICompilationUnit iCompilationUnit) throws JavaModelException {
-		IResource ir = iCompilationUnit.getUnderlyingResource();
-		if (null != ir && ir.getType() == IResource.FILE){
-			IFile iFile = (IFile) ir;
-			//System.out.println(iFile.getRawLocation().toString());
-			//System.out.println(Platform.getLocation());
-		}
-		
-		
 	}
 
 	public ASTReader(IJavaProject iJavaProject, SystemObject existingSystemObject, IProgressMonitor monitor) {

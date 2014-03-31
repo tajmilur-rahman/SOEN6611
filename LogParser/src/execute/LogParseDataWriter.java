@@ -116,8 +116,8 @@ public class LogParseDataWriter {
 		}
 		
 		printStatistics();
-		//calculateVolatility();		
-		writeModifiedCommits();		
+		calculateVolatility();		
+		//writeModifiedCommits();		
 		//createOutputfiles(allCommitObjects);		
 	}
 
@@ -192,15 +192,16 @@ public class LogParseDataWriter {
 		List<String> medFiles = new ArrayList<>();
 		List<String> highFiles = new ArrayList<>();
 		
+		// In the lists of files, make it look like how JD stores the classes (e.g. "org.apache.tools.ant.AntClassLoader")
 		for(Entry<String, Integer> e: volatilityMap.entrySet()) {
 			if (e.getValue().equals(1)) {
-				lowFiles.add(e.getKey());
+				lowFiles.add(e.getKey().replace("/ant/core/trunk/src/main/", "").replace("/", ".").replace(".java", ""));
 				lowVol++;
 			} else if (e.getValue().equals(2)) {
-				medFiles.add(e.getKey());
+				medFiles.add(e.getKey().replace("/ant/core/trunk/src/main/", "").replace("/", ".").replace(".java", ""));
 				midVol++;
 			} else if (e.getValue().equals(3)) {
-				highFiles.add(e.getKey());
+				highFiles.add(e.getKey().replace("/ant/core/trunk/src/main/", "").replace("/", ".").replace(".java", ""));
 				highVol++;
 			} else {
 				throw new IllegalStateException("Volatility is weird!?! " + e.getKey() + ": " + e.getValue());

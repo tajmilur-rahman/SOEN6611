@@ -23,8 +23,10 @@ public class LCOMHenderson extends AbstractClassMetric {
 		
 		for(ClassObject classObject : classes) {
 			float cohesion = computeCohesion(classObject);
-			if(cohesion != -1) {
+			if (cohesion != -1) {
 				metricValues.put(classObject.getName(), "" + cohesion);
+			} else {
+				metricValues.put(classObject.getName(), "Class contains less than 2 methods");
 			}
 		}			
 	}
