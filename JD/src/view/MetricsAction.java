@@ -117,10 +117,10 @@ public class MetricsAction  implements IObjectActionDelegate {
 
 						// === Code here is used to run all the metrics we create === 
 						List<AbstractClassMetric> metricsToRun = new ArrayList<>();
-						metricsToRun.add(new LCOM(system));
-						metricsToRun.add(new LCOM2(system));
-						metricsToRun.add(new RFC(system));
-						metricsToRun.add(new LCOMHenderson(system));
+						//metricsToRun.add(new LCOM(system));
+						//metricsToRun.add(new LCOM2(system));
+						//metricsToRun.add(new RFC(system));
+						//metricsToRun.add(new LCOMHenderson(system));
 						metricsToRun.add(new Coh(system));
 						//... add your metrics the same way I did it here
 						

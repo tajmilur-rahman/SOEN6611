@@ -18,9 +18,15 @@ import com.google.common.io.Files;
 
 public abstract class AbstractClassMetric {
 	
+	/** for windows 
 	private static String pathToHighFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
 	private static String pathToMedFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
 	private static String pathToLowFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
+	*/
+	//** for linux
+	private static String pathToHighFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
+	private static String pathToMedFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
+	private static String pathToLowFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
 	
 	private List<String> highClasses;
 	private List<String> medClasses;
@@ -28,7 +34,7 @@ public abstract class AbstractClassMetric {
 	
 	static String folderName = (new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")).format(new Date());
 	//private static final String outputPath = "C:\\metrics\\"; // for windows
-	private static final String outputPath = "/home/rupak/documents/"; // for linux
+	private static final String outputPath = "/home/rupak/Documents/"; // for linux
 	
 	protected SystemObject system;
 	protected Map<String, String> metricValues;
@@ -42,16 +48,15 @@ public abstract class AbstractClassMetric {
 	private void loadVolatilityLists() {
 		try {
 			String high = Files.asCharSource(new File(pathToHighFiles), Charset.defaultCharset()).read();
-			String med = Files.asCharSource(new File(pathToMedFiles), Charset.defaultCharset()).read();
-			String low = Files.asCharSource(new File(pathToLowFiles), Charset.defaultCharset()).read();
+			String med 	= Files.asCharSource(new File(pathToMedFiles), Charset.defaultCharset()).read();
+			String low 	= Files.asCharSource(new File(pathToLowFiles), Charset.defaultCharset()).read();
 			
 			highClasses = Arrays.asList(high.split("\n"));
-			medClasses = Arrays.asList(med.split("\n"));			
-			lowClasses = Arrays.asList(low.split("\n"));
-			
+			medClasses 	= Arrays.asList(med.split("\n"));			
+			lowClasses 	= Arrays.asList(low.split("\n"));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
 
 	// Template method
