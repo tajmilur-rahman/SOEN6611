@@ -1,0 +1,757 @@
+3, 0.9686869
+3, 0.8503402
+3, 0.9591837
+3, 0.8333333
+3, 1.0
+1, 1.0
+3, 0.9518717
+3, 0.9206349
+2, 0.5
+2, 0.92857146
+3, 1.0037879
+3, 0.96748924
+2, Class contains less than 2 methods
+1, Class contains less than 2 methods
+2, 2.0
+2, Class contains less than 2 methods
+2, Class contains less than 2 methods
+1, 1.0
+3, 0.956848
+3, 1.0333333
+3, Class contains less than 2 methods
+3, 0.96133333
+3, 0.33333334
+1, 0.5
+3, 0.98571074
+3, 0.875
+3, 1.0102041
+1, 0.98
+3, 0.95454544
+3, 0.92628205
+3, 0.9269231
+2, 0.91358024
+3, 0.5
+1, 0.5
+2, Class contains less than 2 methods
+1, 1.0
+3, 0.88505745
+2, Class contains less than 2 methods
+2, Class contains less than 2 methods
+3, 0.9285714
+1, 0.5
+2, Class contains less than 2 methods
+1, Class contains less than 2 methods
+2, 0.9047619
+1, 0.0
+1, Class contains less than 2 methods
+3, 1.0
+1, 0.75
+2, 1.0
+3, 0.75
+2, 0.95151514
+3, 0.9142857
+2, 0.85714287
+2, 0.875
+2, 0.75
+3, 0.9059829
+1, 0.89285713
+2, Class contains less than 2 methods
+3, 1.0
+2, 0.8333334
+3, 0.73333335
+3, 0.875
+3, 0.94285715
+3, 0.8375
+1, Class contains less than 2 methods
+3, 0.9111111
+2, Class contains less than 2 methods
+3, 0.94827586
+2, 1.0
+1, 1.0
+3, 0.92857146
+3, 1.0
+2, 2.0
+3, 1.0
+1, Class contains less than 2 methods
+2, Class contains less than 2 methods
+2, 0.8666667
+2, 0.0
+2, 0.5
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+3, 0.975
+3, 1.0
+3, 1.125
+1, 1.0
+2, 0.7916667
+3, 0.5833333
+3, 0.9
+1, 0.4
+2, 0.0
+2, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, 2.0
+1, 0.9333333
+1, Class contains less than 2 methods
+1, 0.8095238
+3, 0.97116274
+2, 0.9583333
+3, 0.9203297
+3, 0.9166666
+3, 0.85
+1, 0.6666667
+2, 0.97037035
+3, 0.925
+3, 1.0
+2, 2.0
+2, 0.6666667
+2, 0.75
+3, 0.8125
+2, 0.71153843
+3, 0.9358178
+3, 0.6458334
+3, 0.8333334
+1, Class contains less than 2 methods
+3, 0.9467041
+3, 0.8
+3, 0.9530447
+2, 0.9027778
+2, 0.8055555
+2, 0.75
+1, Class contains less than 2 methods
+2, 0.9166667
+2, 0.8
+3, 0.92236024
+3, 0.9307065
+1, 0.5
+3, 0.9285714
+2, Class contains less than 2 methods
+3, 0.5
+3, 0.8
+3, 0.875
+2, 0.75
+3, 0.8541666
+3, 0.94641054
+3, 0.9654321
+2, 0.8585859
+3, 0.9516129
+1, 1.0
+2, 0.76666665
+3, 0.81666666
+3, 0.95873016
+2, 0.6666667
+3, 0.89204544
+3, 1.0
+2, 2.0
+2, 0.90277773
+3, 0.98484844
+1, 0.8888889
+3, 0.9166667
+3, 0.8055555
+3, 0.94285715
+3, 0.9455782
+3, 0.952919
+3, 0.98125297
+3, 0.98492235
+3, Class contains less than 2 methods
+2, 0.95714283
+3, 0.8333333
+2, 0.89204544
+2, Class contains less than 2 methods
+3, 0.90000004
+2, 0.8055555
+3, 0.8333333
+2, Class contains less than 2 methods
+3, 0.9027778
+3, 0.8909091
+1, 0.8796296
+3, 0.97407407
+2, 0.75
+1, Class contains less than 2 methods
+3, 0.875
+2, 0.05
+2, 0.6666667
+3, 0.625
+1, 0.5
+3, 0.9375
+3, 0.91515154
+2, 0.8166667
+3, 0.92982453
+2, 0.5
+3, 0.8
+3, 0.9599359
+1, 0.75
+3, 0.8958333
+2, 0.9411765
+3, 0.9107143
+3, 0.934363
+2, 0.75
+3, 0.9421296
+2, 0.8055555
+1, 0.77777785
+3, 0.97729987
+3, 0.97803026
+2, Class contains less than 2 methods
+3, 0.0
+3, 0.9585921
+3, 0.9
+3, 0.9479167
+3, 0.95622116
+3, 0.7647059
+3, 0.9678572
+2, 0.6666666
+1, Class contains less than 2 methods
+3, 0.85714287
+3, 0.9362745
+3, Class contains less than 2 methods
+1, 0.9444444
+2, 0.6666667
+1, Class contains less than 2 methods
+3, 0.8181818
+3, 0.8
+3, 0.85714287
+2, 0.8
+3, 1.025641
+3, 0.875
+3, 0.71428573
+1, 1.5
+2, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+3, 0.97494555
+3, 0.9585327
+3, 0.9669275
+1, 1.0
+1, 2.0
+2, 2.0
+3, 0.6666667
+3, 0.9527778
+3, 1.0
+3, Class contains less than 2 methods
+2, Class contains less than 2 methods
+2, 2.0
+3, 2.0
+2, Class contains less than 2 methods
+2, 2.0
+2, 2.0
+2, Class contains less than 2 methods
+2, 0.6296296
+2, Class contains less than 2 methods
+3, 0.52380955
+2, 0.6666667
+3, 0.8888889
+2, 0.75
+2, 0.4
+2, 0.8666667
+3, 0.8666666
+1, 0.0
+1, 0.0
+1, 0.77777785
+1, 0.7714286
+2, 1.0333333
+3, 0.5
+3, 0.0
+2, 0.9
+1, 0.0
+1, 0.8
+2, Class contains less than 2 methods
+2, Class contains less than 2 methods
+3, 0.97883594
+1, 0.95
+1, 0.775
+2, 0.5
+1, 0.5
+1, 0.6666667
+2, Class contains less than 2 methods
+2, 0.89285713
+3, 0.83950615
+3, 0.8875
+2, 0.6666666
+3, 0.92763156
+3, 0.6666667
+2, 0.5
+2, 0.8333333
+2, 1.0
+2, Class contains less than 2 methods
+2, 2.0
+1, 0.6
+3, 0.9662005
+1, 0.6666667
+3, 0.99313504
+3, 0.82857144
+3, 1.111111
+3, 1.0
+1, Class contains less than 2 methods
+3, 0.92857146
+3, 0.8703704
+3, 0.9469697
+3, 0.9404467
+3, 0.89166665
+3, 0.95962733
+3, 0.82222223
+2, 0.8
+3, 0.8888889
+3, 0.93406594
+2, 0.97999996
+2, 0.0
+3, 0.9402174
+3, 0.9519231
+2, 0.8888889
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+2, 0.9768519
+2, 0.9285714
+2, 1.075
+2, 0.9692308
+2, 0.9802632
+2, 0.96464646
+2, 0.9705882
+2, 0.9716599
+2, 0.9759359
+2, 0.97008544
+2, 0.88888884
+2, 0.95454544
+2, 0.96703297
+2, 1.045
+2, 2.0
+2, 0.5
+1, Class contains less than 2 methods
+2, 2.0
+3, 0.92800003
+2, 1.0
+1, Class contains less than 2 methods
+2, 0.5416667
+1, 0.9882353
+1, 2.0
+1, 0.6
+1, 0.6
+1, 0.0
+3, 0.96618354
+2, 0.8125
+2, 0.8821549
+2, 1.0
+2, 0.8538462
+3, 0.9548387
+2, 0.92045456
+2, 0.9699248
+2, 0.85714287
+2, Class contains less than 2 methods
+2, 0.9375
+3, 0.97115386
+3, 0.97768766
+2, 0.75
+3, 0.97261906
+2, Class contains less than 2 methods
+2, Class contains less than 2 methods
+3, Class contains less than 2 methods
+3, 0.94047624
+3, 0.8
+2, Class contains less than 2 methods
+3, 0.41666666
+3, 1.0
+2, 0.5
+1, 0.65
+1, 0.33333334
+3, 0.90909094
+3, 0.7818182
+2, 0.8
+2, 1.0
+3, 0.9440789
+2, 0.53333336
+2, 0.0
+2, 0.5555555
+3, 0.94343895
+3, 0.8888889
+1, 0.86153847
+2, 0.7083334
+1, 1.5
+1, 0.88095236
+1, 0.7619047
+3, 0.9166667
+3, 0.96428573
+3, Class contains less than 2 methods
+2, 0.7777778
+3, 0.95238096
+3, 1.0
+3, 0.9588235
+1, 2.0
+3, 1.0
+3, 0.78571427
+2, 0.9285714
+2, 1.0
+2, 1.0
+3, 1.0
+3, 0.9166666
+3, 0.965035
+3, 0.9285714
+3, 0.9464286
+2, Class contains less than 2 methods
+3, 1.0
+1, 2.0
+1, 0.9492754
+3, 0.9322917
+2, 1.0
+3, 0.9792208
+1, 1.0
+1, 1.5
+3, 0.90909094
+3, 0.96843433
+3, 0.8333333
+1, Class contains less than 2 methods
+3, 0.8968254
+3, 0.9166667
+3, Class contains less than 2 methods
+3, 0.89411765
+2, 0.96000004
+1, 1.0
+1, 1.25
+2, Class contains less than 2 methods
+2, 1.0
+1, 2.0
+3, 0.9740686
+2, Class contains less than 2 methods
+1, 0.9898666
+2, Class contains less than 2 methods
+3, 0.8585859
+3, 0.91358024
+3, 0.9012345
+3, 0.9705882
+2, 0.0
+3, 0.8333334
+2, 0.8333333
+3, 0.9722222
+1, 1.0
+1, 1.0
+3, Class contains less than 2 methods
+1, 1.0
+1, 1.0
+3, 0.9166667
+2, 0.6666667
+3, 0.8701298
+3, 0.9272727
+3, 0.93999994
+2, 0.8333333
+2, Class contains less than 2 methods
+3, 0.85714287
+3, 0.95238096
+2, 0.90588236
+3, 0.8937198
+3, 0.97959185
+2, 1.2
+3, 0.85714287
+2, 0.8214286
+1, 0.0
+1, Class contains less than 2 methods
+1, 0.97120005
+3, 1.0
+1, 0.5
+1, 0.5
+3, 0.88888896
+3, 0.9782293
+2, 0.8333333
+1, 1.0
+1, 1.0
+1, 2.0
+1, 1.0
+3, Class contains less than 2 methods
+2, 1.0
+1, 1.0
+1, 1.0
+3, 0.9904762
+3, 0.96153843
+2, 2.0
+2, 1.0
+2, 1.0
+3, 1.3333334
+3, 1.8
+3, 1.1071428
+1, Class contains less than 2 methods
+3, 0.9126984
+3, 0.70370364
+2, 0.935065
+2, 0.8611111
+2, 0.45454547
+3, 0.89
+3, 0.89459455
+2, 1.6
+2, Class contains less than 2 methods
+3, 0.8095238
+3, 1.0
+3, 1.0
+2, 0.85714287
+2, 0.0
+3, 0.5
+3, 1.0
+3, 0.0
+3, 0.96989965
+2, 0.0
+1, 0.0
+1, 1.8333334
+3, 0.82051283
+2, 0.8
+1, Class contains less than 2 methods
+3, 0.9352941
+3, 0.78571427
+3, 0.91428566
+3, 0.9505494
+2, 1.4166666
+2, 0.9153846
+2, 0.4
+3, 0.8333333
+3, 0.94685996
+2, 1.0
+1, Class contains less than 2 methods
+2, 0.8
+3, 1.0
+2, 0.88235295
+1, Class contains less than 2 methods
+2, 1.1
+3, 0.9415584
+2, 0.6
+3, Class contains less than 2 methods
+2, 1.0
+2, 0.54545456
+2, 0.5
+3, 0.6944445
+1, 0.5
+1, 0.84444445
+3, 0.6
+3, 0.94285715
+2, 0.8
+1, 1.0
+1, Class contains less than 2 methods
+2, 0.8333333
+1, Class contains less than 2 methods
+1, 0.5
+2, 0.0
+2, 0.75
+2, 0.8333333
+2, 0.8333333
+1, 0.9285714
+2, 2.0
+2, 0.0
+2, 0.33333334
+1, 0.77777773
+2, 0.925
+1, 0.5555556
+1, 2.0
+1, 0.5
+2, 0.7435897
+2, 1.0
+2, 2.0
+1, 1.0
+1, Class contains less than 2 methods
+1, 0.6666667
+1, Class contains less than 2 methods
+2, 0.89285713
+2, 0.8125
+2, 0.80952376
+2, Class contains less than 2 methods
+2, 1.0
+1, Class contains less than 2 methods
+1, 2.0
+1, Class contains less than 2 methods
+2, 1.0
+1, Class contains less than 2 methods
+1, 0.8
+1, 0.8
+1, 1.0
+1, 0.84210527
+1, 0.84
+2, 0.93999994
+2, 0.125
+1, 0.8333333
+2, 0.0
+2, 0.93333334
+2, 0.85714287
+2, 0.5
+1, Class contains less than 2 methods
+2, 0.8916667
+2, 1.0
+2, 0.87878793
+2, 0.0
+1, Class contains less than 2 methods
+2, 0.0
+1, Class contains less than 2 methods
+2, Class contains less than 2 methods
+1, Class contains less than 2 methods
+2, 1.0
+2, 0.5
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+2, Class contains less than 2 methods
+2, 0.8
+1, 0.8571428
+1, Class contains less than 2 methods
+1, 0.8
+2, 0.0
+1, 0.8701298
+2, Class contains less than 2 methods
+1, 0.0
+2, Class contains less than 2 methods
+2, Class contains less than 2 methods
+2, 0.0
+1, 0.5
+2, 1.7142857
+2, 0.79310346
+1, 2.0
+2, 0.5
+3, 0.5
+2, 0.82758623
+3, 0.925
+3, 0.890625
+3, 0.90909094
+1, 2.0
+2, 0.7
+2, 0.6666667
+1, Class contains less than 2 methods
+3, 0.71875
+1, Class contains less than 2 methods
+2, 0.8428572
+1, 0.5
+3, 0.76666665
+1, 2.0
+2, 2.0
+1, 2.0
+2, 0.5
+1, 2.0
+2, 0.84615386
+1, 1.0
+1, 1.0
+3, 0.9649123
+1, 0.0
+3, 0.92753625
+1, 0.875
+1, 0.6666666
+2, 0.625
+1, 2.0
+1, 2.0
+2, 1.0
+1, 0.5
+3, 0.8333333
+2, 2.0
+2, 1.0
+3, 0.96172255
+2, 0.5277778
+1, 0.0
+1, 0.5
+2, 1.0833333
+2, Class contains less than 2 methods
+3, 1.0
+3, 1.125
+2, Class contains less than 2 methods
+2, 0.8333333
+2, 0.8333334
+2, 0.6666667
+3, 0.9533333
+1, 1.0
+3, 1.0296296
+2, 0.4
+2, 1.0
+1, 2.0
+3, 0.99423075
+2, 1.0
+3, 0.8142857
+2, 1.0
+2, 1.1666666
+2, 1.0
+3, 0.98333335
+2, 2.0
+3, 1.0
+1, 0.8214286
+1, 0.8333333
+2, 1.0
+2, 1.0
+1, 0.8666666
+1, 0.625
+2, 1.0
+3, 0.5
+2, 1.0
+2, Class contains less than 2 methods
+2, 1.8235294
+2, 0.6333333
+2, 1.0
+1, 0.0
+3, 0.76666665
+3, 1.0
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+1, 1.0833334
+2, Class contains less than 2 methods
+2, 0.92948717
+2, 0.8571428
+2, 0.9111111
+3, 0.8333334
+2, 0.85714287
+3, 1.0208334
+1, 1.0
+2, 0.0
+2, 0.125
+1, Class contains less than 2 methods
+1, 2.0
+2, 0.95
+1, Class contains less than 2 methods
+1, 1.0476191
+3, 0.85
+2, 1.0
+1, 0.9285714
+2, 0.5
+1, Class contains less than 2 methods
+1, 0.91071427
+1, 1.0
+2, 2.0
+2, 0.8
+2, 2.0
+3, 0.82857144
+2, 0.0
+2, 0.8
+1, 2.0
+2, 0.8333333
+2, Class contains less than 2 methods
+2, 0.85714287
+3, 1.0
+2, 0.75
+3, 1.0
+2, 0.71428573
+3, 1.0
+2, Class contains less than 2 methods
+3, 1.0
+2, 1.2
+3, 1.0
+2, 1.0
+1, Class contains less than 2 methods
+3, 0.88823533
+3, 0.94471157
+1, 0.4
+2, Class contains less than 2 methods
+2, 0.9770723
+3, 0.6666667
+3, 0.71328676
+3, Class contains less than 2 methods
+3, 0.9514991
+3, 0.9481482
+3, 0.95
+3, 1.0
+1, 0.5925926
+3, 0.9027778
+3, 0.75
+1, 0.5
+1, 0.9166667
+1, 0.0
+1, 1.0
+1, Class contains less than 2 methods
+1, Class contains less than 2 methods
+3, Class contains less than 2 methods
+3, 0.7777778
+1, 1.0
+1, 1.0
+3, 0.95614034
+3, 1.0
+3, 0.9688013
+3, 0.91964287
+3, 0.95498574
+3, 0.6666666
