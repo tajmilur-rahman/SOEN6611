@@ -1,0 +1,1179 @@
+org.apache.tools.ant.AntClassLoader,1380
+org.apache.tools.ant.AntClassLoader.ResourceEnumeration,0
+org.apache.tools.ant.AntTypeDefinition,153
+org.apache.tools.ant.ArgumentProcessor,10
+org.apache.tools.ant.ArgumentProcessorRegistry,34
+org.apache.tools.ant.BuildEvent,22
+org.apache.tools.ant.BuildException,0
+org.apache.tools.ant.BuildListener,21
+org.apache.tools.ant.BuildLogger,6
+org.apache.tools.ant.ComponentHelper,636
+org.apache.tools.ant.DefaultDefinitions,0
+org.apache.tools.ant.DefaultLogger,145
+org.apache.tools.ant.DemuxInputStream,0
+org.apache.tools.ant.DemuxOutputStream,28
+org.apache.tools.ant.DemuxOutputStream.BufferInfo,Class contains less than 2 methods
+org.apache.tools.ant.Diagnostics,561
+org.apache.tools.ant.DirectoryScanner,2095
+org.apache.tools.ant.DynamicAttribute,Class contains less than 2 methods
+org.apache.tools.ant.DynamicAttributeNS,Class contains less than 2 methods
+org.apache.tools.ant.DynamicConfigurator,Class contains less than 2 methods
+org.apache.tools.ant.DynamicConfiguratorNS,Class contains less than 2 methods
+org.apache.tools.ant.DynamicElement,Class contains less than 2 methods
+org.apache.tools.ant.DynamicElementNS,Class contains less than 2 methods
+org.apache.tools.ant.DynamicObjectAttribute,Class contains less than 2 methods
+org.apache.tools.ant.Evaluable,Class contains less than 2 methods
+org.apache.tools.ant.Executor,1
+org.apache.tools.ant.ExitException,Class contains less than 2 methods
+org.apache.tools.ant.ExitStatusException,Class contains less than 2 methods
+org.apache.tools.ant.ExtensionPoint,0
+org.apache.tools.ant.FileScanner,91
+org.apache.tools.ant.IntrospectionHelper,741
+org.apache.tools.ant.IntrospectionHelper.AddNestedCreator,4
+org.apache.tools.ant.IntrospectionHelper.AttributeSetter,1
+org.apache.tools.ant.IntrospectionHelper.CreateNestedCreator,Class contains less than 2 methods
+org.apache.tools.ant.IntrospectionHelper.Creator,0
+org.apache.tools.ant.IntrospectionHelper.MethodAndObject,Class contains less than 2 methods
+org.apache.tools.ant.IntrospectionHelper.NestedCreator,10
+org.apache.tools.ant.Location,11
+org.apache.tools.ant.MagicNames,Class contains less than 2 methods
+org.apache.tools.ant.Main,407
+org.apache.tools.ant.NoBannerLogger,0
+org.apache.tools.ant.PathTokenizer,0
+org.apache.tools.ant.Project,7244
+org.apache.tools.ant.Project.AntRefTable,1
+org.apache.tools.ant.ProjectComponent,30
+org.apache.tools.ant.ProjectHelper,400
+org.apache.tools.ant.ProjectHelper.OnMissingExtensionPoint,1
+org.apache.tools.ant.ProjectHelperRepository,47
+org.apache.tools.ant.ProjectHelperRepository.ConstructingIterator,1
+org.apache.tools.ant.PropertyHelper,860
+org.apache.tools.ant.PropertyHelper.Delegate,Class contains less than 2 methods
+org.apache.tools.ant.PropertyHelper.PropertyEvaluator,Class contains less than 2 methods
+org.apache.tools.ant.PropertyHelper.PropertySetter,1
+org.apache.tools.ant.RuntimeConfigurable,261
+org.apache.tools.ant.RuntimeConfigurable.AttributeComponentInformation,1
+org.apache.tools.ant.RuntimeConfigurable.EnableAttributeConsumer,Class contains less than 2 methods
+org.apache.tools.ant.SubBuildListener,1
+org.apache.tools.ant.Target,281
+org.apache.tools.ant.Target.IfStringCondition,Class contains less than 2 methods
+org.apache.tools.ant.Target.UnlessStringCondition,Class contains less than 2 methods
+org.apache.tools.ant.Task,318
+org.apache.tools.ant.TaskAdapter,4
+org.apache.tools.ant.TaskConfigurationChecker,0
+org.apache.tools.ant.TaskContainer,Class contains less than 2 methods
+org.apache.tools.ant.TypeAdapter,10
+org.apache.tools.ant.UnknownElement,269
+org.apache.tools.ant.UnsupportedAttributeException,Class contains less than 2 methods
+org.apache.tools.ant.UnsupportedElementException,Class contains less than 2 methods
+org.apache.tools.ant.XmlLogger,57
+org.apache.tools.ant.XmlLogger.TimedElement,Class contains less than 2 methods
+org.apache.tools.ant.attribute.AttributeNamespace,Class contains less than 2 methods
+org.apache.tools.ant.attribute.BaseIfAttribute,0
+org.apache.tools.ant.attribute.EnableAttribute,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfBlankAttribute,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfBlankAttribute.Unless,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfSetAttribute,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfSetAttribute.Unless,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfTrueAttribute,Class contains less than 2 methods
+org.apache.tools.ant.attribute.IfTrueAttribute.Unless,Class contains less than 2 methods
+org.apache.tools.ant.dispatch.DispatchTask,1
+org.apache.tools.ant.dispatch.DispatchUtils,Class contains less than 2 methods
+org.apache.tools.ant.dispatch.Dispatchable,Class contains less than 2 methods
+org.apache.tools.ant.filters.BaseFilterReader,24
+org.apache.tools.ant.filters.BaseParamFilterReader,0
+org.apache.tools.ant.filters.ChainableReader,Class contains less than 2 methods
+org.apache.tools.ant.filters.ClassConstants,1
+org.apache.tools.ant.filters.ConcatFilter,7
+org.apache.tools.ant.filters.EscapeUnicode,3
+org.apache.tools.ant.filters.ExpandProperties,0
+org.apache.tools.ant.filters.FixCrLfFilter,94
+org.apache.tools.ant.filters.FixCrLfFilter.AddAsisRemove,15
+org.apache.tools.ant.filters.FixCrLfFilter.AddEofFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.FixCrLfFilter.AddTabFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.FixCrLfFilter.CrLf,15
+org.apache.tools.ant.filters.FixCrLfFilter.MaskJavaTabLiteralsFilter,0
+org.apache.tools.ant.filters.FixCrLfFilter.NormalizeEolFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.FixCrLfFilter.RemoveEofFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.FixCrLfFilter.RemoveTabFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.FixCrLfFilter.SimpleFilterReader,33
+org.apache.tools.ant.filters.HeadFilter,4
+org.apache.tools.ant.filters.LineContains,6
+org.apache.tools.ant.filters.LineContains.Contains,0
+org.apache.tools.ant.filters.LineContainsRegExp,8
+org.apache.tools.ant.filters.PrefixLines,0
+org.apache.tools.ant.filters.ReplaceTokens,39
+org.apache.tools.ant.filters.ReplaceTokens.Token,2
+org.apache.tools.ant.filters.SortFilter,16
+org.apache.tools.ant.filters.StringInputStream,Class contains less than 2 methods
+org.apache.tools.ant.filters.StripJavaComments,1
+org.apache.tools.ant.filters.StripLineBreaks,0
+org.apache.tools.ant.filters.StripLineComments,0
+org.apache.tools.ant.filters.StripLineComments.Comment,1
+org.apache.tools.ant.filters.SuffixLines,0
+org.apache.tools.ant.filters.TabsToSpaces,0
+org.apache.tools.ant.filters.TailFilter,10
+org.apache.tools.ant.filters.TokenFilter,38
+org.apache.tools.ant.filters.TokenFilter.ChainableReaderFilter,0
+org.apache.tools.ant.filters.TokenFilter.ContainsRegex,2
+org.apache.tools.ant.filters.TokenFilter.ContainsString,0
+org.apache.tools.ant.filters.TokenFilter.DeleteCharacters,4
+org.apache.tools.ant.filters.TokenFilter.FileTokenizer,Class contains less than 2 methods
+org.apache.tools.ant.filters.TokenFilter.Filter,Class contains less than 2 methods
+org.apache.tools.ant.filters.TokenFilter.IgnoreBlank,Class contains less than 2 methods
+org.apache.tools.ant.filters.TokenFilter.ReplaceRegex,2
+org.apache.tools.ant.filters.TokenFilter.ReplaceString,0
+org.apache.tools.ant.filters.TokenFilter.StringTokenizer,Class contains less than 2 methods
+org.apache.tools.ant.filters.TokenFilter.Trim,Class contains less than 2 methods
+org.apache.tools.ant.filters.UniqFilter,Class contains less than 2 methods
+org.apache.tools.ant.filters.util.ChainReaderHelper,33
+org.apache.tools.ant.filters.util.JavaClassHelper,Class contains less than 2 methods
+org.apache.tools.ant.helper.AntXMLContext,371
+org.apache.tools.ant.helper.DefaultExecutor,1
+org.apache.tools.ant.helper.IgnoreDependenciesExecutor,1
+org.apache.tools.ant.helper.ProjectHelper2,62
+org.apache.tools.ant.helper.ProjectHelper2.AntHandler,15
+org.apache.tools.ant.helper.ProjectHelper2.ElementHandler,6
+org.apache.tools.ant.helper.ProjectHelper2.MainHandler,Class contains less than 2 methods
+org.apache.tools.ant.helper.ProjectHelper2.ProjectHandler,1
+org.apache.tools.ant.helper.ProjectHelper2.RootHandler,0
+org.apache.tools.ant.helper.ProjectHelper2.TargetHandler,6
+org.apache.tools.ant.helper.ProjectHelperImpl,0
+org.apache.tools.ant.helper.ProjectHelperImpl.AbstractHandler,0
+org.apache.tools.ant.helper.ProjectHelperImpl.DataTypeHandler,0
+org.apache.tools.ant.helper.ProjectHelperImpl.DescriptionHandler,Class contains less than 2 methods
+org.apache.tools.ant.helper.ProjectHelperImpl.NestedElementHandler,0
+org.apache.tools.ant.helper.ProjectHelperImpl.ProjectHandler,3
+org.apache.tools.ant.helper.ProjectHelperImpl.RootHandler,0
+org.apache.tools.ant.helper.ProjectHelperImpl.TargetHandler,0
+org.apache.tools.ant.helper.ProjectHelperImpl.TaskHandler,0
+org.apache.tools.ant.helper.SingleCheckExecutor,1
+org.apache.tools.ant.input.DefaultInputHandler,3
+org.apache.tools.ant.input.GreedyInputHandler,Class contains less than 2 methods
+org.apache.tools.ant.input.InputHandler,Class contains less than 2 methods
+org.apache.tools.ant.input.InputRequest,11
+org.apache.tools.ant.input.MultipleChoiceInputRequest,0
+org.apache.tools.ant.input.PropertyFileInputHandler,0
+org.apache.tools.ant.input.SecureInputHandler,Class contains less than 2 methods
+org.apache.tools.ant.launch.AntMain,Class contains less than 2 methods
+org.apache.tools.ant.launch.LaunchException,Class contains less than 2 methods
+org.apache.tools.ant.launch.Launcher,16
+org.apache.tools.ant.launch.Locator,53
+org.apache.tools.ant.listener.AnsiColorLogger,0
+org.apache.tools.ant.listener.BigProjectLogger,66
+org.apache.tools.ant.listener.CommonsLoggingListener,12
+org.apache.tools.ant.listener.Log4jListener,0
+org.apache.tools.ant.listener.MailLogger,13
+org.apache.tools.ant.listener.MailLogger.Values,299
+org.apache.tools.ant.listener.ProfileLogger,3
+org.apache.tools.ant.listener.SilentLogger,15
+org.apache.tools.ant.listener.SimpleBigProjectLogger,Class contains less than 2 methods
+org.apache.tools.ant.listener.TimestampedLogger,0
+org.apache.tools.ant.loader.AntClassLoader2,Class contains less than 2 methods
+org.apache.tools.ant.loader.AntClassLoader5,1
+org.apache.tools.ant.property.GetProperty,Class contains less than 2 methods
+org.apache.tools.ant.property.LocalProperties,45
+org.apache.tools.ant.property.LocalPropertyStack,0
+org.apache.tools.ant.property.NullReturn,Class contains less than 2 methods
+org.apache.tools.ant.property.ParseNextProperty,1
+org.apache.tools.ant.property.ParseProperties,13
+org.apache.tools.ant.property.PropertyExpander,Class contains less than 2 methods
+org.apache.tools.ant.property.ResolvePropertyMap,4
+org.apache.tools.ant.taskdefs.AbstractCvsTask,866
+org.apache.tools.ant.taskdefs.AbstractCvsTask.Module,0
+org.apache.tools.ant.taskdefs.AbstractJarSignerTask,256
+org.apache.tools.ant.taskdefs.Ant,163
+org.apache.tools.ant.taskdefs.Ant.PropertyType,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Ant.Reference,0
+org.apache.tools.ant.taskdefs.Ant.TargetElement,0
+org.apache.tools.ant.taskdefs.AntStructure,6
+org.apache.tools.ant.taskdefs.AntStructure.DTDPrinter,20
+org.apache.tools.ant.taskdefs.AntStructure.StructurePrinter,6
+org.apache.tools.ant.taskdefs.Antlib,9
+org.apache.tools.ant.taskdefs.AntlibDefinition,2
+org.apache.tools.ant.taskdefs.Apt,110
+org.apache.tools.ant.taskdefs.Apt.Option,2
+org.apache.tools.ant.taskdefs.AttributeNamespaceDef,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.AugmentReference,9
+org.apache.tools.ant.taskdefs.Available,158
+org.apache.tools.ant.taskdefs.Available.FileDir,3
+org.apache.tools.ant.taskdefs.BUnzip2,3
+org.apache.tools.ant.taskdefs.BZip2,1
+org.apache.tools.ant.taskdefs.Basename,0
+org.apache.tools.ant.taskdefs.BindTargets,0
+org.apache.tools.ant.taskdefs.BuildNumber,0
+org.apache.tools.ant.taskdefs.CVSPass,4
+org.apache.tools.ant.taskdefs.CallTarget,0
+org.apache.tools.ant.taskdefs.Checksum,198
+org.apache.tools.ant.taskdefs.Checksum.FileUnion,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Checksum.FormatElement,1
+org.apache.tools.ant.taskdefs.Chmod,44
+org.apache.tools.ant.taskdefs.Classloader,12
+org.apache.tools.ant.taskdefs.CloseResources,0
+org.apache.tools.ant.taskdefs.CommandLauncherTask,0
+org.apache.tools.ant.taskdefs.Componentdef,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Concat,386
+org.apache.tools.ant.taskdefs.Concat.ConcatResource,0
+org.apache.tools.ant.taskdefs.Concat.MultiReader,28
+org.apache.tools.ant.taskdefs.Concat.ReaderFactory,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Concat.TextElement,14
+org.apache.tools.ant.taskdefs.ConditionTask,9
+org.apache.tools.ant.taskdefs.Copy,924
+org.apache.tools.ant.taskdefs.CopyPath,20
+org.apache.tools.ant.taskdefs.Copydir,7
+org.apache.tools.ant.taskdefs.Copyfile,2
+org.apache.tools.ant.taskdefs.Cvs,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.DefBase,72
+org.apache.tools.ant.taskdefs.DefaultExcludes,2
+org.apache.tools.ant.taskdefs.Definer,192
+org.apache.tools.ant.taskdefs.Definer.Format,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Definer.OnError,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Delete,147
+org.apache.tools.ant.taskdefs.Delete.ReverseDirs,1
+org.apache.tools.ant.taskdefs.Deltree,1
+org.apache.tools.ant.taskdefs.DependSet,83
+org.apache.tools.ant.taskdefs.DependSet.HideMissingBasedir,0
+org.apache.tools.ant.taskdefs.DependSet.NonExistent,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.DiagnosticsTask,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Dirname,0
+org.apache.tools.ant.taskdefs.Ear,7
+org.apache.tools.ant.taskdefs.Echo,20
+org.apache.tools.ant.taskdefs.Echo.EchoLevel,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.EchoXML,0
+org.apache.tools.ant.taskdefs.EchoXML.NamespacePolicy,0
+org.apache.tools.ant.taskdefs.Exec,20
+org.apache.tools.ant.taskdefs.Exec.StreamPumper,0
+org.apache.tools.ant.taskdefs.ExecTask,622
+org.apache.tools.ant.taskdefs.Execute,342
+org.apache.tools.ant.taskdefs.ExecuteJava,34
+org.apache.tools.ant.taskdefs.ExecuteOn,434
+org.apache.tools.ant.taskdefs.ExecuteOn.FileDirBoth,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.ExecuteStreamHandler,10
+org.apache.tools.ant.taskdefs.ExecuteWatchdog,5
+org.apache.tools.ant.taskdefs.Exit,42
+org.apache.tools.ant.taskdefs.Exit.NestedCondition,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Expand,203
+org.apache.tools.ant.taskdefs.Filter,0
+org.apache.tools.ant.taskdefs.FixCRLF,38
+org.apache.tools.ant.taskdefs.FixCRLF.AddAsisRemove,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.FixCRLF.CrLf,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.FixCRLF.OneLiner,11
+org.apache.tools.ant.taskdefs.FixCRLF.OneLiner.BufferLine,111
+org.apache.tools.ant.taskdefs.GUnzip,3
+org.apache.tools.ant.taskdefs.GZip,1
+org.apache.tools.ant.taskdefs.GenerateKey,52
+org.apache.tools.ant.taskdefs.GenerateKey.DistinguishedName,0
+org.apache.tools.ant.taskdefs.GenerateKey.DnameParam,2
+org.apache.tools.ant.taskdefs.Get,131
+org.apache.tools.ant.taskdefs.Get.Base64Converter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Get.DownloadProgress,3
+org.apache.tools.ant.taskdefs.Get.GetThread,2
+org.apache.tools.ant.taskdefs.Get.NullProgress,3
+org.apache.tools.ant.taskdefs.Get.VerboseProgress,0
+org.apache.tools.ant.taskdefs.HostInfo,29
+org.apache.tools.ant.taskdefs.ImportTask,64
+org.apache.tools.ant.taskdefs.Input,7
+org.apache.tools.ant.taskdefs.Input.Handler,3
+org.apache.tools.ant.taskdefs.Input.HandlerType,1
+org.apache.tools.ant.taskdefs.JDBCTask,263
+org.apache.tools.ant.taskdefs.Jar,520
+org.apache.tools.ant.taskdefs.Jar.FilesetManifestConfig,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Jar.StrictMode,1
+org.apache.tools.ant.taskdefs.Java,1426
+org.apache.tools.ant.taskdefs.Javac,3525
+org.apache.tools.ant.taskdefs.Javac.ImplementationSpecificArgument,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Javadoc,5683
+org.apache.tools.ant.taskdefs.Javadoc.AccessType,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Javadoc.DocletInfo,0
+org.apache.tools.ant.taskdefs.Javadoc.DocletParam,2
+org.apache.tools.ant.taskdefs.Javadoc.ExtensionInfo,7
+org.apache.tools.ant.taskdefs.Javadoc.GroupArgument,11
+org.apache.tools.ant.taskdefs.Javadoc.Html,0
+org.apache.tools.ant.taskdefs.Javadoc.JavadocOutputStream,0
+org.apache.tools.ant.taskdefs.Javadoc.LinkArgument,35
+org.apache.tools.ant.taskdefs.Javadoc.PackageName,1
+org.apache.tools.ant.taskdefs.Javadoc.ResourceCollectionContainer,0
+org.apache.tools.ant.taskdefs.Javadoc.SourceFile,0
+org.apache.tools.ant.taskdefs.Javadoc.TagArgument,0
+org.apache.tools.ant.taskdefs.Jikes,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.JikesOutputParser,43
+org.apache.tools.ant.taskdefs.KeySubst,13
+org.apache.tools.ant.taskdefs.Length,98
+org.apache.tools.ant.taskdefs.Length.AccumHandler,0
+org.apache.tools.ant.taskdefs.Length.AllHandler,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Length.EachHandler,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Length.FileMode,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Length.Handler,1
+org.apache.tools.ant.taskdefs.Length.When,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.LoadFile,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.LoadProperties,64
+org.apache.tools.ant.taskdefs.LoadResource,7
+org.apache.tools.ant.taskdefs.Local,0
+org.apache.tools.ant.taskdefs.LogOutputStream,4
+org.apache.tools.ant.taskdefs.LogStreamHandler,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.MacroDef,131
+org.apache.tools.ant.taskdefs.MacroDef.Attribute,19
+org.apache.tools.ant.taskdefs.MacroDef.MyAntTypeDefinition,0
+org.apache.tools.ant.taskdefs.MacroDef.NestedSequential,0
+org.apache.tools.ant.taskdefs.MacroDef.TemplateElement,11
+org.apache.tools.ant.taskdefs.MacroDef.Text,34
+org.apache.tools.ant.taskdefs.MacroInstance,21
+org.apache.tools.ant.taskdefs.MacroInstance.Element,0
+org.apache.tools.ant.taskdefs.MakeUrl,34
+org.apache.tools.ant.taskdefs.Manifest,32
+org.apache.tools.ant.taskdefs.Manifest.Attribute,27
+org.apache.tools.ant.taskdefs.Manifest.Section,75
+org.apache.tools.ant.taskdefs.ManifestClassPath,2
+org.apache.tools.ant.taskdefs.ManifestException,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.ManifestTask,20
+org.apache.tools.ant.taskdefs.ManifestTask.Mode,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.MatchingTask,0
+org.apache.tools.ant.taskdefs.Mkdir,0
+org.apache.tools.ant.taskdefs.Move,24
+org.apache.tools.ant.taskdefs.Nice,0
+org.apache.tools.ant.taskdefs.Pack,70
+org.apache.tools.ant.taskdefs.Parallel,40
+org.apache.tools.ant.taskdefs.Parallel.TaskList,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Parallel.TaskRunnable,4
+org.apache.tools.ant.taskdefs.Patch,0
+org.apache.tools.ant.taskdefs.PathConvert,154
+org.apache.tools.ant.taskdefs.PathConvert.MapEntry,0
+org.apache.tools.ant.taskdefs.PathConvert.TargetOs,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.PreSetDef,0
+org.apache.tools.ant.taskdefs.PreSetDef.PreSetDefinition,45
+org.apache.tools.ant.taskdefs.ProcessDestroyer,0
+org.apache.tools.ant.taskdefs.ProcessDestroyer.ProcessDestroyerImpl,0
+org.apache.tools.ant.taskdefs.ProjectHelperTask,0
+org.apache.tools.ant.taskdefs.Property,700
+org.apache.tools.ant.taskdefs.PropertyHelperTask,6
+org.apache.tools.ant.taskdefs.PropertyHelperTask.DelegateElement,0
+org.apache.tools.ant.taskdefs.PumpStreamHandler,52
+org.apache.tools.ant.taskdefs.PumpStreamHandler.ThreadWithPumper,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Recorder,141
+org.apache.tools.ant.taskdefs.Recorder.ActionChoices,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Recorder.VerbosityLevelChoices,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.RecorderEntry,244
+org.apache.tools.ant.taskdefs.Redirector,225
+org.apache.tools.ant.taskdefs.Redirector.PropertyOutputStream,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Rename,0
+org.apache.tools.ant.taskdefs.Replace,274
+org.apache.tools.ant.taskdefs.Replace.FileInput,1
+org.apache.tools.ant.taskdefs.Replace.FileOutput,2
+org.apache.tools.ant.taskdefs.Replace.NestedString,0
+org.apache.tools.ant.taskdefs.Replace.Replacefilter,59
+org.apache.tools.ant.taskdefs.ResourceCount,9
+org.apache.tools.ant.taskdefs.Retry,2
+org.apache.tools.ant.taskdefs.Rmic,1349
+org.apache.tools.ant.taskdefs.Rmic.ImplementationSpecificArgument,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.SQLExec,930
+org.apache.tools.ant.taskdefs.SQLExec.DelimiterType,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.SQLExec.OnError,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.SQLExec.Transaction,6
+org.apache.tools.ant.taskdefs.SendEmail,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Sequential,0
+org.apache.tools.ant.taskdefs.SignJar,224
+org.apache.tools.ant.taskdefs.Sleep,28
+org.apache.tools.ant.taskdefs.StreamPumper,20
+org.apache.tools.ant.taskdefs.SubAnt,436
+org.apache.tools.ant.taskdefs.Sync,37
+org.apache.tools.ant.taskdefs.Sync.MyCopy,8
+org.apache.tools.ant.taskdefs.Sync.SyncTarget,4
+org.apache.tools.ant.taskdefs.Tar,144
+org.apache.tools.ant.taskdefs.Tar.TarCompressionMethod,0
+org.apache.tools.ant.taskdefs.Tar.TarFileSet,8
+org.apache.tools.ant.taskdefs.Tar.TarLongFileMode,21
+org.apache.tools.ant.taskdefs.TaskOutputStream,0
+org.apache.tools.ant.taskdefs.Taskdef,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.TempFile,16
+org.apache.tools.ant.taskdefs.Touch,119
+org.apache.tools.ant.taskdefs.Touch.DateFormatFactory,1
+org.apache.tools.ant.taskdefs.Transform,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Truncate,29
+org.apache.tools.ant.taskdefs.Tstamp,2
+org.apache.tools.ant.taskdefs.Tstamp.CustomFormat,12
+org.apache.tools.ant.taskdefs.Tstamp.Unit,1
+org.apache.tools.ant.taskdefs.Typedef,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Unpack,50
+org.apache.tools.ant.taskdefs.Untar,13
+org.apache.tools.ant.taskdefs.Untar.UntarCompressionMethod,0
+org.apache.tools.ant.taskdefs.UpToDate,42
+org.apache.tools.ant.taskdefs.VerifyJar,0
+org.apache.tools.ant.taskdefs.VerifyJar.BufferingOutputFilter,0
+org.apache.tools.ant.taskdefs.VerifyJar.BufferingOutputFilterReader,0
+org.apache.tools.ant.taskdefs.WaitFor,35
+org.apache.tools.ant.taskdefs.WaitFor.Unit,1
+org.apache.tools.ant.taskdefs.War,28
+org.apache.tools.ant.taskdefs.WhichResource,8
+org.apache.tools.ant.taskdefs.XSLTLiaison,3
+org.apache.tools.ant.taskdefs.XSLTLiaison2,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.XSLTLiaison3,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.XSLTLiaison4,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.XSLTLogger,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.XSLTLoggerAware,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.XSLTProcess,1355
+org.apache.tools.ant.taskdefs.XSLTProcess.Factory,2
+org.apache.tools.ant.taskdefs.XSLTProcess.Factory.Attribute,2
+org.apache.tools.ant.taskdefs.XSLTProcess.OutputProperty,2
+org.apache.tools.ant.taskdefs.XSLTProcess.Param,54
+org.apache.tools.ant.taskdefs.XSLTProcess.StyleMapper,3
+org.apache.tools.ant.taskdefs.XSLTProcess.TraceConfiguration,45
+org.apache.tools.ant.taskdefs.XmlProperty,483
+org.apache.tools.ant.taskdefs.Zip,2357
+org.apache.tools.ant.taskdefs.Zip.ArchiveState,1
+org.apache.tools.ant.taskdefs.Zip.Duplicate,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Zip.UnicodeExtraField,1
+org.apache.tools.ant.taskdefs.Zip.WhenEmpty,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.Zip.Zip64ModeAttribute,1
+org.apache.tools.ant.taskdefs.compilers.AptCompilerAdapter,6
+org.apache.tools.ant.taskdefs.compilers.AptExternalCompilerAdapter,1
+org.apache.tools.ant.taskdefs.compilers.CompilerAdapter,1
+org.apache.tools.ant.taskdefs.compilers.CompilerAdapterExtension,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.compilers.CompilerAdapterFactory,4
+org.apache.tools.ant.taskdefs.compilers.DefaultCompilerAdapter,327
+org.apache.tools.ant.taskdefs.compilers.Gcj,3
+org.apache.tools.ant.taskdefs.compilers.Javac12,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.compilers.Javac13,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.compilers.JavacExternal,1
+org.apache.tools.ant.taskdefs.compilers.Jikes,1
+org.apache.tools.ant.taskdefs.compilers.Jvc,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.compilers.Kjc,1
+org.apache.tools.ant.taskdefs.compilers.Sj,1
+org.apache.tools.ant.taskdefs.condition.And,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.condition.AntVersion,5
+org.apache.tools.ant.taskdefs.condition.Condition,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.condition.ConditionBase,0
+org.apache.tools.ant.taskdefs.condition.Contains,0
+org.apache.tools.ant.taskdefs.condition.Equals,33
+org.apache.tools.ant.taskdefs.condition.FilesMatch,0
+org.apache.tools.ant.taskdefs.condition.HasFreeSpace,0
+org.apache.tools.ant.taskdefs.condition.HasMethod,35
+org.apache.tools.ant.taskdefs.condition.Http,0
+org.apache.tools.ant.taskdefs.condition.IsFailure,0
+org.apache.tools.ant.taskdefs.condition.IsFalse,0
+org.apache.tools.ant.taskdefs.condition.IsFileSelected,2
+org.apache.tools.ant.taskdefs.condition.IsLastModified,8
+org.apache.tools.ant.taskdefs.condition.IsLastModified.CompareMode,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.condition.IsReachable,4
+org.apache.tools.ant.taskdefs.condition.IsReference,0
+org.apache.tools.ant.taskdefs.condition.IsSet,0
+org.apache.tools.ant.taskdefs.condition.IsSigned,6
+org.apache.tools.ant.taskdefs.condition.IsTrue,0
+org.apache.tools.ant.taskdefs.condition.Matches,7
+org.apache.tools.ant.taskdefs.condition.Not,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.condition.Or,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.condition.Os,37
+org.apache.tools.ant.taskdefs.condition.ParserSupports,1
+org.apache.tools.ant.taskdefs.condition.ResourceContains,12
+org.apache.tools.ant.taskdefs.condition.ResourceExists,0
+org.apache.tools.ant.taskdefs.condition.ResourcesMatch,0
+org.apache.tools.ant.taskdefs.condition.Socket,0
+org.apache.tools.ant.taskdefs.condition.TypeFound,2
+org.apache.tools.ant.taskdefs.condition.Xor,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.cvslib.CVSEntry,20
+org.apache.tools.ant.taskdefs.cvslib.ChangeLogParser,0
+org.apache.tools.ant.taskdefs.cvslib.ChangeLogTask,90
+org.apache.tools.ant.taskdefs.cvslib.ChangeLogWriter,0
+org.apache.tools.ant.taskdefs.cvslib.CvsTagDiff,86
+org.apache.tools.ant.taskdefs.cvslib.CvsTagEntry,0
+org.apache.tools.ant.taskdefs.cvslib.CvsUser,0
+org.apache.tools.ant.taskdefs.cvslib.CvsVersion,3
+org.apache.tools.ant.taskdefs.cvslib.RCSFile,3
+org.apache.tools.ant.taskdefs.cvslib.RedirectingOutputStream,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.cvslib.RedirectingStreamHandler,1
+org.apache.tools.ant.taskdefs.email.EmailAddress,3
+org.apache.tools.ant.taskdefs.email.EmailTask,483
+org.apache.tools.ant.taskdefs.email.EmailTask.Encoding,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.email.Header,2
+org.apache.tools.ant.taskdefs.email.Mailer,270
+org.apache.tools.ant.taskdefs.email.Message,14
+org.apache.tools.ant.taskdefs.email.MimeMailer,6
+org.apache.tools.ant.taskdefs.email.MimeMailer.SimpleAuthenticator,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.email.MimeMailer.StringDataSource,5
+org.apache.tools.ant.taskdefs.email.PlainMailer,3
+org.apache.tools.ant.taskdefs.email.UUMailer,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.CommandLauncher,28
+org.apache.tools.ant.taskdefs.launcher.CommandLauncherProxy,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.Java13CommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.MacCommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.OS2CommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.PerlScriptCommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.ScriptCommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.launcher.VmsCommandLauncher,6
+org.apache.tools.ant.taskdefs.launcher.WinNTCommandLauncher,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ANTLR,187
+org.apache.tools.ant.taskdefs.optional.Cab,38
+org.apache.tools.ant.taskdefs.optional.EchoProperties,64
+org.apache.tools.ant.taskdefs.optional.EchoProperties.FormatAttribute,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.EchoProperties.Tuple,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.Javah,422
+org.apache.tools.ant.taskdefs.optional.Javah.ClassArgument,0
+org.apache.tools.ant.taskdefs.optional.Native2Ascii,80
+org.apache.tools.ant.taskdefs.optional.Native2Ascii.ExtMapper,3
+org.apache.tools.ant.taskdefs.optional.NetRexxC,897
+org.apache.tools.ant.taskdefs.optional.NetRexxC.TraceAttr,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.NetRexxC.VerboseAttr,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.PropertyFile,23
+org.apache.tools.ant.taskdefs.optional.PropertyFile.Entry,6
+org.apache.tools.ant.taskdefs.optional.PropertyFile.Entry.Operation,1
+org.apache.tools.ant.taskdefs.optional.PropertyFile.Entry.Type,1
+org.apache.tools.ant.taskdefs.optional.PropertyFile.Unit,1
+org.apache.tools.ant.taskdefs.optional.RenameExtensions,2
+org.apache.tools.ant.taskdefs.optional.ReplaceRegExp,65
+org.apache.tools.ant.taskdefs.optional.Rpm,65
+org.apache.tools.ant.taskdefs.optional.SchemaValidate,102
+org.apache.tools.ant.taskdefs.optional.SchemaValidate.SchemaLocation,0
+org.apache.tools.ant.taskdefs.optional.Script,0
+org.apache.tools.ant.taskdefs.optional.TraXLiaison,222
+org.apache.tools.ant.taskdefs.optional.XMLValidateTask,283
+org.apache.tools.ant.taskdefs.optional.XMLValidateTask.Attribute,2
+org.apache.tools.ant.taskdefs.optional.XMLValidateTask.Property,2
+org.apache.tools.ant.taskdefs.optional.XMLValidateTask.ValidatorErrorHandler,9
+org.apache.tools.ant.taskdefs.optional.XSLTTraceSupport,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.Xalan2TraceSupport,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ccm.CCMCheck,27
+org.apache.tools.ant.taskdefs.optional.ccm.CCMCheckin,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ccm.CCMCheckinDefault,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ccm.CCMCheckout,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ccm.CCMCreateTask,159
+org.apache.tools.ant.taskdefs.optional.ccm.CCMReconfigure,22
+org.apache.tools.ant.taskdefs.optional.ccm.Continuus,11
+org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckin,108
+org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout,282
+org.apache.tools.ant.taskdefs.optional.clearcase.CCLock,155
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMkattr,196
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMkbl,139
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMkdir,39
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMkelem,194
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMklabel,176
+org.apache.tools.ant.taskdefs.optional.clearcase.CCMklbtype,235
+org.apache.tools.ant.taskdefs.optional.clearcase.CCRmtype,157
+org.apache.tools.ant.taskdefs.optional.clearcase.CCUnCheckout,4
+org.apache.tools.ant.taskdefs.optional.clearcase.CCUnlock,62
+org.apache.tools.ant.taskdefs.optional.clearcase.CCUpdate,93
+org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase,43
+org.apache.tools.ant.taskdefs.optional.depend.AntAnalyzer,1
+org.apache.tools.ant.taskdefs.optional.depend.ClassFile,0
+org.apache.tools.ant.taskdefs.optional.depend.ClassFileIterator,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.depend.ClassFileUtils,1
+org.apache.tools.ant.taskdefs.optional.depend.Depend,249
+org.apache.tools.ant.taskdefs.optional.depend.Depend.ClassFileInfo,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.depend.DirectoryIterator,1
+org.apache.tools.ant.taskdefs.optional.depend.JarFileIterator,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.ClassCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.ConstantCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.ConstantPool,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.ConstantPoolEntry,13
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.DoubleCPInfo,1
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.FieldRefCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.FloatCPInfo,1
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.IntegerCPInfo,1
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.InterfaceMethodRefCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.InvokeDynamicCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.LongCPInfo,1
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.MethodHandleCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.MethodRefCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.MethodTypeCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.NameAndTypeCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.StringCPInfo,0
+org.apache.tools.ant.taskdefs.optional.depend.constantpool.Utf8CPInfo,0
+org.apache.tools.ant.taskdefs.optional.ejb.BorlandDeploymentTool,238
+org.apache.tools.ant.taskdefs.optional.ejb.BorlandGenerateClient,22
+org.apache.tools.ant.taskdefs.optional.ejb.DescriptorHandler,17
+org.apache.tools.ant.taskdefs.optional.ejb.EJBDeploymentTool,6
+org.apache.tools.ant.taskdefs.optional.ejb.EjbJar,153
+org.apache.tools.ant.taskdefs.optional.ejb.EjbJar.CMPVersion,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.EjbJar.Config,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.EjbJar.DTDLocation,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.EjbJar.NamingScheme,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.GenericDeploymentTool,292
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetDeploymentTool,52
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc,81
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc.Classname,9
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc.EjbInfo,362
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc.EjbcException,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc.EjbcHandler,14
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbc.RedirectOutput,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.IPlanetEjbcTask,50
+org.apache.tools.ant.taskdefs.optional.ejb.InnerClassFilenameFilter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ejb.JbossDeploymentTool,8
+org.apache.tools.ant.taskdefs.optional.ejb.JonasDeploymentTool,295
+org.apache.tools.ant.taskdefs.optional.ejb.WeblogicDeploymentTool,385
+org.apache.tools.ant.taskdefs.optional.ejb.WeblogicTOPLinkDeploymentTool,2
+org.apache.tools.ant.taskdefs.optional.ejb.WebsphereDeploymentTool,405
+org.apache.tools.ant.taskdefs.optional.extension.Compatability,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.extension.Compatibility,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.extension.DeweyDecimal,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.extension.Extension,178
+org.apache.tools.ant.taskdefs.optional.extension.ExtensionAdapter,25
+org.apache.tools.ant.taskdefs.optional.extension.ExtensionResolver,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.extension.ExtensionSet,0
+org.apache.tools.ant.taskdefs.optional.extension.ExtensionUtil,15
+org.apache.tools.ant.taskdefs.optional.extension.ExtraAttribute,0
+org.apache.tools.ant.taskdefs.optional.extension.JarLibAvailableTask,0
+org.apache.tools.ant.taskdefs.optional.extension.JarLibDisplayTask,0
+org.apache.tools.ant.taskdefs.optional.extension.JarLibManifestTask,46
+org.apache.tools.ant.taskdefs.optional.extension.JarLibResolveTask,24
+org.apache.tools.ant.taskdefs.optional.extension.LibFileSet,9
+org.apache.tools.ant.taskdefs.optional.extension.LibraryDisplayer,10
+org.apache.tools.ant.taskdefs.optional.extension.Specification,110
+org.apache.tools.ant.taskdefs.optional.extension.resolvers.AntResolver,0
+org.apache.tools.ant.taskdefs.optional.extension.resolvers.LocationResolver,0
+org.apache.tools.ant.taskdefs.optional.extension.resolvers.URLResolver,0
+org.apache.tools.ant.taskdefs.optional.i18n.Translate,93
+org.apache.tools.ant.taskdefs.optional.image.Image,113
+org.apache.tools.ant.taskdefs.optional.j2ee.AbstractHotDeploymentTool,63
+org.apache.tools.ant.taskdefs.optional.j2ee.GenericHotDeploymentTool,4
+org.apache.tools.ant.taskdefs.optional.j2ee.HotDeploymentTool,3
+org.apache.tools.ant.taskdefs.optional.j2ee.JonasHotDeploymentTool,7
+org.apache.tools.ant.taskdefs.optional.j2ee.ServerDeploy,12
+org.apache.tools.ant.taskdefs.optional.j2ee.WebLogicHotDeploymentTool,39
+org.apache.tools.ant.taskdefs.optional.javacc.JJDoc,14
+org.apache.tools.ant.taskdefs.optional.javacc.JJTree,89
+org.apache.tools.ant.taskdefs.optional.javacc.JavaCC,10
+org.apache.tools.ant.taskdefs.optional.javah.Gcjh,1
+org.apache.tools.ant.taskdefs.optional.javah.JavahAdapter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.javah.JavahAdapterFactory,6
+org.apache.tools.ant.taskdefs.optional.javah.Kaffeh,1
+org.apache.tools.ant.taskdefs.optional.javah.SunJavah,1
+org.apache.tools.ant.taskdefs.optional.jdepend.JDependTask,364
+org.apache.tools.ant.taskdefs.optional.jdepend.JDependTask.FormatAttribute,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.jlink.ClassNameReader,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.jlink.ConstantPool,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.jlink.JlinkTask,17
+org.apache.tools.ant.taskdefs.optional.jlink.jlink,102
+org.apache.tools.ant.taskdefs.optional.jsp.Jasper41Mangler,3
+org.apache.tools.ant.taskdefs.optional.jsp.JspC,734
+org.apache.tools.ant.taskdefs.optional.jsp.JspC.WebAppParameter,0
+org.apache.tools.ant.taskdefs.optional.jsp.JspMangler,1
+org.apache.tools.ant.taskdefs.optional.jsp.JspNameMangler,10
+org.apache.tools.ant.taskdefs.optional.jsp.WLJspc,10
+org.apache.tools.ant.taskdefs.optional.jsp.compilers.DefaultJspCompilerAdapter,26
+org.apache.tools.ant.taskdefs.optional.jsp.compilers.JasperC,10
+org.apache.tools.ant.taskdefs.optional.jsp.compilers.JspCompilerAdapter,6
+org.apache.tools.ant.taskdefs.optional.jsp.compilers.JspCompilerAdapterFactory,3
+org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer,36
+org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.Format,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.ArrayEnumeration,0
+org.apache.tools.ant.taskdefs.optional.junit.BaseTest,233
+org.apache.tools.ant.taskdefs.optional.junit.BatchTest,26
+org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter,89
+org.apache.tools.ant.taskdefs.optional.junit.CompoundEnumeration,0
+org.apache.tools.ant.taskdefs.optional.junit.Constants,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.CustomJUnit4TestAdapterCache,3
+org.apache.tools.ant.taskdefs.optional.junit.DOMUtil,6
+org.apache.tools.ant.taskdefs.optional.junit.DOMUtil.NodeFilter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.DOMUtil.NodeListImpl,1
+org.apache.tools.ant.taskdefs.optional.junit.Enumerations,1
+org.apache.tools.ant.taskdefs.optional.junit.FailureRecorder,250
+org.apache.tools.ant.taskdefs.optional.junit.FailureRecorder.TestInfos,6
+org.apache.tools.ant.taskdefs.optional.junit.FormatterElement,110
+org.apache.tools.ant.taskdefs.optional.junit.FormatterElement.DelayedFileOutputStream,0
+org.apache.tools.ant.taskdefs.optional.junit.FormatterElement.TypeAttribute,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.IgnoredTestListener,1
+org.apache.tools.ant.taskdefs.optional.junit.IgnoredTestResult,0
+org.apache.tools.ant.taskdefs.optional.junit.JUnit4TestMethodAdapter,5
+org.apache.tools.ant.taskdefs.optional.junit.JUnit4TestMethodAdapter.MultipleMethodsFilter,0
+org.apache.tools.ant.taskdefs.optional.junit.JUnitResultFormatter,10
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask,2813
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.ForkMode,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.ForkedTestConfiguration,0
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.JUnitLogOutputStream,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.JUnitLogStreamHandler,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.SummaryAttribute,1
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.TestResultHolder,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirror,3
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirror.JUnitResultFormatterMirror,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirror.JUnitTestRunnerMirror,36
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirror.SummaryJUnitResultFormatterMirror,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirrorImpl,3
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTaskMirrorImpl.VmExitErrorTest,6
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTest,242
+org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner,489
+org.apache.tools.ant.taskdefs.optional.junit.JUnitVersionHelper,1
+org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter,73
+org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter,43
+org.apache.tools.ant.taskdefs.optional.junit.TearDownOnVmCrash,49
+org.apache.tools.ant.taskdefs.optional.junit.TestIgnored,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.TestListenerWrapper,0
+org.apache.tools.ant.taskdefs.optional.junit.XMLConstants,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,115
+org.apache.tools.ant.taskdefs.optional.junit.XMLResultAggregator,45
+org.apache.tools.ant.taskdefs.optional.native2ascii.DefaultNative2Ascii,6
+org.apache.tools.ant.taskdefs.optional.native2ascii.KaffeNative2Ascii,3
+org.apache.tools.ant.taskdefs.optional.native2ascii.Native2AsciiAdapter,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.native2ascii.Native2AsciiAdapterFactory,6
+org.apache.tools.ant.taskdefs.optional.native2ascii.SunNative2Ascii,1
+org.apache.tools.ant.taskdefs.optional.net.FTP,1643
+org.apache.tools.ant.taskdefs.optional.net.FTP.Action,1
+org.apache.tools.ant.taskdefs.optional.net.FTP.FTPDirectoryScanner,22
+org.apache.tools.ant.taskdefs.optional.net.FTP.FTPDirectoryScanner.AntFTPFile,76
+org.apache.tools.ant.taskdefs.optional.net.FTP.FTPDirectoryScanner.AntFTPRootFile,1
+org.apache.tools.ant.taskdefs.optional.net.FTP.FTPFileProxy,35
+org.apache.tools.ant.taskdefs.optional.net.FTP.FTPSystemType,1
+org.apache.tools.ant.taskdefs.optional.net.FTP.Granularity,3
+org.apache.tools.ant.taskdefs.optional.net.FTP.LanguageCode,3
+org.apache.tools.ant.taskdefs.optional.net.FTPConfigurator,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.net.FTPTask,2732
+org.apache.tools.ant.taskdefs.optional.net.FTPTask.Action,1
+org.apache.tools.ant.taskdefs.optional.net.FTPTask.FTPSystemType,1
+org.apache.tools.ant.taskdefs.optional.net.FTPTask.Granularity,3
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskConfig,21
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirror,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirrorImpl,0
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirrorImpl.FTPDirectoryScanner,22
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirrorImpl.FTPDirectoryScanner.AntFTPFile,76
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirrorImpl.FTPDirectoryScanner.AntFTPRootFile,1
+org.apache.tools.ant.taskdefs.optional.net.FTPTaskMirrorImpl.FTPFileProxy,35
+org.apache.tools.ant.taskdefs.optional.net.MimeMail,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.net.RExecTask,26
+org.apache.tools.ant.taskdefs.optional.net.RExecTask.AntRExecClient,6
+org.apache.tools.ant.taskdefs.optional.net.RExecTask.RExecRead,0
+org.apache.tools.ant.taskdefs.optional.net.RExecTask.RExecSubTask,3
+org.apache.tools.ant.taskdefs.optional.net.RExecTask.RExecWrite,0
+org.apache.tools.ant.taskdefs.optional.net.SetProxy,25
+org.apache.tools.ant.taskdefs.optional.net.SetProxy.ProxyAuth,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.net.TelnetTask,21
+org.apache.tools.ant.taskdefs.optional.net.TelnetTask.AntTelnetClient,3
+org.apache.tools.ant.taskdefs.optional.net.TelnetTask.TelnetRead,0
+org.apache.tools.ant.taskdefs.optional.net.TelnetTask.TelnetSubTask,3
+org.apache.tools.ant.taskdefs.optional.net.TelnetTask.TelnetWrite,0
+org.apache.tools.ant.taskdefs.optional.pvcs.Pvcs,545
+org.apache.tools.ant.taskdefs.optional.pvcs.PvcsProject,0
+org.apache.tools.ant.taskdefs.optional.script.ScriptDef,33
+org.apache.tools.ant.taskdefs.optional.script.ScriptDef.Attribute,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.script.ScriptDef.NestedElement,3
+org.apache.tools.ant.taskdefs.optional.script.ScriptDefBase,15
+org.apache.tools.ant.taskdefs.optional.sos.SOS,628
+org.apache.tools.ant.taskdefs.optional.sos.SOSCheckin,6
+org.apache.tools.ant.taskdefs.optional.sos.SOSCheckout,3
+org.apache.tools.ant.taskdefs.optional.sos.SOSCmd,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.sos.SOSGet,10
+org.apache.tools.ant.taskdefs.optional.sos.SOSLabel,6
+org.apache.tools.ant.taskdefs.optional.sound.AntSoundPlayer,74
+org.apache.tools.ant.taskdefs.optional.sound.SoundTask,2
+org.apache.tools.ant.taskdefs.optional.sound.SoundTask.BuildAlert,9
+org.apache.tools.ant.taskdefs.optional.splash.SplashScreen,48
+org.apache.tools.ant.taskdefs.optional.splash.SplashTask,37
+org.apache.tools.ant.taskdefs.optional.ssh.AbstractSshMessage,47
+org.apache.tools.ant.taskdefs.optional.ssh.AbstractSshMessage.ProgressMonitor,0
+org.apache.tools.ant.taskdefs.optional.ssh.Directory,52
+org.apache.tools.ant.taskdefs.optional.ssh.LogListener,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.ssh.SSHBase,64
+org.apache.tools.ant.taskdefs.optional.ssh.SSHExec,150
+org.apache.tools.ant.taskdefs.optional.ssh.SSHSession,20
+org.apache.tools.ant.taskdefs.optional.ssh.SSHSession.LocalTunnel,9
+org.apache.tools.ant.taskdefs.optional.ssh.SSHSession.NestedSequential,0
+org.apache.tools.ant.taskdefs.optional.ssh.SSHSession.RemoteTunnel,9
+org.apache.tools.ant.taskdefs.optional.ssh.SSHUserInfo,131
+org.apache.tools.ant.taskdefs.optional.ssh.Scp,198
+org.apache.tools.ant.taskdefs.optional.ssh.ScpFromMessage,26
+org.apache.tools.ant.taskdefs.optional.ssh.ScpFromMessageBySftp,3
+org.apache.tools.ant.taskdefs.optional.ssh.ScpToMessage,14
+org.apache.tools.ant.taskdefs.optional.ssh.ScpToMessageBySftp,14
+org.apache.tools.ant.taskdefs.optional.testing.BlockFor,0
+org.apache.tools.ant.taskdefs.optional.testing.BuildTimeoutException,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.testing.Funtest,285
+org.apache.tools.ant.taskdefs.optional.testing.Funtest.NestedCondition,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.unix.AbstractAccessTask,10
+org.apache.tools.ant.taskdefs.optional.unix.Chgrp,1
+org.apache.tools.ant.taskdefs.optional.unix.Chown,1
+org.apache.tools.ant.taskdefs.optional.unix.Symlink,130
+org.apache.tools.ant.taskdefs.optional.vss.MSVSS,1361
+org.apache.tools.ant.taskdefs.optional.vss.MSVSS.CurrentModUpdated,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.vss.MSVSS.WritableFiles,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSADD,19
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSCHECKIN,15
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSCHECKOUT,45
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSCP,1
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSCREATE,6
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSConstants,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSGET,55
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSHISTORY,55
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSHISTORY.BriefCodediffNofile,Class contains less than 2 methods
+org.apache.tools.ant.taskdefs.optional.vss.MSVSSLABEL,10
+org.apache.tools.ant.taskdefs.optional.windows.Attrib,118
+org.apache.tools.ant.taskdefs.rmic.DefaultRmicAdapter,47
+org.apache.tools.ant.taskdefs.rmic.DefaultRmicAdapter.RmicFileNameMapper,3
+org.apache.tools.ant.taskdefs.rmic.ForkingSunRmic,1
+org.apache.tools.ant.taskdefs.rmic.KaffeRmic,1
+org.apache.tools.ant.taskdefs.rmic.RmicAdapter,6
+org.apache.tools.ant.taskdefs.rmic.RmicAdapterFactory,3
+org.apache.tools.ant.taskdefs.rmic.SunRmic,1
+org.apache.tools.ant.taskdefs.rmic.WLRmic,10
+org.apache.tools.ant.taskdefs.rmic.XNewRmic,Class contains less than 2 methods
+org.apache.tools.ant.types.AbstractFileSet,1538
+org.apache.tools.ant.types.AntFilterReader,13
+org.apache.tools.ant.types.ArchiveFileSet,419
+org.apache.tools.ant.types.ArchiveScanner,40
+org.apache.tools.ant.types.Assertions,0
+org.apache.tools.ant.types.Assertions.BaseAssertion,11
+org.apache.tools.ant.types.Assertions.DisabledAssertion,Class contains less than 2 methods
+org.apache.tools.ant.types.Assertions.EnabledAssertion,Class contains less than 2 methods
+org.apache.tools.ant.types.Commandline,255
+org.apache.tools.ant.types.Commandline.Argument,0
+org.apache.tools.ant.types.Commandline.Marker,6
+org.apache.tools.ant.types.CommandlineJava,483
+org.apache.tools.ant.types.CommandlineJava.SysProperties,22
+org.apache.tools.ant.types.Comparison,1
+org.apache.tools.ant.types.DTDLocation,Class contains less than 2 methods
+org.apache.tools.ant.types.DataType,193
+org.apache.tools.ant.types.Description,6
+org.apache.tools.ant.types.DirSet,10
+org.apache.tools.ant.types.EnumeratedAttribute,24
+org.apache.tools.ant.types.Environment,0
+org.apache.tools.ant.types.Environment.Variable,0
+org.apache.tools.ant.types.FileList,1
+org.apache.tools.ant.types.FileList.FileName,0
+org.apache.tools.ant.types.FileSet,6
+org.apache.tools.ant.types.FilterChain,0
+org.apache.tools.ant.types.FilterSet,246
+org.apache.tools.ant.types.FilterSet.Filter,2
+org.apache.tools.ant.types.FilterSet.FiltersFile,Class contains less than 2 methods
+org.apache.tools.ant.types.FilterSet.OnMissing,Class contains less than 2 methods
+org.apache.tools.ant.types.FilterSetCollection,0
+org.apache.tools.ant.types.FlexInteger,0
+org.apache.tools.ant.types.LogLevel,1
+org.apache.tools.ant.types.Mapper,51
+org.apache.tools.ant.types.Mapper.MapperType,1
+org.apache.tools.ant.types.Parameter,9
+org.apache.tools.ant.types.Parameterizable,Class contains less than 2 methods
+org.apache.tools.ant.types.Path,503
+org.apache.tools.ant.types.Path.PathElement,0
+org.apache.tools.ant.types.PatternSet,155
+org.apache.tools.ant.types.PatternSet.InvertedPatternSet,1
+org.apache.tools.ant.types.PatternSet.NameEntry,14
+org.apache.tools.ant.types.Permissions,9
+org.apache.tools.ant.types.Permissions.MySM,3
+org.apache.tools.ant.types.Permissions.Permission,8
+org.apache.tools.ant.types.PropertySet,325
+org.apache.tools.ant.types.PropertySet.BuiltinPropertySetName,Class contains less than 2 methods
+org.apache.tools.ant.types.PropertySet.PropertyRef,7
+org.apache.tools.ant.types.Quantifier,3
+org.apache.tools.ant.types.Quantifier.Predicate,Class contains less than 2 methods
+org.apache.tools.ant.types.RedirectorElement,247
+org.apache.tools.ant.types.Reference,0
+org.apache.tools.ant.types.RegularExpression,0
+org.apache.tools.ant.types.Resource,246
+org.apache.tools.ant.types.ResourceCollection,3
+org.apache.tools.ant.types.ResourceFactory,Class contains less than 2 methods
+org.apache.tools.ant.types.ResourceLocation,9
+org.apache.tools.ant.types.Substitution,1
+org.apache.tools.ant.types.TarFileSet,105
+org.apache.tools.ant.types.TarScanner,Class contains less than 2 methods
+org.apache.tools.ant.types.TimeComparison,8
+org.apache.tools.ant.types.XMLCatalog,219
+org.apache.tools.ant.types.XMLCatalog.CatalogResolver,1
+org.apache.tools.ant.types.XMLCatalog.ExternalResolver,0
+org.apache.tools.ant.types.XMLCatalog.InternalResolver,1
+org.apache.tools.ant.types.ZipFileSet,9
+org.apache.tools.ant.types.ZipScanner,Class contains less than 2 methods
+org.apache.tools.ant.types.mappers.CutDirsMapper,4
+org.apache.tools.ant.types.mappers.FilterMapper,3
+org.apache.tools.ant.types.optional.AbstractScriptComponent,0
+org.apache.tools.ant.types.optional.ScriptCondition,1
+org.apache.tools.ant.types.optional.ScriptFilter,0
+org.apache.tools.ant.types.optional.ScriptMapper,4
+org.apache.tools.ant.types.optional.ScriptSelector,20
+org.apache.tools.ant.types.optional.depend.ClassfileSet,3
+org.apache.tools.ant.types.optional.depend.ClassfileSet.ClassRoot,0
+org.apache.tools.ant.types.optional.depend.DependScanner,95
+org.apache.tools.ant.types.optional.image.Arc,5
+org.apache.tools.ant.types.optional.image.BasicShape,3
+org.apache.tools.ant.types.optional.image.ColorMapper,Class contains less than 2 methods
+org.apache.tools.ant.types.optional.image.Draw,17
+org.apache.tools.ant.types.optional.image.DrawOperation,Class contains less than 2 methods
+org.apache.tools.ant.types.optional.image.Ellipse,0
+org.apache.tools.ant.types.optional.image.ImageOperation,0
+org.apache.tools.ant.types.optional.image.Rectangle,2
+org.apache.tools.ant.types.optional.image.Rotate,4
+org.apache.tools.ant.types.optional.image.Scale,16
+org.apache.tools.ant.types.optional.image.Scale.ProportionsAttribute,Class contains less than 2 methods
+org.apache.tools.ant.types.optional.image.Text,13
+org.apache.tools.ant.types.optional.image.TransformOperation,1
+org.apache.tools.ant.types.resolver.ApacheCatalog,0
+org.apache.tools.ant.types.resolver.ApacheCatalogResolver,0
+org.apache.tools.ant.types.resources.AbstractClasspathResource,44
+org.apache.tools.ant.types.resources.AbstractClasspathResource.ClassLoaderWithFlag,0
+org.apache.tools.ant.types.resources.AbstractResourceCollectionWrapper,52
+org.apache.tools.ant.types.resources.Appendable,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.ArchiveResource,112
+org.apache.tools.ant.types.resources.Archives,17
+org.apache.tools.ant.types.resources.BCFileSet,1
+org.apache.tools.ant.types.resources.BZip2Resource,1
+org.apache.tools.ant.types.resources.BaseResourceCollectionContainer,45
+org.apache.tools.ant.types.resources.BaseResourceCollectionWrapper,6
+org.apache.tools.ant.types.resources.CompressedResource,1
+org.apache.tools.ant.types.resources.ContentTransformingResource,21
+org.apache.tools.ant.types.resources.Difference,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.FailFast,7
+org.apache.tools.ant.types.resources.FileProvider,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.FileResource,199
+org.apache.tools.ant.types.resources.FileResourceIterator,4
+org.apache.tools.ant.types.resources.Files,47
+org.apache.tools.ant.types.resources.First,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.GZipResource,3
+org.apache.tools.ant.types.resources.ImmutableResourceException,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.Intersect,1
+org.apache.tools.ant.types.resources.JavaConstantResource,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.JavaResource,3
+org.apache.tools.ant.types.resources.Last,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.LazyResourceCollectionWrapper,3
+org.apache.tools.ant.types.resources.LazyResourceCollectionWrapper.CachedIterator,1
+org.apache.tools.ant.types.resources.LazyResourceCollectionWrapper.FilteringIterator,1
+org.apache.tools.ant.types.resources.LogOutputResource,0
+org.apache.tools.ant.types.resources.MappedResource,13
+org.apache.tools.ant.types.resources.MappedResourceCollection,55
+org.apache.tools.ant.types.resources.PropertyResource,55
+org.apache.tools.ant.types.resources.ResourceDecorator,178
+org.apache.tools.ant.types.resources.ResourceList,29
+org.apache.tools.ant.types.resources.Resources,33
+org.apache.tools.ant.types.resources.Resources.MyCollection,3
+org.apache.tools.ant.types.resources.Resources.MyCollection.MyIterator,1
+org.apache.tools.ant.types.resources.Restrict,0
+org.apache.tools.ant.types.resources.SizeLimitCollection,4
+org.apache.tools.ant.types.resources.Sort,0
+org.apache.tools.ant.types.resources.StringResource,108
+org.apache.tools.ant.types.resources.StringResource.StringResourceFilterOutputStream,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.TarResource,20
+org.apache.tools.ant.types.resources.Tokens,0
+org.apache.tools.ant.types.resources.Touchable,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.URLProvider,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.URLResource,160
+org.apache.tools.ant.types.resources.Union,21
+org.apache.tools.ant.types.resources.ZipResource,56
+org.apache.tools.ant.types.resources.comparators.Content,0
+org.apache.tools.ant.types.resources.comparators.Date,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.comparators.DelegatedResourceComparator,0
+org.apache.tools.ant.types.resources.comparators.Exists,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.comparators.FileSystem,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.comparators.Name,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.comparators.ResourceComparator,6
+org.apache.tools.ant.types.resources.comparators.Reverse,0
+org.apache.tools.ant.types.resources.comparators.Size,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.comparators.Type,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.And,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.Compare,7
+org.apache.tools.ant.types.resources.selectors.Date,21
+org.apache.tools.ant.types.resources.selectors.Exists,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.InstanceOf,8
+org.apache.tools.ant.types.resources.selectors.Majority,0
+org.apache.tools.ant.types.resources.selectors.Name,40
+org.apache.tools.ant.types.resources.selectors.None,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.Not,0
+org.apache.tools.ant.types.resources.selectors.Or,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.ResourceSelector,Class contains less than 2 methods
+org.apache.tools.ant.types.resources.selectors.ResourceSelectorContainer,0
+org.apache.tools.ant.types.resources.selectors.Size,0
+org.apache.tools.ant.types.resources.selectors.Type,0
+org.apache.tools.ant.types.resources.selectors.Type.FileDir,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.AbstractSelectorContainer,393
+org.apache.tools.ant.types.selectors.AndSelector,1
+org.apache.tools.ant.types.selectors.BaseExtendSelector,1
+org.apache.tools.ant.types.selectors.BaseSelector,4
+org.apache.tools.ant.types.selectors.BaseSelectorContainer,405
+org.apache.tools.ant.types.selectors.ContainsRegexpSelector,18
+org.apache.tools.ant.types.selectors.ContainsSelector,14
+org.apache.tools.ant.types.selectors.DateSelector,24
+org.apache.tools.ant.types.selectors.DateSelector.TimeComparisons,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.DependSelector,1
+org.apache.tools.ant.types.selectors.DepthSelector,0
+org.apache.tools.ant.types.selectors.DifferentSelector,0
+org.apache.tools.ant.types.selectors.ExtendFileSelector,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.ExtendSelector,10
+org.apache.tools.ant.types.selectors.FileSelector,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.FilenameSelector,2
+org.apache.tools.ant.types.selectors.MajoritySelector,1
+org.apache.tools.ant.types.selectors.MappingSelector,5
+org.apache.tools.ant.types.selectors.NoneSelector,1
+org.apache.tools.ant.types.selectors.NotSelector,1
+org.apache.tools.ant.types.selectors.OrSelector,1
+org.apache.tools.ant.types.selectors.PresentSelector,0
+org.apache.tools.ant.types.selectors.PresentSelector.FilePresence,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.ReadableSelector,1
+org.apache.tools.ant.types.selectors.SelectSelector,81
+org.apache.tools.ant.types.selectors.SelectorContainer,276
+org.apache.tools.ant.types.selectors.SelectorScanner,3
+org.apache.tools.ant.types.selectors.SelectorUtils,186
+org.apache.tools.ant.types.selectors.SignedSelector,0
+org.apache.tools.ant.types.selectors.SizeSelector,0
+org.apache.tools.ant.types.selectors.SizeSelector.ByteUnits,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.SizeSelector.SizeComparisons,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.TokenizedPath,0
+org.apache.tools.ant.types.selectors.TokenizedPattern,0
+org.apache.tools.ant.types.selectors.TypeSelector,0
+org.apache.tools.ant.types.selectors.TypeSelector.FileType,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.WritableSelector,1
+org.apache.tools.ant.types.selectors.modifiedselector.Algorithm,1
+org.apache.tools.ant.types.selectors.modifiedselector.Cache,21
+org.apache.tools.ant.types.selectors.modifiedselector.ChecksumAlgorithm,0
+org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm,0
+org.apache.tools.ant.types.selectors.modifiedselector.EqualComparator,1
+org.apache.tools.ant.types.selectors.modifiedselector.HashvalueAlgorithm,3
+org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector,641
+org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector.AlgorithmName,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector.CacheName,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector.ComparatorName,Class contains less than 2 methods
+org.apache.tools.ant.types.selectors.modifiedselector.PropertiesfileCache,0
+org.apache.tools.ant.types.spi.Provider,0
+org.apache.tools.ant.types.spi.Service,0
+org.apache.tools.ant.util.Base64Converter,1
+org.apache.tools.ant.util.ChainedMapper,Class contains less than 2 methods
+org.apache.tools.ant.util.ClasspathUtils,45
+org.apache.tools.ant.util.ClasspathUtils.Delegate,36
+org.apache.tools.ant.util.CollectionUtils,36
+org.apache.tools.ant.util.CollectionUtils.CompoundEnumeration,1
+org.apache.tools.ant.util.CollectionUtils.EmptyEnumeration,1
+org.apache.tools.ant.util.CompositeMapper,Class contains less than 2 methods
+org.apache.tools.ant.util.ConcatFileInputStream,10
+org.apache.tools.ant.util.ConcatResourceInputStream,16
+org.apache.tools.ant.util.ContainerMapper,15
+org.apache.tools.ant.util.DOMElementWriter,106
+org.apache.tools.ant.util.DOMElementWriter.XmlNamespacePolicy,Class contains less than 2 methods
+org.apache.tools.ant.util.DOMUtils,15
+org.apache.tools.ant.util.DateUtils,41
+org.apache.tools.ant.util.DeweyDecimal,13
+org.apache.tools.ant.util.FileNameMapper,3
+org.apache.tools.ant.util.FileTokenizer,1
+org.apache.tools.ant.util.FileUtils,2131
+org.apache.tools.ant.util.FirstMatchMapper,Class contains less than 2 methods
+org.apache.tools.ant.util.FlatFileNameMapper,3
+org.apache.tools.ant.util.GlobPatternMapper,12
+org.apache.tools.ant.util.IdentityMapper,3
+org.apache.tools.ant.util.IdentityStack,21
+org.apache.tools.ant.util.JAXPUtils,55
+org.apache.tools.ant.util.JavaEnvUtils,114
+org.apache.tools.ant.util.KeepAliveInputStream,1
+org.apache.tools.ant.util.KeepAliveOutputStream,6
+org.apache.tools.ant.util.LayoutPreservingProperties,165
+org.apache.tools.ant.util.LayoutPreservingProperties.Blank,Class contains less than 2 methods
+org.apache.tools.ant.util.LayoutPreservingProperties.Comment,Class contains less than 2 methods
+org.apache.tools.ant.util.LayoutPreservingProperties.LogicalLine,0
+org.apache.tools.ant.util.LayoutPreservingProperties.Pair,33
+org.apache.tools.ant.util.LazyFileOutputStream,3
+org.apache.tools.ant.util.LazyHashtable,28
+org.apache.tools.ant.util.LeadPipeInputStream,8
+org.apache.tools.ant.util.LineOrientedOutputStream,9
+org.apache.tools.ant.util.LineOrientedOutputStreamRedirector,0
+org.apache.tools.ant.util.LineTokenizer,0
+org.apache.tools.ant.util.LinkedHashtable,153
+org.apache.tools.ant.util.LoaderUtils,28
+org.apache.tools.ant.util.MergingMapper,1
+org.apache.tools.ant.util.OutputStreamFunneler,8
+org.apache.tools.ant.util.OutputStreamFunneler.Funnel,10
+org.apache.tools.ant.util.PackageNameMapper,Class contains less than 2 methods
+org.apache.tools.ant.util.PropertyOutputStream,Class contains less than 2 methods
+org.apache.tools.ant.util.ProxySetup,0
+org.apache.tools.ant.util.ReaderInputStream,0
+org.apache.tools.ant.util.ReflectUtil,36
+org.apache.tools.ant.util.ReflectWrapper,0
+org.apache.tools.ant.util.RegexpPatternMapper,0
+org.apache.tools.ant.util.ResourceUtils,208
+org.apache.tools.ant.util.ResourceUtils.ReadOnlyTargetFileException,Class contains less than 2 methods
+org.apache.tools.ant.util.ResourceUtils.ResourceSelectorProvider,Class contains less than 2 methods
+org.apache.tools.ant.util.RetryHandler,Class contains less than 2 methods
+org.apache.tools.ant.util.Retryable,Class contains less than 2 methods
+org.apache.tools.ant.util.ScriptFixBSFPath,3
+org.apache.tools.ant.util.ScriptRunner,Class contains less than 2 methods
+org.apache.tools.ant.util.ScriptRunnerBase,315
+org.apache.tools.ant.util.ScriptRunnerCreator,0
+org.apache.tools.ant.util.ScriptRunnerHelper,88
+org.apache.tools.ant.util.SourceFileScanner,6
+org.apache.tools.ant.util.SplitClassLoader,1
+org.apache.tools.ant.util.StringTokenizer,9
+org.apache.tools.ant.util.StringUtils,36
+org.apache.tools.ant.util.SymbolicLinkUtils,28
+org.apache.tools.ant.util.TaskLogger,0
+org.apache.tools.ant.util.TeeOutputStream,0
+org.apache.tools.ant.util.TimeoutObserver,Class contains less than 2 methods
+org.apache.tools.ant.util.Tokenizer,1
+org.apache.tools.ant.util.UUEncoder,8
+org.apache.tools.ant.util.UnPackageNameMapper,Class contains less than 2 methods
+org.apache.tools.ant.util.UnicodeUtil,Class contains less than 2 methods
+org.apache.tools.ant.util.VectorSet,231
+org.apache.tools.ant.util.Watchdog,3
+org.apache.tools.ant.util.WeakishReference,1
+org.apache.tools.ant.util.WeakishReference.HardReference,Class contains less than 2 methods
+org.apache.tools.ant.util.WorkerAnt,20
+org.apache.tools.ant.util.XMLFragment,0
+org.apache.tools.ant.util.XMLFragment.Child,0
+org.apache.tools.ant.util.XmlConstants,Class contains less than 2 methods
+org.apache.tools.ant.util.depend.AbstractAnalyzer,87
+org.apache.tools.ant.util.depend.DependencyAnalyzer,45
+org.apache.tools.ant.util.depend.bcel.AncestorAnalyzer,1
+org.apache.tools.ant.util.depend.bcel.DependencyVisitor,43
+org.apache.tools.ant.util.depend.bcel.FullAnalyzer,1
+org.apache.tools.ant.util.facade.FacadeTaskHelper,10
+org.apache.tools.ant.util.facade.ImplementationSpecificArgument,0
+org.apache.tools.ant.util.java15.ProxyDiagnostics,Class contains less than 2 methods
+org.apache.tools.ant.util.optional.JavaxScriptRunner,13
+org.apache.tools.ant.util.optional.NoExitSecurityManager,1
+org.apache.tools.ant.util.optional.ScriptRunner,15
+org.apache.tools.ant.util.optional.WeakishReference12,Class contains less than 2 methods
+org.apache.tools.ant.util.regexp.JakartaOroMatcher,20
+org.apache.tools.ant.util.regexp.JakartaOroRegexp,1
+org.apache.tools.ant.util.regexp.JakartaRegexpMatcher,30
+org.apache.tools.ant.util.regexp.JakartaRegexpRegexp,1
+org.apache.tools.ant.util.regexp.Jdk14RegexpMatcher,22
+org.apache.tools.ant.util.regexp.Jdk14RegexpRegexp,1
+org.apache.tools.ant.util.regexp.Regexp,Class contains less than 2 methods
+org.apache.tools.ant.util.regexp.RegexpFactory,3
+org.apache.tools.ant.util.regexp.RegexpMatcher,15
+org.apache.tools.ant.util.regexp.RegexpMatcherFactory,10
+org.apache.tools.ant.util.regexp.RegexpUtil,10
+org.apache.tools.bzip2.BZip2Constants,Class contains less than 2 methods
+org.apache.tools.bzip2.BlockSort,104
+org.apache.tools.bzip2.CBZip2InputStream,77
+org.apache.tools.bzip2.CBZip2InputStream.Data,Class contains less than 2 methods
+org.apache.tools.bzip2.CBZip2OutputStream,198
+org.apache.tools.bzip2.CBZip2OutputStream.Data,Class contains less than 2 methods
+org.apache.tools.bzip2.CRC,0
+org.apache.tools.mail.ErrorInQuitException,Class contains less than 2 methods
+org.apache.tools.mail.MailMessage,340
+org.apache.tools.mail.MailPrintStream,6
+org.apache.tools.mail.SmtpResponseReader,2
+org.apache.tools.tar.TarArchiveSparseEntry,Class contains less than 2 methods
+org.apache.tools.tar.TarBuffer,0
+org.apache.tools.tar.TarConstants,Class contains less than 2 methods
+org.apache.tools.tar.TarEntry,1163
+org.apache.tools.tar.TarInputStream,127
+org.apache.tools.tar.TarOutputStream,146
+org.apache.tools.tar.TarUtils,151
+org.apache.tools.zip.AbstractUnicodeExtraField,3
+org.apache.tools.zip.AsiExtraField,129
+org.apache.tools.zip.CentralDirectoryParsingZipExtraField,Class contains less than 2 methods
+org.apache.tools.zip.ExtraFieldUtils,13
+org.apache.tools.zip.ExtraFieldUtils.UnparseableExtraField,Class contains less than 2 methods
+org.apache.tools.zip.FallbackZipEncoding,1
+org.apache.tools.zip.GeneralPurposeBit,0
+org.apache.tools.zip.JarMarker,17
+org.apache.tools.zip.NioZipEncoding,0
+org.apache.tools.zip.Simple8BitZipEncoding,21
+org.apache.tools.zip.Simple8BitZipEncoding.Simple8BitChar,0
+org.apache.tools.zip.UnicodeCommentExtraField,Class contains less than 2 methods
+org.apache.tools.zip.UnicodePathExtraField,Class contains less than 2 methods
+org.apache.tools.zip.UnixStat,Class contains less than 2 methods
+org.apache.tools.zip.UnparseableExtraFieldData,3
+org.apache.tools.zip.UnrecognizedExtraField,25
+org.apache.tools.zip.UnsupportedZipFeatureException,1
+org.apache.tools.zip.UnsupportedZipFeatureException.Feature,Class contains less than 2 methods
+org.apache.tools.zip.Zip64ExtendedInformationExtraField,0
+org.apache.tools.zip.Zip64RequiredException,Class contains less than 2 methods
+org.apache.tools.zip.ZipConstants,Class contains less than 2 methods
+org.apache.tools.zip.ZipEightByteInteger,34
+org.apache.tools.zip.ZipEncoding,3
+org.apache.tools.zip.ZipEncodingHelper,6
+org.apache.tools.zip.ZipEncodingHelper.SimpleEncodingHolder,Class contains less than 2 methods
+org.apache.tools.zip.ZipEntry,647
+org.apache.tools.zip.ZipExtraField,15
+org.apache.tools.zip.ZipFile,115
+org.apache.tools.zip.ZipFile.BoundedInputStream,0
+org.apache.tools.zip.ZipFile.Entry,0
+org.apache.tools.zip.ZipFile.NameAndComment,Class contains less than 2 methods
+org.apache.tools.zip.ZipFile.OffsetEntry,Class contains less than 2 methods
+org.apache.tools.zip.ZipLong,14
+org.apache.tools.zip.ZipOutputStream,641
+org.apache.tools.zip.ZipOutputStream.CurrentEntry,Class contains less than 2 methods
+org.apache.tools.zip.ZipOutputStream.UnicodeExtraFieldPolicy,Class contains less than 2 methods
+org.apache.tools.zip.ZipShort,10
+org.apache.tools.zip.ZipUtil,66
