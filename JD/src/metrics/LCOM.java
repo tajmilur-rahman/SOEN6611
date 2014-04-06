@@ -25,7 +25,7 @@ public class LCOM extends AbstractClassMetric {
 			if(cohesion != -1) {
 				metricValues.put(classObject.getName(), "" + cohesion);
 			} else {
-				metricValues.put(classObject.getName(), "Class contains less than 2 methods");
+				// metricValues.put(classObject.getName(), "Class contains less than 2 methods");
 			}
 		}			
 	}

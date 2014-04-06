@@ -214,7 +214,11 @@ public class CompositeStatementObject extends AbstractStatement {
 
 	@Override
 	public int count() {
-		int sum = 1; // count itself
+		int sum = 0; // count itself
+		
+		if (!(this.getStatement() instanceof Block)) {
+			sum++;
+		}
 		
 		// add all lines from its statements
 		for(AbstractStatement a: statementList) {

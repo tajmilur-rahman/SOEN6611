@@ -42,11 +42,6 @@ public class RelativeClassSize extends AbstractClassMetric {
 							mb.getLocalVariableDeclarations().size() + 
 							mb.getLocalVariableInstructions().size();
 					
-					CompositeStatementObject cs = mb.getCompositeStatement();
-					for(AbstractStatement as: cs.getStatements()) {
-						
-					}
-					
 					sum += addend;
 				}
 			}
