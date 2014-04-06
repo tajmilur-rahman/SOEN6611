@@ -27,4 +27,7 @@ public abstract class AbstractStatement extends AbstractMethodFragment {
 	}
 
 	public abstract List<String> stringRepresentation();
+	
+	// To help with LOC count
+	public abstract int count();
 }

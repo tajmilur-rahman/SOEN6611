@@ -12,9 +12,9 @@ import ast.FieldObject;
 import ast.MethodObject;
 import ast.SystemObject;
 
-public class CohStandard extends AbstractClassMetric {
+public class LCOMHendersonStandard extends AbstractClassMetric {
 
-	public CohStandard(SystemObject system) {
+	public LCOMHendersonStandard(SystemObject system) {
 		super(system);
 	}
 
@@ -26,15 +26,16 @@ public class CohStandard extends AbstractClassMetric {
 			if ((classObject.getMethodList().size() < 1) || (classObject.getFieldList().size() < 1)) {
 				continue;
 			}
-			double cohesion = computeCohesion(classObject);
-			if (cohesion != -1) { 
-				metricValues.put(classObject.getName(), "" + cohesion);
+			double lackOfCohesion = computeLCOM(classObject);
+			if (lackOfCohesion != -1) { 
+				metricValues.put(classObject.getName(), "" + lackOfCohesion);
 			}
 		}			
 
 	}
 
-	private double computeCohesion(ClassObject classObject) {
+	private double computeLCOM(ClassObject classObject) {
+		
 		List<MethodObject> methods = classObject.getMethodList();
 		List<FieldObject> classAttributes = classObject.getFieldList();
 		List<FieldObject> nonStaticClassAttributes = new ArrayList<>();
@@ -44,6 +45,8 @@ public class CohStandard extends AbstractClassMetric {
 				nonStaticClassAttributes.add(f);
 			}
 		}
+		
+		if (nonStaticClassAttributes.size() == 0) return -1;
 		
 		Map<FieldObject, Integer> numberOfMethodsWhichAccessField = new HashMap<>();
 		int numberOfNonStaticMethods = 0;
@@ -64,16 +67,17 @@ public class CohStandard extends AbstractClassMetric {
 			}
 		}
 		
-		Integer sum = 0;
+		int sum = 0;
 		for(Entry<FieldObject, Integer> e: numberOfMethodsWhichAccessField.entrySet()) {
 			sum += e.getValue();
 		}
 		
-		double denominator = (double)(numberOfNonStaticMethods * nonStaticClassAttributes.size());
+		double denominator = (double)(nonStaticClassAttributes.size());
 		if (denominator == 0) {
 			return -1;
 		} else {
-			return (double)(sum) / denominator;		
+			double numerator = numberOfNonStaticMethods - ((double)(sum) / denominator); 
+			return numerator / (numberOfNonStaticMethods - 1);
 		}
 	}
 }

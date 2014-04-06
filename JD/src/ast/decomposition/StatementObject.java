@@ -53,4 +53,10 @@ public class StatementObject extends AbstractStatement {
 		stringRepresentation.add(this.toString());
 		return stringRepresentation;
 	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
 }

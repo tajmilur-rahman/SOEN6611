@@ -26,7 +26,7 @@ public class LCOMHenderson extends AbstractClassMetric {
 			if (cohesion != -1) {
 				metricValues.put(classObject.getName(), "" + cohesion);
 			} else {
-				metricValues.put(classObject.getName(), "Class contains less than 2 methods");
+				// metricValues.put(classObject.getName(), "Class contains less than 2 methods");
 			}
 		}			
 	}
@@ -44,12 +44,12 @@ public class LCOMHenderson extends AbstractClassMetric {
 		
 		for(int i=0; i<methods.size(); i++) {
 			MethodObject mI = methods.get(i);
-			List<FieldInstructionObject> attributesI = mI.getFieldInstructions();	
-				Set<FieldInstructionObject> attributeAccess = instanceAttributes(attributesI,  classObject.getName());
-				if(attributeAccess.isEmpty()) {
-				} else {
-					a=a+attributeAccess.size();
-				}
+			List<FieldInstructionObject> attributesI = mI.getFieldInstructions();
+			Set<FieldInstructionObject> attributeAccess = instanceAttributes(attributesI,  classObject.getName());
+			if(attributeAccess.isEmpty()) {
+			} else {
+				a=a+attributeAccess.size();
+			}
 		}
 		
 		
