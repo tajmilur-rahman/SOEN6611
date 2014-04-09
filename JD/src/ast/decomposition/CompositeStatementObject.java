@@ -15,6 +15,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.Statement;
 
 /*
@@ -209,5 +210,21 @@ public class CompositeStatementObject extends AbstractStatement {
 		}
 		sb.append("\n");
 		return sb.toString();
+	}
+
+	@Override
+	public int count() {
+		int sum = 0; // count itself
+		
+		if (!(this.getStatement() instanceof Block)) {
+			sum++;
+		}
+		
+		// add all lines from its statements
+		for(AbstractStatement a: statementList) {
+			sum += a.count();
+		}
+		
+		return sum;
 	}
 }

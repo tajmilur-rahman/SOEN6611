@@ -17,32 +17,37 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
 public abstract class AbstractClassMetric {
+		
+	// for windows 
+	public static final String pathToHighFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
+	public static final String pathToMedFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
+	public static final String pathToLowFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
 	
-	/** for windows 
-	private static String pathToHighFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
-	private static String pathToMedFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
-	private static String pathToLowFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
-	*/
-	//** for linux
+	/** for linux
 	private static String pathToHighFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
 	private static String pathToMedFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
-	private static String pathToLowFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
+	private static String pathToLowFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/3_low_volatility.txt"; */
 	
 	private List<String> highClasses;
 	private List<String> medClasses;
 	private List<String> lowClasses;	
 	
-	static String folderName = (new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")).format(new Date());
-	//private static final String outputPath = "C:\\metrics\\"; // for windows
-	private static final String outputPath = "/home/rupak/Documents/"; // for linux
+	public static final String folderName = (new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")).format(new Date());
+	public static final String outputPath = "C:\\metrics\\"; // for windows
+	//public static final String outputPath = "/home/rupak/Documents/"; // for linux
 	
 	protected SystemObject system;
 	protected Map<String, String> metricValues;
+	SummaryMetricCollector smc;
 	
 	public AbstractClassMetric(SystemObject system) {
 		this.system = system;
 		metricValues = new TreeMap<>();
 		loadVolatilityLists();
+	}
+	
+	public void setSummaryMetricCollector(SummaryMetricCollector smc) {
+		this.smc = smc;
 	}
 	
 	private void loadVolatilityLists() {
@@ -81,6 +86,7 @@ public abstract class AbstractClassMetric {
 		}
 		
 		File metricFile = new File(outputPath + folderName + "/" + this.getClass().getName() + ".txt");
+		File encodedMetricFile = new File(outputPath + folderName + "/" + this.getClass().getName() + "_encoded.txt");
 		File metricFileHigh = new File(outputPath + folderName + "/" + this.getClass().getName() + "_1_high.txt");
 		File metricFileMed = new File(outputPath + folderName + "/" + this.getClass().getName() + "_2_med.txt");
 		File metricFileLow = new File(outputPath + folderName + "/" + this.getClass().getName() + "_3_low.txt");
@@ -93,13 +99,19 @@ public abstract class AbstractClassMetric {
 				Files.append(className + "," + e.getValue() + "\r\n", metricFile, Charsets.UTF_8);
 				
 				if(highClasses.contains(className)) {
-					Files.append(className + "," + e.getValue() + "\r\n", metricFileHigh, Charsets.UTF_8);	
+					Files.append("3, " + e.getValue() + "\r\n", encodedMetricFile, Charsets.UTF_8);	
+					//Files.append("3, " + e.getValue() + "\r\n", metricFileHigh, Charsets.UTF_8);
+					smc.addMetricForClass(className, this.getClass().getName(), 3, e.getValue());
 				} else if(medClasses.contains(className)) {
-					Files.append(className + "," + e.getValue() + "\r\n", metricFileMed, Charsets.UTF_8);
+					Files.append("2, " + e.getValue() + "\r\n", encodedMetricFile, Charsets.UTF_8);	
+					//Files.append("2, " + e.getValue() + "\r\n", metricFileMed, Charsets.UTF_8);
+					smc.addMetricForClass(className, this.getClass().getName(), 2, e.getValue());
 				} else if(lowClasses.contains(className)) {
-					Files.append(className + "," + e.getValue() + "\r\n", metricFileLow, Charsets.UTF_8);
+					Files.append("1, " + e.getValue() + "\r\n", encodedMetricFile, Charsets.UTF_8);	
+					//Files.append("1, " + e.getValue() + "\r\n", metricFileLow, Charsets.UTF_8);
+					smc.addMetricForClass(className, this.getClass().getName(), 1, e.getValue());
 				} else {
-					System.out.println("Class not in HV, MV, or LV: " + className);
+					//System.out.println("Class not in HV, MV, or LV: " + className);
 				}	
 				
 			} catch (IOException e1) {

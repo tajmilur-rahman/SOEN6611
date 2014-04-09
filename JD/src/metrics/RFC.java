@@ -60,19 +60,19 @@ public class RFC extends AbstractClassMetric {
 			Map<AbstractVariable, LinkedHashSet<MethodInvocationObject>> im, String className) {
 		
 		for(Entry<AbstractVariable, LinkedHashSet<MethodInvocationObject>> e: im.entrySet()) {
-			System.out.println("Class name: " + className);
-			System.out.println("Varible: " + e.getKey());
+			//System.out.println("Class name: " + className);
+			//System.out.println("Varible: " + e.getKey());
 			for(MethodInvocationObject m: e.getValue()) {
 				
 				if (system.getPositionInClassList(m.getOriginClassName()) != -1) {
 					if (m.getOriginClassName() != className) {
 						calledMethods.add(m);
-						System.out.println("Adding " + m.getOriginClassName() + " " + m.getMethodName() + ". Size: " + calledMethods.size());
+						//System.out.println("Adding " + m.getOriginClassName() + " " + m.getMethodName() + ". Size: " + calledMethods.size());
 					} else {
-						System.out.println("Skipping " + m.getOriginClassName() + " " + m.getMethodName() + ". Size: " + calledMethods.size());
+						//System.out.println("Skipping " + m.getOriginClassName() + " " + m.getMethodName() + ". Size: " + calledMethods.size());
 					}
 				} else {
-					System.out.println("Skipping " + m.getOriginClassName() + " because it is not our code!");
+					//System.out.println("Skipping " + m.getOriginClassName() + " because it is not our code!");
 				}
 				
 			}			

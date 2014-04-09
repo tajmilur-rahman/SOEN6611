@@ -1,15 +1,18 @@
 package view;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import metrics.AbstractClassMetric;
+import metrics.CohStandard;
 import metrics.LCOM;
-import metrics.LCOM2;
-import metrics.LCOMHenderson;
+import metrics.LCOMHendersonStandard;
+import metrics.LOC;
 import metrics.RFC;
-import metrics.Coh;
+import metrics.RelativeClassSize;
+import metrics.SummaryMetricCollector;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -117,15 +120,27 @@ public class MetricsAction  implements IObjectActionDelegate {
 
 						// === Code here is used to run all the metrics we create === 
 						List<AbstractClassMetric> metricsToRun = new ArrayList<>();
-						//metricsToRun.add(new LCOM(system));
-						//metricsToRun.add(new LCOM2(system));
-						//metricsToRun.add(new RFC(system));
-						//metricsToRun.add(new LCOMHenderson(system));
-						metricsToRun.add(new Coh(system));
+						
+						metricsToRun.add(new LCOM(system));
+						metricsToRun.add(new LCOMHendersonStandard(system));
+						metricsToRun.add(new CohStandard(system));
+						metricsToRun.add(new RFC(system));
+						metricsToRun.add(new LOC(system));
+						metricsToRun.add(new RelativeClassSize(system));
 						//... add your metrics the same way I did it here
 						
+						SummaryMetricCollector smc = new SummaryMetricCollector();
+						smc.setSize(metricsToRun.size());
 						for(AbstractClassMetric acm : metricsToRun) {
+							acm.setSummaryMetricCollector(smc);
 							acm.executeMetric();
+						}
+						
+						try {
+							smc.writeMetricsToFiles();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
 						// === End === 
 						

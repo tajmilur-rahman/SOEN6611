@@ -33,7 +33,7 @@ public class Coh extends AbstractClassMetric {
 		
 		float a=0;
 		
-		if(methods.size() < 2) {
+		if(methods.size() < 1 || classObject.getFieldList().size() < 1) {
 			return -1;
 		}
 		
