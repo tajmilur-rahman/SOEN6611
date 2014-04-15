@@ -31,9 +31,11 @@ public class MHFStandard extends AbstractClassMetric {
 		Set<ClassObject> classes = system.getClassObjects();
 		
 		// output is 3 entries into the metricValues
-		totalNumberOfClasses = classes.size(); 
+		totalNumberOfClasses = 0; // classes.size(); 
 		
 		for(ClassObject classObject : classes) {
+			if (classObject.isInterface()) continue;
+			totalNumberOfClasses += 1;
 			String packageName = extractPackageName(classObject.getName());
 			packageToClasses.put(packageName, classObject);
 			
