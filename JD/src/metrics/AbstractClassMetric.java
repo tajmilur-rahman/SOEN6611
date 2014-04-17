@@ -19,9 +19,9 @@ import com.google.common.io.Files;
 public abstract class AbstractClassMetric {
 		
 	// for windows 
-	public static final String pathToHighFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
-	public static final String pathToMedFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
-	public static final String pathToLowFiles = "C:/Users/Amish/workspace/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
+	public static final String pathToHighFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
+	public static final String pathToMedFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/2_med_volatility.txt";
+	public static final String pathToLowFiles = "C:/Users/Amish_Gala/workspace_oss/SOEN6611_Taj/JD/volatility/3_low_volatility.txt";
 	
 	/** for linux
 	private static String pathToHighFiles = "/home/rupak/Documents/git/SOEN6611_Taj/JD/volatility/1_high_volatility.txt";
@@ -87,9 +87,9 @@ public abstract class AbstractClassMetric {
 		
 		File metricFile = new File(outputPath + folderName + "/" + this.getClass().getName() + ".txt");
 		File encodedMetricFile = new File(outputPath + folderName + "/" + this.getClass().getName() + "_encoded.txt");
-		File metricFileHigh = new File(outputPath + folderName + "/" + this.getClass().getName() + "_1_high.txt");
+/*		File metricFileHigh = new File(outputPath + folderName + "/" + this.getClass().getName() + "_1_high.txt");
 		File metricFileMed = new File(outputPath + folderName + "/" + this.getClass().getName() + "_2_med.txt");
-		File metricFileLow = new File(outputPath + folderName + "/" + this.getClass().getName() + "_3_low.txt");
+		File metricFileLow = new File(outputPath + folderName + "/" + this.getClass().getName() + "_3_low.txt");*/
 		
 		// This code works now because we added "plugin.guava" to JD's plugin.xml.
 		String className;

@@ -7,7 +7,13 @@ import java.util.List;
 
 import metrics.AHFStandard;
 import metrics.AbstractClassMetric;
+import metrics.CohStandard;
+import metrics.LCOM;
+import metrics.LCOMHendersonStandard;
+import metrics.LOC;
 import metrics.MHFStandard;
+import metrics.RFC;
+import metrics.RelativeClassSize;
 import metrics.SummaryMetricCollector;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -117,15 +123,14 @@ public class MetricsAction  implements IObjectActionDelegate {
 						// === Code here is used to run all the metrics we create === 
 						List<AbstractClassMetric> metricsToRun = new ArrayList<>();
 						
-						/*metricsToRun.add(new LCOM(system));
+						metricsToRun.add(new LCOM(system));
 						metricsToRun.add(new LCOMHendersonStandard(system));
 						metricsToRun.add(new CohStandard(system));
 						metricsToRun.add(new RFC(system));
 						metricsToRun.add(new LOC(system));
-						metricsToRun.add(new RelativeClassSize(system));*/
+						metricsToRun.add(new RelativeClassSize(system));
 						metricsToRun.add(new MHFStandard(system));
 						metricsToRun.add(new AHFStandard(system));
-						//metricsToRun.add(new AHF(system));
 						//... add your metrics the same way I did it here
 						
 						SummaryMetricCollector smc = new SummaryMetricCollector();

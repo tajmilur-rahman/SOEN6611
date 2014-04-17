@@ -43,7 +43,7 @@ public class RFC extends AbstractClassMetric {
 			Map<AbstractVariable, LinkedHashSet<MethodInvocationObject>> imtf = method.getInvokedMethodsThroughFields();
 			Map<AbstractVariable, LinkedHashSet<MethodInvocationObject>> imtlv = method.getInvokedMethodsThroughLocalVariables();
 			Map<AbstractVariable, LinkedHashSet<MethodInvocationObject>> imtp = method.getInvokedMethodsThroughParameters();
-			Set<MethodInvocationObject> imttr = method.getInvokedMethodsThroughThisReference();
+			//Set<MethodInvocationObject> imttr = method.getInvokedMethodsThroughThisReference();
 			
 			processInvokedMethods(imtf, classObject.getName());
 			processInvokedMethods(imtlv, classObject.getName());
@@ -61,7 +61,7 @@ public class RFC extends AbstractClassMetric {
 		
 		for(Entry<AbstractVariable, LinkedHashSet<MethodInvocationObject>> e: im.entrySet()) {
 			//System.out.println("Class name: " + className);
-			//System.out.println("Varible: " + e.getKey());
+			//System.out.println("Variable: " + e.getKey());
 			for(MethodInvocationObject m: e.getValue()) {
 				
 				if (system.getPositionInClassList(m.getOriginClassName()) != -1) {

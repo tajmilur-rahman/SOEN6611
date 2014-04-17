@@ -6,7 +6,6 @@ import java.util.Set;
 import ast.ClassObject;
 import ast.MethodObject;
 import ast.SystemObject;
-import ast.decomposition.AbstractStatement;
 import ast.decomposition.CompositeStatementObject;
 import ast.decomposition.MethodBodyObject;
 
