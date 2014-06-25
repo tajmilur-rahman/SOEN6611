@@ -46,6 +46,6 @@ public class Commit {
 	
 	@Override
 	public String toString() {
-		return revisionID + " - " + userID + "\n";
+		return revisionID + " - " + commitDate.toString()  + " - " + userID + " - " + commitLogsByType + "\n";
 	}
 }

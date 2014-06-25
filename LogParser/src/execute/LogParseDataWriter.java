@@ -183,6 +183,18 @@ public class LogParseDataWriter {
 		}
 		
 		System.out.println("Size of Volatility Map: " + volatilityMap.size());
+
+		modifiedJavaFiles = new HashSet<>();
+		for(Commit c: from18to19) {
+			for(String file: c.commitLogsByType.get("M")) {
+				if(file.contains(".java")) {
+					modifiedJavaFiles.add(file.trim());
+				}
+			}
+		}
+		
+		System.out.println("Number of modified files between 1.8 and 1.9: " + modifiedJavaFiles.size());
+		
 		
 		int lowVol = 0;
 		int midVol = 0;
