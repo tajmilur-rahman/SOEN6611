@@ -29,10 +29,9 @@ public class NLPSRunner {
 		LogProcessor p = new LogProcessor();
 		Map<String, List<Commit>> commits = p.process(paths);
 		
-		//PostgreSQL DB should exist beforehand? Should we drop the DB and recreate each time?
+		// Creating the object drops and recreates the tables
 		CommitDBWriter writer = new CommitDBWriter();
 		writer.writeAll(commits);
-
 	}
 
 	private static List<String> getPathsOfFiles() {
