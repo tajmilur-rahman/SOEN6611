@@ -3,8 +3,17 @@ package execute;
 import java.text.ParseException;
 import java.util.Date;
 
-import model.EventJaccardCalculator;
+import db.EventJaccardDBWriter;
 
+
+/**
+ * @author amish_gala
+ * Uses the data after data extraction and data cleanup via SQL script. This code should be 
+ * run only after the records have been cleaned. The output is a a table showing the 
+ * Jaccard raw values of intersect and union for each of the dev/paths for periods before/after 
+ * a given event date.  
+ *
+ */
 public class NLPSExecutor {
 	public static void main(String[] args) throws ParseException {
 		/* 
@@ -29,7 +38,7 @@ public class NLPSExecutor {
 		Date eventDate = NLPSRunner.DATEFORMAT.parse("2014-02-16 16:23:11 -0400");
 		int period = 30;
 
-		EventJaccardCalculator ec = new EventJaccardCalculator();
+		EventJaccardDBWriter ec = new EventJaccardDBWriter();
 		ec.writeOutputTable(eventDate, period);
 	}
 	

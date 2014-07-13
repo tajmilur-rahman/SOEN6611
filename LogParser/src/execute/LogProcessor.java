@@ -70,6 +70,12 @@ public class LogProcessor {
 				} else if (isModifiedFileLine(line)) {
 					// For this project, we'll take all files, not just Java files.
 					//if (!line.contains(".java")) continue; //only takes java files
+					
+					// the "(from" handles cases for moved files. 
+					if (line.contains("(from ")) {
+						logger.info(line + ". Splitted: " + line.split("\\(from")[0].trim());
+						line = line.split("\\(from")[0].trim();
+					}
 					commitObject.modifiedFiles.add(line.trim());
 					commitObject.commitLogsByType.put(line.trim().split("\\s")[0].trim(), line.trim().split("\\s", 2)[1].trim());
 					modifiedFileFound = true;

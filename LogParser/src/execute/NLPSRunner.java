@@ -14,6 +14,12 @@ import db.CommitDBWriter;
 
 import model.Commit;
 
+/**
+ * @author amish_gala
+ * Class to initialize the database with the records stored in the SVN commits logs for 
+ * each of the investigated projects
+ *
+ */
 public class NLPSRunner {
 	static Logger logger = Logger.getLogger(NLPSRunner.class.getName());
 	

@@ -1,4 +1,4 @@
-package model;
+package db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,20 +9,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.TreeMap;
 import java.util.logging.Logger;
+
+import model.Author;
+
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
-public class EventJaccardCalculator {
-	static Logger logger = Logger.getLogger(EventJaccardCalculator.class.getName());
+public class EventJaccardDBWriter {
+	static Logger logger = Logger.getLogger(EventJaccardDBWriter.class.getName());
 	
 	static {
-		logger.setParent(Logger.getLogger(EventJaccardCalculator.class.getPackage().getName()));
+		logger.setParent(Logger.getLogger(EventJaccardDBWriter.class.getPackage().getName()));
 	}
 	
 	String dbPath;
@@ -33,7 +37,11 @@ public class EventJaccardCalculator {
 	ResultSet rs = null;
 	PreparedStatement ps = null;
 	
-	public EventJaccardCalculator() {
+	public EventJaccardDBWriter() {
+		loadDBProperties();
+	}
+
+	private void loadDBProperties() {
 		Properties p = new Properties();
 		try (FileInputStream input = new FileInputStream("src/config.properties")) {
 			p.load(input);
@@ -56,14 +64,14 @@ public class EventJaccardCalculator {
 		// get authors
 		Map<String, Author> authorMinMax = getAuthorsMinMax();
 		
-		for(Entry<String, Author> e: authorMinMax.entrySet()) {
-			writeEventAuthor(eventDate, e, period);
+		for(Entry<String, Author> authorMinMaxEntry: authorMinMax.entrySet()) {
+			writeEventAuthor(eventDate, authorMinMaxEntry, period);
 		}
 		
 		
 	}
 
-	private void writeEventAuthor(Date eventDate, Entry<String, Author> e, int period) {
+	private void writeEventAuthor(Date eventDate, Entry<String, Author> authorMinMaxEntry, int period) {
 		// Fill in table first, then perhaps we can calculate after
 		connection = null;
 		Statement st = null;
@@ -73,30 +81,63 @@ public class EventJaccardCalculator {
 			connection.setAutoCommit(false);
 			
 			// from event date to first commit stepping back by period
-			int fromFirstToEvent = Days.daysBetween(new DateTime(e.getValue().firstCommit), new DateTime(eventDate)).getDays();
-			int fromEventToLast = Days.daysBetween(new DateTime(eventDate), new DateTime(e.getValue().lastCommit)).getDays();
+			int fromFirstToEvent = Days.daysBetween(new DateTime(authorMinMaxEntry.getValue().firstCommit), new DateTime(eventDate)).getDays();
+			int fromEventToLast = Days.daysBetween(new DateTime(eventDate), new DateTime(authorMinMaxEntry.getValue().lastCommit)).getDays();
 			
-			if (e.getValue().firstCommit.after(eventDate)) {
-				System.out.println("[Skipped] " + e.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
+			if (authorMinMaxEntry.getValue().firstCommit.after(eventDate)) {
+				System.out.println("[Skipped] " + authorMinMaxEntry.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
 			} else {
 				int multiplier = -1;
 				do {
-					System.out.println(e.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
-					st.addBatch("insert into event_author(event_date, author, period) values ('" + 
-							new Timestamp(eventDate.getTime()) + "', '" + e.getKey() + "','" + (period * multiplier) + "')");
+					System.out.println(authorMinMaxEntry.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
+					Calendar cal = Calendar.getInstance();
+					cal.setTime(new Timestamp(eventDate.getTime()));
+					cal.add(Calendar.DAY_OF_WEEK, (period * (multiplier + 1)));
+					Timestamp current = new Timestamp(cal.getTime().getTime());
+					
+					cal.setTime(new Timestamp(eventDate.getTime()));
+					cal.add(Calendar.DAY_OF_WEEK, (period * multiplier));
+					Timestamp previous = new Timestamp(cal.getTime().getTime());
+					
+					st.addBatch("insert into event_author " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + (period * multiplier) + "', " +
+									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
+									"commit_date <= '" + current + "' and " +
+									"commit_date > '" + previous + "' and " +
+									"author = '" + authorMinMaxEntry.getKey() + "' " +
+									"group by author, dir");
+					
 					fromFirstToEvent -= period;
 					multiplier -= 1;
 				} while (fromFirstToEvent >= 0);
 			}
 
-			if (e.getValue().lastCommit.before(eventDate)) {
-				System.out.println("[Skipped] " + e.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
+			// from event date to last commit stepping forward by period
+			if (authorMinMaxEntry.getValue().lastCommit.before(eventDate)) {
+				System.out.println("[Skipped] " + authorMinMaxEntry.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
 			} else {
 				int multiplier = 1;
 				do {
-					System.out.println(e.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
-					st.addBatch("insert into event_author(event_date, author, period) values ('" + 
-							new Timestamp(eventDate.getTime()) + "', '" + e.getKey() + "','" + (period * multiplier) + "')");
+					System.out.println(authorMinMaxEntry.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
+
+					Calendar cal = Calendar.getInstance();
+					cal.setTime(new Timestamp(eventDate.getTime()));
+					cal.add(Calendar.DAY_OF_WEEK, (period * (multiplier - 1)));
+					Timestamp current = new Timestamp(cal.getTime().getTime());
+					
+					cal.setTime(new Timestamp(eventDate.getTime()));
+					cal.add(Calendar.DAY_OF_WEEK, (period * multiplier));
+					Timestamp next = new Timestamp(cal.getTime().getTime());
+					
+					st.addBatch("insert into event_author " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + (period * multiplier) + "', " +
+									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
+									"commit_date >= '" + current + "' and " +
+									"commit_date < '" + next + "' and " +
+									"author = '" + authorMinMaxEntry.getKey() + "' " +
+									"group by author, dir");					
+					
+					
 					fromEventToLast -= period;
 					multiplier += 1;
 				} while (fromEventToLast >= 0);
@@ -110,6 +151,7 @@ public class EventJaccardCalculator {
 		} catch (SQLException ex) {
 			System.out.println("Insert failed!");
 			ex.printStackTrace();
+			ex.getNextException().printStackTrace();
 		} finally {
 			try {
 				st.close();
@@ -157,8 +199,12 @@ public class EventJaccardCalculator {
 			connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
 			PreparedStatement ps = connection.prepareStatement("drop table if exists event_author");
 			ps.executeUpdate();
-			ps.close();
+			
+			ps = connection.prepareStatement("drop table if exists jaccard_summary");
+			ps.executeUpdate();
 
+			ps.close();
+			
 		} catch (SQLException e) {
 			System.out.println("Connection Failed! Check output console");
 			e.printStackTrace();
@@ -175,11 +221,21 @@ public class EventJaccardCalculator {
 					"event_date timestamp with time zone NOT NULL," +
 					"author text NOT NULL, " +
 					"period numeric NOT NULL," +
+					"dir text NOT NULL," +
+					"commits numeric," +
+					"" +
+					"primary key(event_date, author, period, dir))");
+			ps.executeUpdate();
+
+			ps = connection.prepareStatement("create table if not exists jaccard_summary (" +
+					"event_date timestamp with time zone NOT NULL," +
+					"author text NOT NULL, " +
+					"period numeric NOT NULL," +
 					"jac_num numeric," +
 					"jac_den numeric," +
 					"" +
 					"primary key(event_date, author, period))");
-			ps.executeUpdate();
+			ps.executeUpdate();			
 			
 			ps.close();
 

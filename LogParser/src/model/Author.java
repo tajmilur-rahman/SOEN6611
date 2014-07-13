@@ -5,8 +5,10 @@ import java.util.Date;
 
 public class Author {
 	String name;
-	Date firstCommit;
-	Date lastCommit;
+	
+	// Date is a superclass of Timestamp 
+	public final Date firstCommit;
+	public final Date lastCommit;
 
 	public Author(String name, Timestamp firstCommit, Timestamp lastCommit) {
 		this.name = name;
