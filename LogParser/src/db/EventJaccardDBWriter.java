@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -72,17 +73,16 @@ public class EventJaccardDBWriter {
 	}
 
 	private void writeEventAuthor(Date eventDate, Entry<String, Author> authorMinMaxEntry, int period) {
-		// Fill in table first, then perhaps we can calculate after
-		connection = null;
+		// from event date to first commit stepping back by period
+		int fromFirstToEvent = Days.daysBetween(new DateTime(authorMinMaxEntry.getValue().firstCommit), new DateTime(eventDate)).getDays();
+		int fromEventToLast = Days.daysBetween(new DateTime(eventDate), new DateTime(authorMinMaxEntry.getValue().lastCommit)).getDays();
+		
+		Connection connection = null;
 		Statement st = null;
 		try {
 			connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
 			st = connection.createStatement();
 			connection.setAutoCommit(false);
-			
-			// from event date to first commit stepping back by period
-			int fromFirstToEvent = Days.daysBetween(new DateTime(authorMinMaxEntry.getValue().firstCommit), new DateTime(eventDate)).getDays();
-			int fromEventToLast = Days.daysBetween(new DateTime(eventDate), new DateTime(authorMinMaxEntry.getValue().lastCommit)).getDays();
 			
 			if (authorMinMaxEntry.getValue().firstCommit.after(eventDate)) {
 				System.out.println("[Skipped] " + authorMinMaxEntry.getKey() + ": " + fromFirstToEvent + ", " + fromEventToLast);
@@ -110,6 +110,8 @@ public class EventJaccardDBWriter {
 					fromFirstToEvent -= period;
 					multiplier -= 1;
 				} while (fromFirstToEvent >= 0);
+				
+				authorMinMaxEntry.getValue().lowerPeriod = period * (multiplier + 1);
 			}
 
 			// from event date to last commit stepping forward by period
@@ -141,11 +143,15 @@ public class EventJaccardDBWriter {
 					fromEventToLast -= period;
 					multiplier += 1;
 				} while (fromEventToLast >= 0);
+				
+				authorMinMaxEntry.getValue().upperPeriod = period * (multiplier - 1);
 			}
 			
 			int counts [] = st.executeBatch();
-		
 			System.out.println(counts.length);
+			System.out.println("   -----> " + authorMinMaxEntry.getKey() + " " + 
+					authorMinMaxEntry.getValue().lowerPeriod + " " + authorMinMaxEntry.getValue().upperPeriod);
+
 			connection.commit();
 
 		} catch (SQLException ex) {
@@ -159,15 +165,75 @@ public class EventJaccardDBWriter {
 				ex2.printStackTrace();
 			}			
 		}
-		
-		
+
+		if (authorMinMaxEntry.getValue().lowerPeriod != 0 || authorMinMaxEntry.getValue().upperPeriod != 0) {
+			writeJaccardSummary(eventDate, authorMinMaxEntry.getKey(), period);	
+		}
 	}
+
+	private void writeJaccardSummary(Date eventDate, String author, int period) {
+		Connection connection = null;
+		Statement st = null;
+		try {
+			connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
+			st = connection.createStatement();
+			connection.setAutoCommit(false);
+			
+			Map<String, Integer> minMax = getActualMinMax(eventDate, author);
+			int min = minMax.get("min");
+			int max = minMax.get("max");
+			
+			if (Math.abs(max - min) >= (period * 2) ) {
+				int start = min;
+				int incrementor = period;
+				while(start < (max - period)) {
+					
+					// stupid handling due to data organization :(
+					if (start == -period) {
+						incrementor *= 2;
+					} else {
+						incrementor = period;
+					}
+					
+					st.addBatch("insert into jaccard_summary " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', '" + author + "', '" + start + "', " +
+									"(select count(*) from (select dir from event_author where period = '" + start + "' and author = '" + author + "' " + 
+									"intersect select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "'" +
+									") as r), " +
+									"" +
+									"(select count(*) from (select dir from event_author where period = '" + start + "' and author = '" + author + "' " + 
+									"union select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "'" +
+									") as u)");
+					
+					start += incrementor;
+				}
+				
+				int counts [] = st.executeBatch();
+				System.out.println(" --> Executing write to jaccard_summary: " + counts.length);
+				connection.commit();
+			}
+			
+			
+			
+		} catch (SQLException ex) {
+			System.out.println("Insert failed!");
+			ex.printStackTrace();
+			ex.getNextException().printStackTrace();
+		} finally {
+			try {
+				st.close();
+			} catch (SQLException ex2) {
+				ex2.printStackTrace();
+			}			
+		}
+	}
+
 
 	private Map<String, Author> getAuthorsMinMax() {
 		Map<String, Author> result = new TreeMap<>();
 		
 		try {
-			connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
+			Connection connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
 			ps = connection.prepareStatement("select author, min(commit_date), max(commit_date) from svn_commit group by author");
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -191,6 +257,38 @@ public class EventJaccardDBWriter {
 
 		return result;
 	}
+	
+	private Map<String, Integer> getActualMinMax(Date eventDate, String author) {
+		Map<String, Integer> result = new HashMap<>();
+		
+		try {
+			Connection connection = DriverManager.getConnection(dbPath, dbUser, dbPassword);
+			
+			ps = connection.prepareStatement("select min(period), max(period) from event_author where event_date = '" +
+					 new Timestamp(eventDate.getTime()) + "' and author = '" + author + "'");
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				result.put("min", rs.getInt(1));
+				result.put("max", rs.getInt(2));
+			}
+			ps.close();
+
+		} catch (SQLException e) {
+			System.out.println("Something went wrong");
+			e.printStackTrace();
+
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}			
+		}
+
+		return result;
+	}
+	
 
 	private void dropTable() {
 		Connection connection = null;
@@ -231,8 +329,8 @@ public class EventJaccardDBWriter {
 					"event_date timestamp with time zone NOT NULL," +
 					"author text NOT NULL, " +
 					"period numeric NOT NULL," +
-					"jac_num numeric," +
-					"jac_den numeric," +
+					"jac_intersect numeric," +
+					"jac_union numeric," +
 					"" +
 					"primary key(event_date, author, period))");
 			ps.executeUpdate();			

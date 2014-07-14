@@ -9,6 +9,8 @@ public class Author {
 	// Date is a superclass of Timestamp 
 	public final Date firstCommit;
 	public final Date lastCommit;
+	public int lowerPeriod;
+	public int upperPeriod;
 
 	public Author(String name, Timestamp firstCommit, Timestamp lastCommit) {
 		this.name = name;

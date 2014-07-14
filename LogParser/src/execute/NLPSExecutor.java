@@ -36,7 +36,7 @@ public class NLPSExecutor {
 
 		// Input there the date of the event, and the step in days (+/- from that date)
 		Date eventDate = NLPSRunner.DATEFORMAT.parse("2014-02-16 16:23:11 -0400");
-		int period = 30;
+		int period = 15;
 
 		EventJaccardDBWriter ec = new EventJaccardDBWriter();
 		ec.writeOutputTable(eventDate, period);
