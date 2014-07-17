@@ -23,11 +23,9 @@ public class NLPSExecutor {
 		 * 
 		 * May think about weighted one
 		 * 
-		 * How to align based on the EVENT DATE, and then +30x and -30x
+		 * Calculating the intersect and union is done as per the following (i.e. how to read the jaccard_summary
+		 * table). Here is an example row.
 		 * 
-		 * eventID eventDate  dev union intersection
-		 * 
-		 * event, dev, period (-30, +30 etc.), path
 		 * 
 		 * select count(*) from (select dir from dev_file_mn where yr = '2012' and mn = '5' and author = 'nirh' 
 		 *   union select dir from dev_file_mn where yr = '2012' and mn = '6' and author = 'nirh') as r

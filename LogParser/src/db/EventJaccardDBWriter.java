@@ -100,7 +100,7 @@ public class EventJaccardDBWriter {
 					Timestamp previous = new Timestamp(cal.getTime().getTime());
 					
 					st.addBatch("insert into event_author " +
-							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + (period * multiplier) + "', " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + period + "', '" + (period * multiplier) + "', " +
 									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
 									"commit_date <= '" + current + "' and " +
 									"commit_date > '" + previous + "' and " +
@@ -132,7 +132,7 @@ public class EventJaccardDBWriter {
 					Timestamp next = new Timestamp(cal.getTime().getTime());
 					
 					st.addBatch("insert into event_author " +
-							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + (period * multiplier) + "', " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + period + "', '" + (period * multiplier) + "', " +
 									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
 									"commit_date >= '" + current + "' and " +
 									"commit_date < '" + next + "' and " +
@@ -166,6 +166,10 @@ public class EventJaccardDBWriter {
 			}			
 		}
 
+		if (authorMinMaxEntry.getKey().equals("octavio_pinto")) {
+			System.out.println("Pinto time!");
+		}
+
 		if (authorMinMaxEntry.getValue().lowerPeriod != 0 || authorMinMaxEntry.getValue().upperPeriod != 0) {
 			writeJaccardSummary(eventDate, authorMinMaxEntry.getKey(), period);	
 		}
@@ -183,10 +187,10 @@ public class EventJaccardDBWriter {
 			int min = minMax.get("min");
 			int max = minMax.get("max");
 			
-			if (Math.abs(max - min) >= (period * 2) ) {
+			if (Math.abs(max - min) >= (period) ) {
 				int start = min;
 				int incrementor = period;
-				while(start < (max - period)) {
+				while(start <= (max - period)) {
 					
 					// stupid handling due to data organization :(
 					if (start == -period) {
@@ -196,7 +200,7 @@ public class EventJaccardDBWriter {
 					}
 					
 					st.addBatch("insert into jaccard_summary " +
-							"select '" + new Timestamp(eventDate.getTime()) + "', '" + author + "', '" + start + "', " +
+							"select '" + new Timestamp(eventDate.getTime()) + "', '" + author + "', '" + period + "', '" + start + "', " +
 									"(select count(*) from (select dir from event_author where period = '" + start + "' and author = '" + author + "' " + 
 									"intersect select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "'" +
 									") as r), " +
@@ -318,21 +322,23 @@ public class EventJaccardDBWriter {
 			ps = connection.prepareStatement("create table if not exists event_author (" +
 					"event_date timestamp with time zone NOT NULL," +
 					"author text NOT NULL, " +
+					"input_period numeric NOT NULL," +
 					"period numeric NOT NULL," +
 					"dir text NOT NULL," +
 					"commits numeric," +
 					"" +
-					"primary key(event_date, author, period, dir))");
+					"primary key(event_date, author, input_period, period, dir))");
 			ps.executeUpdate();
 
 			ps = connection.prepareStatement("create table if not exists jaccard_summary (" +
 					"event_date timestamp with time zone NOT NULL," +
 					"author text NOT NULL, " +
+					"input_period numeric NOT NULL," +
 					"period numeric NOT NULL," +
 					"jac_intersect numeric," +
 					"jac_union numeric," +
 					"" +
-					"primary key(event_date, author, period))");
+					"primary key(event_date, author, input_period, period))");
 			ps.executeUpdate();			
 			
 			ps.close();
