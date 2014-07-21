@@ -6,5 +6,8 @@
 	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/guava-16.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/postgresql-9.3-1101.jdbc41.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/joda-time-2.3-dist/joda-time-2.3/joda-time-2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/jfreechart-1.0.18/jfreechart-1.0.18/lib/jcommon-1.0.22.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/jfreechart-1.0.18/jfreechart-1.0.18/lib/jfreechart-1.0.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Amish_Gala/Downloads/jfreechart-1.0.18/jfreechart-1.0.18/jfreechart-1.0.18-demo.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
