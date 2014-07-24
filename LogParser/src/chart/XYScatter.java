@@ -1,10 +1,10 @@
 package chart;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -39,12 +39,17 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 	Multimap<String, JaccardSummary> authorSummary;
 	private XYPlot plot;
 	private XYSeriesCollection dataset;  
+	private String eventDate;
 
 	public XYScatter(String title) throws ParseException {
 		super(title);
-		authorSummary = (new JaccardSummaryReader()).getJaccardSummaryForEventDate(NLPSRunner.DATEFORMAT.parse("2014-02-16 16:23:11 -0400"));
-		//authorToSeriesID = new HashMap<>();
-		//authorToSeries = new HashMap<>();
+		eventDate = "2014-02-16 16:23:11 -0400";
+		authorSummary = (new JaccardSummaryReader()).getJaccardSummaryForEventDate(NLPSRunner.DATEFORMAT.parse(eventDate));
+		
+		// Remove some authors with only 1 value
+		authorSummary.removeAll("octavio_pinto");
+		authorSummary.removeAll("abraham_shenker");
+		
 		hidden = new HashSet<>();
 		populateDataset(); 
 		JFreeChart chart = createChart();
@@ -56,19 +61,22 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
         content.add(chartPanel);
         
         final JPanel buttonPanel = new JPanel();
+        GridLayout gridLayoutForButtons = new GridLayout(0, 7);
+        buttonPanel.setLayout(gridLayoutForButtons);
+        
         for(String author: authorSummary.keySet()) {
         	final JButton button = new JButton("Toggle " + author);
         	button.setActionCommand(author);
         	button.addActionListener(this);
         	buttonPanel.add(button);
         }
-        
+                
         content.add(buttonPanel, BorderLayout.SOUTH);
         setContentPane(content);
 	}
 	
     private JFreeChart createChart() {
-    	JFreeChart chart = ChartFactory.createXYLineChart("Wow!", "Period", "Jaccard", dataset, PlotOrientation.VERTICAL, true, true, false);
+    	JFreeChart chart = ChartFactory.createXYLineChart(eventDate, "Period", "Jaccard", dataset, PlotOrientation.VERTICAL, true, true, false);
 		return chart;
 	}
 
@@ -77,11 +85,13 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 
     	for(String author: authorSummary.keySet()) {
     		if (hidden.contains(author)) continue;
-    		
+       		    		
         	final XYSeries series = new XYSeries(author);
         	
         	for(JaccardSummary js: authorSummary.get(author)) {
+        		// Show Jaccard values when they are 1?
         		if(js.jaccard == 1) continue;
+        		
         		series.add(js.period, js.jaccard);
         		System.out.println(author + ": " + js.period + ", " + js.jaccard);	
         	}
