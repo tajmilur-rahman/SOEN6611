@@ -51,6 +51,7 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 		authorSummary.removeAll("abraham_shenker");
 		
 		hidden = new HashSet<>();
+		hidden.addAll(authorSummary.keySet());
 		populateDataset(); 
 		JFreeChart chart = createChart();
 		plot = chart.getXYPlot();
@@ -90,7 +91,7 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
         	
         	for(JaccardSummary js: authorSummary.get(author)) {
         		// Show Jaccard values when they are 1?
-        		if(js.jaccard == 1) continue;
+        		//if(js.jaccard == 1) continue;
         		
         		series.add(js.period, js.jaccard);
         		System.out.println(author + ": " + js.period + ", " + js.jaccard);	
