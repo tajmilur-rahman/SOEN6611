@@ -38,6 +38,8 @@ public class EventJaccardDBWriter {
 	ResultSet rs = null;
 	PreparedStatement ps = null;
 	
+	String dirToUse;
+	
 	public EventJaccardDBWriter() {
 		loadDBProperties();
 	}
@@ -54,8 +56,9 @@ public class EventJaccardDBWriter {
 		}
 	}
 	
-	public void writeOutputTable(Date eventDate, int period) {
-		
+	public void writeOutputTable(Date eventDate, int period, String dirToUse) {
+		this.dirToUse = dirToUse;	
+
 		// Drop table - only do this once!!! Comment out for future runs
 		dropTable();
 		
@@ -68,8 +71,7 @@ public class EventJaccardDBWriter {
 		for(Entry<String, Author> authorMinMaxEntry: authorMinMax.entrySet()) {
 			writeEventAuthor(eventDate, authorMinMaxEntry, period);
 		}
-		
-		
+				
 	}
 
 	private void writeEventAuthor(Date eventDate, Entry<String, Author> authorMinMaxEntry, int period) {
@@ -101,11 +103,12 @@ public class EventJaccardDBWriter {
 					
 					st.addBatch("insert into event_author " +
 							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + period + "', '" + (period * multiplier) + "', " +
-									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
+									dirToUse + ", count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
 									"commit_date <= '" + current + "' and " +
 									"commit_date > '" + previous + "' and " +
-									"author = '" + authorMinMaxEntry.getKey() + "' " +
-									"group by author, dir");
+									"author = '" + authorMinMaxEntry.getKey() + "' and " +
+									"coalesce(" + dirToUse + ", '') != '' " +
+									"group by author, " + dirToUse);
 					
 					fromFirstToEvent -= period;
 					multiplier -= 1;
@@ -133,11 +136,12 @@ public class EventJaccardDBWriter {
 					
 					st.addBatch("insert into event_author " +
 							"select '" + new Timestamp(eventDate.getTime()) + "', author, '" + period + "', '" + (period * multiplier) + "', " +
-									"dir, count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
+									dirToUse + ", count(*) from committed_files f, svn_commit s	where f.revision_id = s.revision_id and " +
 									"commit_date >= '" + current + "' and " +
 									"commit_date < '" + next + "' and " +
-									"author = '" + authorMinMaxEntry.getKey() + "' " +
-									"group by author, dir");					
+									"author = '" + authorMinMaxEntry.getKey() + "' and " +
+									"coalesce(" + dirToUse + ", '') != '' " +
+									"group by author, " + dirToUse);					
 					
 					
 					fromEventToLast -= period;

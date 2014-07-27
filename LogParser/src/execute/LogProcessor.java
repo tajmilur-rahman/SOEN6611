@@ -13,6 +13,8 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
+
 import model.Commit;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -33,6 +35,7 @@ public class LogProcessor {
 		
 		for(String file: paths) {
 			commitsPerProject.put(file, processFile(file));
+			System.out.println(file + " has " + commitsPerProject.get(file).size() + " commits");
 		}
 		
 		return commitsPerProject;
@@ -73,9 +76,16 @@ public class LogProcessor {
 					
 					// the "(from" handles cases for moved files. 
 					if (line.contains("(from ")) {
-						logger.info(line + ". Splitted: " + line.split("\\(from")[0].trim());
+						//logger.info(line + ". Splitted: " + line.split("\\(from")[0].trim());
 						line = line.split("\\(from")[0].trim();
 					}
+					
+					// Skip directories
+					if (!isLineAFile(line)) {
+						//logger.warning("[Skipping] " + line);
+						continue;
+					}
+					
 					commitObject.modifiedFiles.add(line.trim());
 					commitObject.commitLogsByType.put(line.trim().split("\\s")[0].trim(), line.trim().split("\\s", 2)[1].trim());
 					modifiedFileFound = true;
@@ -104,6 +114,32 @@ public class LogProcessor {
 		return allCommitObjects;
 	}
 	
+	private boolean isLineAFile(String line) {
+		if (line.trim().equals("/")) return false;
+		
+		Pattern lastPartPattern = Pattern.compile("/([^/]+)\\s*$");
+		Matcher lastPartMatcher = lastPartPattern.matcher(line);
+		
+		if(lastPartMatcher.find()) {
+			String lastPart = lastPartMatcher.group(1);
+			//System.out.println(lastPart);
+			
+			if (lastPart.contains(".")) {
+				//System.out.println(lastPart + " has " + StringUtils.countMatches(lastPart, ".") + " dot(s)");
+				if ( StringUtils.countMatches(lastPart, ".") > 1 && (line.contains("/tags/") || line.contains("/branches/")) ) {
+					return false;
+				} else {
+					return true;
+				}
+			} else {
+				return false;
+			}
+			
+		}
+		
+		return false;
+	}
+
 	private boolean isModifiedFileLine(String line) {
 		StringBuilder regex = new StringBuilder() ;
 		//   M /ant/core/trunk/WHATSNEW

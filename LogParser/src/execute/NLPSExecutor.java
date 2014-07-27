@@ -32,12 +32,14 @@ public class NLPSExecutor {
 		 *  
 		 */
 
-		// Input there the date of the event, and the step in days (+/- from that date)
+		// Input there the date of the event, the step in days (+/- from that date)
+		// and the directory field we should use (either dir, dir_2_file, or dir_3_file) 
 		Date eventDate = NLPSRunner.DATEFORMAT.parse("2014-02-16 16:23:11 -0400");
 		int period = 30;
-
+		String dirToUse = "dir_3_file";
+		
 		EventJaccardDBWriter ec = new EventJaccardDBWriter();
-		ec.writeOutputTable(eventDate, period);
+		ec.writeOutputTable(eventDate, period, dirToUse);
 	}
 	
 

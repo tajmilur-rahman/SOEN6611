@@ -50,6 +50,7 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 		authorSummary.removeAll("octavio_pinto");
 		authorSummary.removeAll("abraham_shenker");
 		
+		// Start with all authors hidden
 		hidden = new HashSet<>();
 		hidden.addAll(authorSummary.keySet());
 		populateDataset(); 
@@ -94,7 +95,7 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
         		//if(js.jaccard == 1) continue;
         		
         		series.add(js.period, js.jaccard);
-        		System.out.println(author + ": " + js.period + ", " + js.jaccard);	
+        		System.out.println(author + ": " + js.period + ", [intersect: " + js.intersect + ", union: " + js.union + ", index: " + js.jaccard + "]");	
         	}
         	dataset.addSeries(series);
     	}
