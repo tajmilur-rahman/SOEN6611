@@ -53,6 +53,7 @@ public class NLPSRunner {
 		paths.add("input/solr-stub-dss.txt");
 		paths.add("input/stub-dss.txt");
 		paths.add("input/udss.txt");
+		paths.add("input/nmkb.txt");
 		
 		return paths;
 	}
