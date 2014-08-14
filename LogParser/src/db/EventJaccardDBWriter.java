@@ -211,7 +211,16 @@ public class EventJaccardDBWriter {
 									"" +
 									"(select count(*) from (select dir from event_author where period = '" + start + "' and author = '" + author + "' " + 
 									"union select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "'" +
-									") as u)");
+									") as u), " +
+									"" +
+									"(select coalesce(sum(commits), 0) from event_author where author = '" + author + "' and (period = '" + start + "' or period = '" + (start + incrementor) + "') " + 
+									"and dir in (select dir from event_author where period = '" + start + "' and author = '" + author + "' intersect " +
+									"select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "')), " +
+									"" +
+									"(select coalesce(sum(commits), 0) from event_author where author = '" + author + "' and (period = '" + start + "' or period = '" + (start + incrementor) + "') " + 
+									"and dir in (select dir from event_author where period = '" + start + "' and author = '" + author + "' union " +
+									"select dir from event_author where period = '" + (start + incrementor) + "' and author = '" + author + "'))" +
+									"");
 					
 					start += incrementor;
 				}
@@ -341,6 +350,8 @@ public class EventJaccardDBWriter {
 					"period numeric NOT NULL," +
 					"jac_intersect numeric," +
 					"jac_union numeric," +
+					"jac_int_weighted numeric," +
+					"jac_union_weighted numeric," +
 					"" +
 					"primary key(event_date, author, input_period, period))");
 			ps.executeUpdate();			

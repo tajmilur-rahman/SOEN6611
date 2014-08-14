@@ -56,13 +56,17 @@ public class JaccardSummaryReader {
 			ps = connection.prepareStatement("select author, period, jac_intersect, jac_union, " +
 					"case when jac_union = 0 then 1 " +
 					"else jac_intersect / jac_union " +
+					"end," +
+					"jac_int_weighted, jac_union_weighted," +
+					"case when jac_union_weighted = 0 then 1 " +
+					"else jac_int_weighted / jac_union_weighted " +
 					"end " +
 					"from jaccard_summary where event_date = '" +
 					 new Timestamp(eventDate.getTime()) + "' order by author, period");
 
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				result.put(rs.getString(1), new JaccardSummary(rs.getString(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getDouble(5)));
+				result.put(rs.getString(1), new JaccardSummary(rs.getString(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getDouble(5), rs.getInt(6), rs.getInt(7), rs.getDouble(8)));
 			}
 			ps.close();
 

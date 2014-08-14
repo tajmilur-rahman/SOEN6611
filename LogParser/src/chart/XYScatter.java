@@ -40,6 +40,7 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 	private XYPlot plot;
 	private XYSeriesCollection dataset;  
 	private String eventDate;
+	private boolean showWeighted = false;
 
 	public XYScatter(String title) throws ParseException {
 		super(title);
@@ -72,6 +73,12 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
         	button.addActionListener(this);
         	buttonPanel.add(button);
         }
+        
+        // add the weighted toggle
+        final JButton button = new JButton("Weighted");
+    	button.setActionCommand("weighted");
+    	button.addActionListener(this);
+    	buttonPanel.add(button);
                 
         content.add(buttonPanel, BorderLayout.SOUTH);
         setContentPane(content);
@@ -93,9 +100,13 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
         	for(JaccardSummary js: authorSummary.get(author)) {
         		// Show Jaccard values when they are 1?
         		//if(js.jaccard == 1) continue;
-        		
-        		series.add(js.period, js.jaccard);
-        		System.out.println(author + ": " + js.period + ", [intersect: " + js.intersect + ", union: " + js.union + ", index: " + js.jaccard + "]");	
+        		if (!showWeighted) {
+            		series.add(js.period, js.jaccard);
+            		System.out.println(author + ": " + js.period + ", [intersect: " + js.intersect + ", union: " + js.union + ", index: " + js.jaccard + "]");	
+        		} else {
+            		series.add(js.period, js.weightedJaccard);
+            		System.out.println("[WEIGHTED] " + author + ": " + js.period + ", [intersect: " + js.weightedIntersect + ", union: " + js.weightedUnion+ ", index: " + js.weightedJaccard + "]");	
+        		}
         	}
         	dataset.addSeries(series);
     	}
@@ -114,10 +125,14 @@ public class XYScatter extends ApplicationFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(hidden.contains(e.getActionCommand())) {
-			hidden.remove(e.getActionCommand());
+		if("weighted".equals(e.getActionCommand())) {
+			showWeighted = !showWeighted;
 		} else {
-			hidden.add(e.getActionCommand());
+			if(hidden.contains(e.getActionCommand())) {
+				hidden.remove(e.getActionCommand());
+			} else {
+				hidden.add(e.getActionCommand());
+			}
 		}
 		
 		try {
