@@ -246,7 +246,7 @@ public class EventJaccardDBWriter {
 	}
 
 
-	private Map<String, Author> getAuthorsMinMax() {
+	public Map<String, Author> getAuthorsMinMax() {
 		Map<String, Author> result = new TreeMap<>();
 		
 		try {

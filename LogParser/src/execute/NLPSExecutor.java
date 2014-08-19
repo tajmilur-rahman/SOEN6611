@@ -9,7 +9,7 @@ import db.EventJaccardDBWriter;
 /**
  * @author amish_gala
  * Uses the data after data extraction and data cleanup via SQL script. This code should be 
- * run only after the records have been cleaned. The output is a a table showing the 
+ * run only after the records have been cleaned. The output is a table showing the 
  * Jaccard raw values of intersect and union for each of the dev/paths for periods before/after 
  * a given event date.  
  *
@@ -36,7 +36,7 @@ public class NLPSExecutor {
 		// and the directory field we should use (either dir, dir_2_file, or dir_3_file) 
 		Date eventDate = NLPSRunner.DATEFORMAT.parse("2014-02-16 16:23:11 -0400");
 		int period = 30;
-		String dirToUse = "dir_3_file";
+		String dirToUse = "dir_2_file";
 		
 		EventJaccardDBWriter ec = new EventJaccardDBWriter();
 		ec.writeOutputTable(eventDate, period, dirToUse);
