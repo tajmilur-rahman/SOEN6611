@@ -75,11 +75,11 @@ public class DirectoryToJiraDBWriter {
 			
 			do {
 				st.addBatch("insert into period_author_dir " +
-						"select '" + periodToStore + "', s.author, dir_2_file, count(dir_2_file) " +
+						"select '" + periodToStore + "', s.author, dir_2_file, s.project, count(dir_2_file) " +
 						"from svn_commit s, committed_files f where s.revision_id = f.revision_id " +
 						"and commit_date >= '" + current + "' " +
 						"and commit_date < '" + next + "' " +
-						"group by s.author, dir_2_file");
+						"group by s.author, dir_2_file, s.project");
 
 				String query = "insert into period_author_jiras " +
 						"select '" + periodToStore + "', u.author, " +
@@ -103,6 +103,7 @@ public class DirectoryToJiraDBWriter {
 						"from user_jira_mapper u, jiras2 j where (u.jira_user = j.assignee or u.jira_user = j.reporter) " +
 						"and resolved >= '" + current + "' " +
 						"and resolved < '" + next + "' " +
+						"and bug_duration < 21" +
 						"group by u.author");
 				
 				current = increment(current, period);
@@ -141,8 +142,8 @@ public class DirectoryToJiraDBWriter {
 			connection.setAutoCommit(false);
 			
 			st.addBatch("insert into directory_jira " +
-					"select period, author, coalesce(count, 0), coalesce(sum, 0), coalesce(assigned_jiras, 0), coalesce(reported_jiras, 0), coalesce(sum_jiras, 0), coalesce(num_apps, 0) " +
-					"from (select period, author, count(directory), sum(count) from period_author_dir group by period, author order by author, period) p " +
+					"select period, author, coalesce(count, 0), coalesce(sum, 0), coalesce(cp, 0), coalesce(assigned_jiras, 0), coalesce(reported_jiras, 0), coalesce(sum_jiras, 0), coalesce(num_apps, 0) " +
+					"from (select period, author, count(directory), count(distinct project) as cp, sum(count) from period_author_dir group by period, author order by author, period) p " +
 						"full join period_author_jiras d using(period, author) order by author, period;");
 
 			int counts [] = st.executeBatch();
@@ -262,10 +263,11 @@ public class DirectoryToJiraDBWriter {
 			ps = connection.prepareStatement("create table if not exists period_author_dir (" +
 					"period numeric NOT NULL," +
 					"author text NOT NULL, " +
-					"directory text NOT NULL," +
+					"directory text NOT NULL, " +
+					"project text NOT NULL, " +
 					"count numeric," +
 					"" +
-					"primary key(period, author, directory))");
+					"primary key(period, author, directory, project))");
 			ps.executeUpdate();
 			
 			ps = connection.prepareStatement("create table if not exists directory_jira (" +
@@ -273,6 +275,7 @@ public class DirectoryToJiraDBWriter {
 					"author text NOT NULL, " +
 					"directory_count numeric, " +
 					"files_count numeric, " +
+					"project_count numeric, " +
 					"assigned_jira numeric, " +
 					"reported_jira numeric, " +
 					"sum_jira numeric, " +
